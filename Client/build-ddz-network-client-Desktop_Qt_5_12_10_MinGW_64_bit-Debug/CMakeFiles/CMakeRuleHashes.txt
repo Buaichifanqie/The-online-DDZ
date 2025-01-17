@@ -1,0 +1,9 @@
+# Hashes of file build rules.
+d5580a076021c2e87a9374f422323721 CMakeFiles/ddz-network-client_autogen
+aed1833b64899a7c1662e84fa51f2bee card/CMakeFiles/card_autogen
+9788046b7e2bfee545cae9402912737e control/CMakeFiles/control_autogen
+f9c8735a28860e163448259314962718 player/CMakeFiles/player_autogen
+2d30857ad7f8bb8d297c8807ae713789 qrc_res.cpp
+e1dc6b85af2355f08ee313d7a26901a8 strategy/CMakeFiles/strategy_autogen
+7ceb4f74a43efef20586cf3e0c7c19be thread/CMakeFiles/thread_autogen
+b8cac1c4071197a1ee3d7107a41f3e60 windows/CMakeFiles/windows_autogen

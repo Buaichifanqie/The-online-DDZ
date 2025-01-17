@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/Server.dir/main.cpp.o -o /tmp/tmp.f8b4sgbeRY/bin/Server  common/libcommon.a http/libhttp.a reactor/libreactor.a tcp/libtcp.a thread/libthread.a

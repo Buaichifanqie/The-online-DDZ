@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="reactor"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\common\;CMake Files\http\;CMake Files\reactor\;CMake Files\tcp\;CMake Files\thread\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/tmp/tmp.f8b4sgbeRY/cmake-build-remote-debug/reactor"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j2 -f &quot;/tmp/tmp.f8b4sgbeRY/cmake-build-remote-debug/reactor/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j2 -f &quot;/tmp/tmp.f8b4sgbeRY/cmake-build-remote-debug/reactor/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j2 -f &quot;/tmp/tmp.f8b4sgbeRY/cmake-build-remote-debug/reactor/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j2 -f &quot;/tmp/tmp.f8b4sgbeRY/cmake-build-remote-debug/reactor/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="reactor">
+				<Option output="/tmp/tmp.f8b4sgbeRY/cmake-build-remote-debug/reactor/libreactor.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.f8b4sgbeRY/cmake-build-remote-debug/reactor"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.f8b4sgbeRY/common"/>
+					<Add directory="/tmp/tmp.f8b4sgbeRY/http"/>
+					<Add directory="/tmp/tmp.f8b4sgbeRY/reactor"/>
+					<Add directory="/tmp/tmp.f8b4sgbeRY/tcp"/>
+					<Add directory="/tmp/tmp.f8b4sgbeRY/thread"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j2 -f &quot;/tmp/tmp.f8b4sgbeRY/cmake-build-remote-debug/reactor/Makefile&quot;  VERBOSE=1 reactor"/>
+					<CompileFile command="/usr/bin/gmake -j2 -f &quot;/tmp/tmp.f8b4sgbeRY/cmake-build-remote-debug/reactor/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j2 -f &quot;/tmp/tmp.f8b4sgbeRY/cmake-build-remote-debug/reactor/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j2 -f &quot;/tmp/tmp.f8b4sgbeRY/cmake-build-remote-debug/reactor/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="reactor/fast">
+				<Option output="/tmp/tmp.f8b4sgbeRY/cmake-build-remote-debug/reactor/libreactor.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.f8b4sgbeRY/cmake-build-remote-debug/reactor"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.f8b4sgbeRY/common"/>
+					<Add directory="/tmp/tmp.f8b4sgbeRY/http"/>
+					<Add directory="/tmp/tmp.f8b4sgbeRY/reactor"/>
+					<Add directory="/tmp/tmp.f8b4sgbeRY/tcp"/>
+					<Add directory="/tmp/tmp.f8b4sgbeRY/thread"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j2 -f &quot;/tmp/tmp.f8b4sgbeRY/cmake-build-remote-debug/reactor/Makefile&quot;  VERBOSE=1 reactor/fast"/>
+					<CompileFile command="/usr/bin/gmake -j2 -f &quot;/tmp/tmp.f8b4sgbeRY/cmake-build-remote-debug/reactor/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j2 -f &quot;/tmp/tmp.f8b4sgbeRY/cmake-build-remote-debug/reactor/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j2 -f &quot;/tmp/tmp.f8b4sgbeRY/cmake-build-remote-debug/reactor/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/tmp/tmp.f8b4sgbeRY/reactor/Dispatcher.cpp">
+			<Option target="reactor"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.f8b4sgbeRY/reactor/Dispatcher.h">
+			<Option target="reactor"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.f8b4sgbeRY/reactor/EpollDispatcher.cpp">
+			<Option target="reactor"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.f8b4sgbeRY/reactor/EpollDispatcher.h">
+			<Option target="reactor"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.f8b4sgbeRY/reactor/EventLoop.cpp">
+			<Option target="reactor"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.f8b4sgbeRY/reactor/EventLoop.h">
+			<Option target="reactor"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.f8b4sgbeRY/reactor/PollDispatcher.cpp">
+			<Option target="reactor"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.f8b4sgbeRY/reactor/PollDispatcher.h">
+			<Option target="reactor"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.f8b4sgbeRY/reactor/SelectDispatcher.cpp">
+			<Option target="reactor"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.f8b4sgbeRY/reactor/SelectDispatcher.h">
+			<Option target="reactor"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.f8b4sgbeRY/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.f8b4sgbeRY/common/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\common\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.f8b4sgbeRY/http/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\http\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.f8b4sgbeRY/reactor/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\reactor\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.f8b4sgbeRY/tcp/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\tcp\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.f8b4sgbeRY/thread/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thread\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

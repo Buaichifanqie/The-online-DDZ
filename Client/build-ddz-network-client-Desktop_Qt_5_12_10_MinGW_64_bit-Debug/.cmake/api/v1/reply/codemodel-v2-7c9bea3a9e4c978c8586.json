@@ -1,0 +1,345 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						4,
+						5
+					]
+				},
+				{
+					"build" : "card",
+					"jsonFile" : "directory-card-Debug-0d10850d4b9e903c71b3.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "card",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				},
+				{
+					"build" : "windows",
+					"jsonFile" : "directory-windows-Debug-b0cbbbcd3f6e8c6d3f67.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "windows",
+					"targetIndexes" : 
+					[
+						12,
+						13
+					]
+				},
+				{
+					"build" : "control",
+					"jsonFile" : "directory-control-Debug-e88a547fdfbb617b9195.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "control",
+					"targetIndexes" : 
+					[
+						2,
+						3
+					]
+				},
+				{
+					"build" : "player",
+					"jsonFile" : "directory-player-Debug-b5aa96b15bf0c02ae0d9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 4,
+					"source" : "player",
+					"targetIndexes" : 
+					[
+						6,
+						7
+					]
+				},
+				{
+					"build" : "strategy",
+					"jsonFile" : "directory-strategy-Debug-29293966d564a505d675.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 5,
+					"source" : "strategy",
+					"targetIndexes" : 
+					[
+						8,
+						9
+					]
+				},
+				{
+					"build" : "thread",
+					"jsonFile" : "directory-thread-Debug-9f696b3d0c5c247e01de.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 6,
+					"source" : "thread",
+					"targetIndexes" : 
+					[
+						10,
+						11
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ddz-network-client",
+					"targetIndexes" : 
+					[
+						4,
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "card",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "windows",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						12,
+						13
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "control",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						2,
+						3
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "player",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						6,
+						7
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "strategy",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						8,
+						9
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						6
+					],
+					"name" : "thread",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						10,
+						11
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "card::@182f1c272d1d9a15b9e1",
+					"jsonFile" : "target-card-Debug-e3446315abc43efe7231.json",
+					"name" : "card",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "card_autogen::@182f1c272d1d9a15b9e1",
+					"jsonFile" : "target-card_autogen-Debug-4fcaa5bfae649e55e779.json",
+					"name" : "card_autogen",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "control::@a06da966ec71d8a337a9",
+					"jsonFile" : "target-control-Debug-36e9588819f7bfe89ee2.json",
+					"name" : "control",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "control_autogen::@a06da966ec71d8a337a9",
+					"jsonFile" : "target-control_autogen-Debug-bb1b602e8f318926ab29.json",
+					"name" : "control_autogen",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ddz-network-client::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ddz-network-client-Debug-2ebdb95a36ccb28a4172.json",
+					"name" : "ddz-network-client",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ddz-network-client_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ddz-network-client_autogen-Debug-96225b0a9acd87545b95.json",
+					"name" : "ddz-network-client_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "player::@6e497030d9506a5b7385",
+					"jsonFile" : "target-player-Debug-805f97f2732ac64a1a61.json",
+					"name" : "player",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "player_autogen::@6e497030d9506a5b7385",
+					"jsonFile" : "target-player_autogen-Debug-a30dd3ed520e6a57623f.json",
+					"name" : "player_autogen",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "strategy::@241ee8dc02c6c148167d",
+					"jsonFile" : "target-strategy-Debug-1ce373ca0e391e0b1057.json",
+					"name" : "strategy",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "strategy_autogen::@241ee8dc02c6c148167d",
+					"jsonFile" : "target-strategy_autogen-Debug-14e2a88e94468600c45a.json",
+					"name" : "strategy_autogen",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "thread::@1994991b6c1bd8685afc",
+					"jsonFile" : "target-thread-Debug-e87cdc0bad2abedff580.json",
+					"name" : "thread",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "thread_autogen::@1994991b6c1bd8685afc",
+					"jsonFile" : "target-thread_autogen-Debug-1489277f0516c76a3af2.json",
+					"name" : "thread_autogen",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "windows::@f197aaf5197350ad3995",
+					"jsonFile" : "target-windows-Debug-a53ba8db7473a74b53ad.json",
+					"name" : "windows",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "windows_autogen::@f197aaf5197350ad3995",
+					"jsonFile" : "target-windows_autogen-Debug-e75eb52be7e31bdc1ad9.json",
+					"name" : "windows_autogen",
+					"projectIndex" : 2
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/DDZ-network/Client/build-ddz-network-client-Desktop_Qt_5_12_10_MinGW_64_bit-Debug",
+		"source" : "D:/DDZ-network/Client/ddz-network-client"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
