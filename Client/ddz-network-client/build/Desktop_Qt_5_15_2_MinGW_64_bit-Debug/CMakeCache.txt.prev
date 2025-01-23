@@ -315,6 +315,18 @@ control_LIB_DEPENDS:STATIC=general;Qt5::Core;general;Qt5::Multimedia;
 control_SOURCE_DIR:STATIC=D:/DDZ-network/Client/ddz-network-client/control
 
 //Value Computed by CMake
+crypto_BINARY_DIR:STATIC=D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/crypto
+
+//Value Computed by CMake
+crypto_IS_TOP_LEVEL:STATIC=OFF
+
+//Dependencies for the target
+crypto_LIB_DEPENDS:STATIC=general;Qt5::Core;
+
+//Value Computed by CMake
+crypto_SOURCE_DIR:STATIC=D:/DDZ-network/Client/ddz-network-client/crypto
+
+//Value Computed by CMake
 ddz-network-client_BINARY_DIR:STATIC=D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug
 
 //Value Computed by CMake
@@ -500,7 +512,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=9
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=10
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

@@ -43,3 +43,8 @@ D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-De
 D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/serialize/CMakeFiles/rebuild_cache.dir
 D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/serialize/CMakeFiles/serialize_autogen_timestamp_deps.dir
 D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/serialize/CMakeFiles/serialize_autogen.dir
+D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/crypto/CMakeFiles/crypto.dir
+D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/crypto/CMakeFiles/edit_cache.dir
+D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/crypto/CMakeFiles/rebuild_cache.dir
+D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/crypto/CMakeFiles/crypto_autogen_timestamp_deps.dir
+D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/crypto/CMakeFiles/crypto_autogen.dir

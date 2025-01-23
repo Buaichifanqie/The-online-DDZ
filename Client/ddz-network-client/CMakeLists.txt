@@ -49,6 +49,8 @@ include_directories(
     ${PROJECT_SOURCE_DIR}/thread
     ${PROJECT_SOURCE_DIR}/tcp
     ${PROJECT_SOURCE_DIR}/serialize
+    ${PROJECT_SOURCE_DIR}/crypto
+    "D:\\OpenSSL-Win64\\include"
 )
 
 # 添加子目录
@@ -60,6 +62,7 @@ add_subdirectory(strategy)
 add_subdirectory(thread)
 add_subdirectory(tcp)
 add_subdirectory(serialize)
+add_subdirectory(crypto)
 
 # 添加资源文件
 qt5_add_resources(RES res.qrc)
@@ -76,5 +79,5 @@ else()
 endif()
 
 target_link_libraries(ddz-network-client PRIVATE Qt${QT_VERSION_MAJOR}::Widgets
-    card windows control player strategy thread
+    card windows control player strategy thread crypto
 )

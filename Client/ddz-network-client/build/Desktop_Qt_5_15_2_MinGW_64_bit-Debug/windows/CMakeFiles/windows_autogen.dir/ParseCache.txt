@@ -1309,17 +1309,16 @@ D:/DDZ-network/Client/ddz-network-client/windows/loading.h
  mdp:D:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/vadefs.h
  mdp:D:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/wchar.h
  mdp:D:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/wctype.h
-D:/DDZ-network/Client/ddz-network-client/windows/countdown.h
+D:/DDZ-network/Client/ddz-network-client/windows/endingpanel.h
  mmc:Q_OBJECT
  mdp:D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/windows/windows_autogen/moc_predefs.h
- mdp:D:/DDZ-network/Client/ddz-network-client/windows/countdown.h
- mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/QTimer
+ mdp:D:/DDZ-network/Client/ddz-network-client/windows/endingpanel.h
+ mdp:D:/DDZ-network/Client/ddz-network-client/windows/scorepanel.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qalgorithms.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qarraydata.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qatomic.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qatomic_cxx11.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qbasicatomic.h
- mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qbasictimer.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qbytearray.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qbytearraylist.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qchar.h
@@ -1367,7 +1366,6 @@ D:/DDZ-network/Client/ddz-network-client/windows/countdown.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qsysinfo.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qsystemdetection.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qtcore-config.h
- mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qtimer.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qtypeinfo.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qvarlengtharray.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qvector.h
@@ -1378,6 +1376,7 @@ D:/DDZ-network/Client/ddz-network-client/windows/countdown.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtGui/qfont.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtGui/qfontinfo.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtGui/qfontmetrics.h
+ mdp:D:/Qt/5.15.2/mingw81_64/include/QtGui/qicon.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtGui/qimage.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtGui/qkeysequence.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtGui/qmatrix.h
@@ -1394,7 +1393,13 @@ D:/DDZ-network/Client/ddz-network-client/windows/countdown.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtGui/qtransform.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtGui/qwindowdefs.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtGui/qwindowdefs_win.h
+ mdp:D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QLabel
+ mdp:D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QPushButton
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QWidget
+ mdp:D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractbutton.h
+ mdp:D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qframe.h
+ mdp:D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlabel.h
+ mdp:D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qpushbutton.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qsizepolicy.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtwidgets-config.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtwidgetsglobal.h
@@ -1572,16 +1577,17 @@ D:/DDZ-network/Client/ddz-network-client/windows/countdown.h
  mdp:D:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/vadefs.h
  mdp:D:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/wchar.h
  mdp:D:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/wctype.h
-D:/DDZ-network/Client/ddz-network-client/windows/endingpanel.h
+D:/DDZ-network/Client/ddz-network-client/windows/countdown.h
  mmc:Q_OBJECT
  mdp:D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/windows/windows_autogen/moc_predefs.h
- mdp:D:/DDZ-network/Client/ddz-network-client/windows/endingpanel.h
- mdp:D:/DDZ-network/Client/ddz-network-client/windows/scorepanel.h
+ mdp:D:/DDZ-network/Client/ddz-network-client/windows/countdown.h
+ mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/QTimer
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qalgorithms.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qarraydata.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qatomic.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qatomic_cxx11.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qbasicatomic.h
+ mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qbasictimer.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qbytearray.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qbytearraylist.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qchar.h
@@ -1629,6 +1635,7 @@ D:/DDZ-network/Client/ddz-network-client/windows/endingpanel.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qsysinfo.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qsystemdetection.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qtcore-config.h
+ mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qtimer.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qtypeinfo.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qvarlengtharray.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qvector.h
@@ -1639,7 +1646,6 @@ D:/DDZ-network/Client/ddz-network-client/windows/endingpanel.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtGui/qfont.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtGui/qfontinfo.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtGui/qfontmetrics.h
- mdp:D:/Qt/5.15.2/mingw81_64/include/QtGui/qicon.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtGui/qimage.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtGui/qkeysequence.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtGui/qmatrix.h
@@ -1656,13 +1662,7 @@ D:/DDZ-network/Client/ddz-network-client/windows/endingpanel.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtGui/qtransform.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtGui/qwindowdefs.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtGui/qwindowdefs_win.h
- mdp:D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QLabel
- mdp:D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QPushButton
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QWidget
- mdp:D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractbutton.h
- mdp:D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qframe.h
- mdp:D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlabel.h
- mdp:D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qpushbutton.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qsizepolicy.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtwidgets-config.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtwidgetsglobal.h
@@ -2154,6 +2154,8 @@ D:/DDZ-network/Client/ddz-network-client/windows/gamepanel.h
  mdp:D:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/vadefs.h
  mdp:D:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/wchar.h
  mdp:D:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/wctype.h
+D:/DDZ-network/Client/ddz-network-client/windows/scorepanel.cpp
+ uic:ui_scorepanel.h
 D:/DDZ-network/Client/ddz-network-client/windows/login.h
  mmc:Q_OBJECT
  mdp:D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/windows/windows_autogen/moc_predefs.h
@@ -2424,8 +2426,6 @@ D:/DDZ-network/Client/ddz-network-client/windows/login.h
  mdp:D:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/vadefs.h
  mdp:D:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/wchar.h
  mdp:D:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/wctype.h
-D:/DDZ-network/Client/ddz-network-client/windows/scorepanel.cpp
- uic:ui_scorepanel.h
 D:/DDZ-network/Client/ddz-network-client/windows/scorepanel.h
  mmc:Q_OBJECT
  mdp:D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/windows/windows_autogen/moc_predefs.h
@@ -2689,12 +2689,12 @@ D:/DDZ-network/Client/ddz-network-client/windows/scorepanel.h
  mdp:D:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/vadefs.h
  mdp:D:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/wchar.h
  mdp:D:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/wctype.h
-D:/DDZ-network/Client/ddz-network-client/windows/animationwindow.cpp
 D:/DDZ-network/Client/ddz-network-client/windows/mybutton.cpp
+D:/DDZ-network/Client/ddz-network-client/windows/animationwindow.cpp
 D:/DDZ-network/Client/ddz-network-client/windows/buttongroup.cpp
  uic:ui_buttongroup.h
-D:/DDZ-network/Client/ddz-network-client/windows/cardpanel.cpp
 D:/DDZ-network/Client/ddz-network-client/windows/loading.cpp
+D:/DDZ-network/Client/ddz-network-client/windows/cardpanel.cpp
 D:/DDZ-network/Client/ddz-network-client/windows/countdown.cpp
 D:/DDZ-network/Client/ddz-network-client/windows/endingpanel.cpp
 D:/DDZ-network/Client/ddz-network-client/windows/gamepanel.cpp
