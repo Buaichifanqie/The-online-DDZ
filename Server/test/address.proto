@@ -1,0 +1,10 @@
+syntax="proto3";
+
+//包
+package Aoqi;
+
+message Address
+{
+  int32 num=1;
+  bytes m_addr=2;
+}

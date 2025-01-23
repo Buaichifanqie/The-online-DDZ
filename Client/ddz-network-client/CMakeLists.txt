@@ -47,6 +47,8 @@ include_directories(
     ${PROJECT_SOURCE_DIR}/player
     ${PROJECT_SOURCE_DIR}/strategy
     ${PROJECT_SOURCE_DIR}/thread
+    ${PROJECT_SOURCE_DIR}/tcp
+    ${PROJECT_SOURCE_DIR}/serialize
 )
 
 # 添加子目录
@@ -56,6 +58,8 @@ add_subdirectory(control)
 add_subdirectory(player)
 add_subdirectory(strategy)
 add_subdirectory(thread)
+add_subdirectory(tcp)
+add_subdirectory(serialize)
 
 # 添加资源文件
 qt5_add_resources(RES res.qrc)

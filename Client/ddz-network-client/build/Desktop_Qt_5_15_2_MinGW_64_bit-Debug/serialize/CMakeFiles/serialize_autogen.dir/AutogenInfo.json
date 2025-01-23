@@ -1,0 +1,122 @@
+{
+	"AUTOGEN_COMMAND_LINE_LENGTH_MAX" : 32000,
+	"BUILD_DIR" : "D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/serialize/serialize_autogen",
+	"CMAKE_BINARY_DIR" : "D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/serialize",
+	"CMAKE_CURRENT_SOURCE_DIR" : "D:/DDZ-network/Client/ddz-network-client/serialize",
+	"CMAKE_EXECUTABLE" : "D:/cmake/bin/cmake.exe",
+	"CMAKE_LIST_FILES" : 
+	[
+		"D:/DDZ-network/Client/ddz-network-client/serialize/CMakeLists.txt",
+		"D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake",
+		"D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/CMakeFiles/3.31.2/CMakeCCompiler.cmake",
+		"D:/cmake/share/cmake-3.31/Modules/CMakeCInformation.cmake",
+		"D:/cmake/share/cmake-3.31/Modules/CMakeLanguageInformation.cmake",
+		"D:/cmake/share/cmake-3.31/Modules/Compiler/GNU-C.cmake",
+		"D:/cmake/share/cmake-3.31/Modules/Compiler/GNU.cmake",
+		"D:/cmake/share/cmake-3.31/Modules/Platform/Windows-GNU-C.cmake",
+		"D:/cmake/share/cmake-3.31/Modules/Platform/Windows-GNU.cmake",
+		"D:/cmake/share/cmake-3.31/Modules/Platform/Windows-GNU-C-ABI.cmake",
+		"D:/cmake/share/cmake-3.31/Modules/CMakeCommonLanguageInclude.cmake",
+		"D:/cmake/share/cmake-3.31/Modules/Internal/CMakeCLinkerInformation.cmake",
+		"D:/cmake/share/cmake-3.31/Modules/Internal/CMakeCommonLinkerInformation.cmake",
+		"D:/cmake/share/cmake-3.31/Modules/Linker/GNU-C.cmake",
+		"D:/cmake/share/cmake-3.31/Modules/Linker/GNU.cmake",
+		"D:/cmake/share/cmake-3.31/Modules/Platform/Linker/Windows-GNU-C.cmake",
+		"D:/cmake/share/cmake-3.31/Modules/Platform/Linker/Windows-GNU.cmake"
+	],
+	"CMAKE_SOURCE_DIR" : "D:/DDZ-network/Client/ddz-network-client",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/serialize/serialize_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "serialize_autogen/timestamp",
+	"HEADERS" : 
+	[
+		[
+			"D:/DDZ-network/Client/ddz-network-client/serialize/codec.h",
+			"MU",
+			"EWIEGA46WW/moc_codec.cpp",
+			null
+		],
+		[
+			"D:/DDZ-network/Client/ddz-network-client/serialize/information.pb.h",
+			"MU",
+			"EWIEGA46WW/moc_information.pb.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/serialize/serialize_autogen/include",
+	"MOC_COMPILATION_FILE" : "D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/serialize/serialize_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : [ "QT_CORE_LIB" ],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/serialize",
+		"D:/DDZ-network/Client/ddz-network-client/serialize",
+		"D:/DDZ-network/Client/ddz-network-client/card",
+		"D:/DDZ-network/Client/ddz-network-client/windows",
+		"D:/DDZ-network/Client/ddz-network-client/control",
+		"D:/DDZ-network/Client/ddz-network-client/player",
+		"D:/DDZ-network/Client/ddz-network-client/strategy",
+		"D:/DDZ-network/Client/ddz-network-client/thread",
+		"D:/DDZ-network/Client/ddz-network-client/tcp",
+		"C:/Protobuf/include",
+		"D:/Qt/5.15.2/mingw81_64/include",
+		"D:/Qt/5.15.2/mingw81_64/include/QtCore",
+		"D:/Qt/5.15.2/mingw81_64/mkspecs/win32-g++",
+		"D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++",
+		"D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32",
+		"D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward",
+		"D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include",
+		"D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed",
+		"D:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"D:/Qt/Tools/mingw810_64/bin/g++.exe",
+		"-std=gnu++17",
+		"-dM",
+		"-E",
+		"-c",
+		"D:/cmake/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/serialize/serialize_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 12,
+	"PARSE_CACHE_FILE" : "D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/serialize/CMakeFiles/serialize_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "D:/Qt/5.15.2/mingw81_64/bin/moc.exe",
+	"QT_UIC_EXECUTABLE" : "D:/Qt/5.15.2/mingw81_64/bin/uic.exe",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 15,
+	"SETTINGS_FILE" : "D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/serialize/CMakeFiles/serialize_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"D:/DDZ-network/Client/ddz-network-client/serialize/codec.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/DDZ-network/Client/ddz-network-client/serialize/information.pb.cc",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"USE_BETTER_GRAPH" : false,
+	"VERBOSITY" : 0
+}

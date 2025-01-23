@@ -3,9 +3,9 @@
 
 #include "player.h"
 
-#include <QThread>
+#include <QRunnable>
 
-class RobotPlayHand : public QThread
+class RobotPlayHand : public QObject,public QRunnable
 {
     Q_OBJECT
 public:

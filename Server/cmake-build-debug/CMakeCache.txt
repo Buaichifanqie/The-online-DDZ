@@ -243,6 +243,15 @@ Server_IS_TOP_LEVEL:STATIC=ON
 Server_SOURCE_DIR:STATIC=/cygdrive/d/DDZ-network/Server
 
 //Value Computed by CMake
+Test_BINARY_DIR:STATIC=/cygdrive/d/DDZ-network/Server/cmake-build-debug/test
+
+//Value Computed by CMake
+Test_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+Test_SOURCE_DIR:STATIC=/cygdrive/d/DDZ-network/Server/test
+
+//Value Computed by CMake
 common_BINARY_DIR:STATIC=/cygdrive/d/DDZ-network/Server/cmake-build-debug/common
 
 //Value Computed by CMake
@@ -277,6 +286,15 @@ tcp_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 tcp_SOURCE_DIR:STATIC=/cygdrive/d/DDZ-network/Server/tcp
+
+//Value Computed by CMake
+test_BINARY_DIR:STATIC=/cygdrive/d/DDZ-network/Server/cmake-build-debug/test
+
+//Value Computed by CMake
+test_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+test_SOURCE_DIR:STATIC=/cygdrive/d/DDZ-network/Server/test
 
 //Value Computed by CMake
 thread_BINARY_DIR:STATIC=/cygdrive/d/DDZ-network/Server/cmake-build-debug/thread
@@ -386,7 +404,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

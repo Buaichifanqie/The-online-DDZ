@@ -47,12 +47,12 @@ cmake_ninja_workdir = /cygdrive/d/DDZ-network/Server/cmake-build-debug/
 #############################################
 # Order-only phony target for Server
 
-build cmake_object_order_depends_target_Server: phony || cmake_object_order_depends_target_common cmake_object_order_depends_target_http cmake_object_order_depends_target_reactor cmake_object_order_depends_target_tcp cmake_object_order_depends_target_thread
+build cmake_object_order_depends_target_Server: phony || cmake_object_order_depends_target_common cmake_object_order_depends_target_http cmake_object_order_depends_target_reactor cmake_object_order_depends_target_tcp cmake_object_order_depends_target_test cmake_object_order_depends_target_thread
 
 build CMakeFiles/Server.dir/main.cpp.o: CXX_COMPILER__Server_unscanned_Debug /cygdrive/d/DDZ-network/Server/main.cpp || cmake_object_order_depends_target_Server
   DEP_FILE = CMakeFiles/Server.dir/main.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = CMakeFiles/Server.dir
   OBJECT_FILE_DIR = CMakeFiles/Server.dir
 
@@ -64,10 +64,10 @@ build CMakeFiles/Server.dir/main.cpp.o: CXX_COMPILER__Server_unscanned_Debug /cy
 #############################################
 # Link the executable /cygdrive/d/DDZ-network/Server/bin/Server.exe
 
-build /cygdrive/d/DDZ-network/Server/bin/Server.exe: CXX_EXECUTABLE_LINKER__Server_Debug CMakeFiles/Server.dir/main.cpp.o | common/libcommon.a http/libhttp.a reactor/libreactor.a tcp/libtcp.a thread/libthread.a || common/libcommon.a http/libhttp.a reactor/libreactor.a tcp/libtcp.a thread/libthread.a
+build /cygdrive/d/DDZ-network/Server/bin/Server.exe: CXX_EXECUTABLE_LINKER__Server_Debug CMakeFiles/Server.dir/main.cpp.o | tcp/libtcp.a http/libhttp.a reactor/libreactor.a thread/libthread.a common/libcommon.a test/libtest.a || common/libcommon.a http/libhttp.a reactor/libreactor.a tcp/libtcp.a test/libtest.a thread/libthread.a
   FLAGS = -g
   LINK_FLAGS = -Wl,--enable-auto-import
-  LINK_LIBRARIES = common/libcommon.a  http/libhttp.a  reactor/libreactor.a  tcp/libtcp.a  thread/libthread.a
+  LINK_LIBRARIES = tcp/libtcp.a  http/libhttp.a  reactor/libreactor.a  thread/libthread.a  common/libcommon.a  test/libtest.a  -lpthread  -lprotobuf
   OBJECT_DIR = CMakeFiles/Server.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -115,14 +115,14 @@ build cmake_object_order_depends_target_common: phony || common/CMakeFiles/commo
 build common/CMakeFiles/common.dir/Buffer.cpp.o: CXX_COMPILER__common_unscanned_Debug /cygdrive/d/DDZ-network/Server/common/Buffer.cpp || cmake_object_order_depends_target_common
   DEP_FILE = common/CMakeFiles/common.dir/Buffer.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = common/CMakeFiles/common.dir
   OBJECT_FILE_DIR = common/CMakeFiles/common.dir
 
 build common/CMakeFiles/common.dir/Channel.cpp.o: CXX_COMPILER__common_unscanned_Debug /cygdrive/d/DDZ-network/Server/common/Channel.cpp || cmake_object_order_depends_target_common
   DEP_FILE = common/CMakeFiles/common.dir/Channel.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = common/CMakeFiles/common.dir
   OBJECT_FILE_DIR = common/CMakeFiles/common.dir
 
@@ -182,14 +182,14 @@ build cmake_object_order_depends_target_http: phony || http/CMakeFiles/http.dir
 build http/CMakeFiles/http.dir/HttpRequest.cpp.o: CXX_COMPILER__http_unscanned_Debug /cygdrive/d/DDZ-network/Server/http/HttpRequest.cpp || cmake_object_order_depends_target_http
   DEP_FILE = http/CMakeFiles/http.dir/HttpRequest.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = http/CMakeFiles/http.dir
   OBJECT_FILE_DIR = http/CMakeFiles/http.dir
 
 build http/CMakeFiles/http.dir/HttpResponse.cpp.o: CXX_COMPILER__http_unscanned_Debug /cygdrive/d/DDZ-network/Server/http/HttpResponse.cpp || cmake_object_order_depends_target_http
   DEP_FILE = http/CMakeFiles/http.dir/HttpResponse.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = http/CMakeFiles/http.dir
   OBJECT_FILE_DIR = http/CMakeFiles/http.dir
 
@@ -249,35 +249,35 @@ build cmake_object_order_depends_target_reactor: phony || reactor/CMakeFiles/rea
 build reactor/CMakeFiles/reactor.dir/Dispatcher.cpp.o: CXX_COMPILER__reactor_unscanned_Debug /cygdrive/d/DDZ-network/Server/reactor/Dispatcher.cpp || cmake_object_order_depends_target_reactor
   DEP_FILE = reactor/CMakeFiles/reactor.dir/Dispatcher.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = reactor/CMakeFiles/reactor.dir
   OBJECT_FILE_DIR = reactor/CMakeFiles/reactor.dir
 
 build reactor/CMakeFiles/reactor.dir/EpollDispatcher.cpp.o: CXX_COMPILER__reactor_unscanned_Debug /cygdrive/d/DDZ-network/Server/reactor/EpollDispatcher.cpp || cmake_object_order_depends_target_reactor
   DEP_FILE = reactor/CMakeFiles/reactor.dir/EpollDispatcher.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = reactor/CMakeFiles/reactor.dir
   OBJECT_FILE_DIR = reactor/CMakeFiles/reactor.dir
 
 build reactor/CMakeFiles/reactor.dir/EventLoop.cpp.o: CXX_COMPILER__reactor_unscanned_Debug /cygdrive/d/DDZ-network/Server/reactor/EventLoop.cpp || cmake_object_order_depends_target_reactor
   DEP_FILE = reactor/CMakeFiles/reactor.dir/EventLoop.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = reactor/CMakeFiles/reactor.dir
   OBJECT_FILE_DIR = reactor/CMakeFiles/reactor.dir
 
 build reactor/CMakeFiles/reactor.dir/PollDispatcher.cpp.o: CXX_COMPILER__reactor_unscanned_Debug /cygdrive/d/DDZ-network/Server/reactor/PollDispatcher.cpp || cmake_object_order_depends_target_reactor
   DEP_FILE = reactor/CMakeFiles/reactor.dir/PollDispatcher.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = reactor/CMakeFiles/reactor.dir
   OBJECT_FILE_DIR = reactor/CMakeFiles/reactor.dir
 
 build reactor/CMakeFiles/reactor.dir/SelectDispatcher.cpp.o: CXX_COMPILER__reactor_unscanned_Debug /cygdrive/d/DDZ-network/Server/reactor/SelectDispatcher.cpp || cmake_object_order_depends_target_reactor
   DEP_FILE = reactor/CMakeFiles/reactor.dir/SelectDispatcher.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = reactor/CMakeFiles/reactor.dir
   OBJECT_FILE_DIR = reactor/CMakeFiles/reactor.dir
 
@@ -337,14 +337,14 @@ build cmake_object_order_depends_target_tcp: phony || tcp/CMakeFiles/tcp.dir
 build tcp/CMakeFiles/tcp.dir/TcpConnection.cpp.o: CXX_COMPILER__tcp_unscanned_Debug /cygdrive/d/DDZ-network/Server/tcp/TcpConnection.cpp || cmake_object_order_depends_target_tcp
   DEP_FILE = tcp/CMakeFiles/tcp.dir/TcpConnection.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = tcp/CMakeFiles/tcp.dir
   OBJECT_FILE_DIR = tcp/CMakeFiles/tcp.dir
 
 build tcp/CMakeFiles/tcp.dir/TcpServer.cpp.o: CXX_COMPILER__tcp_unscanned_Debug /cygdrive/d/DDZ-network/Server/tcp/TcpServer.cpp || cmake_object_order_depends_target_tcp
   DEP_FILE = tcp/CMakeFiles/tcp.dir/TcpServer.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = tcp/CMakeFiles/tcp.dir
   OBJECT_FILE_DIR = tcp/CMakeFiles/tcp.dir
 
@@ -404,14 +404,14 @@ build cmake_object_order_depends_target_thread: phony || thread/CMakeFiles/threa
 build thread/CMakeFiles/thread.dir/ThreadPool.cpp.o: CXX_COMPILER__thread_unscanned_Debug /cygdrive/d/DDZ-network/Server/thread/ThreadPool.cpp || cmake_object_order_depends_target_thread
   DEP_FILE = thread/CMakeFiles/thread.dir/ThreadPool.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = thread/CMakeFiles/thread.dir
   OBJECT_FILE_DIR = thread/CMakeFiles/thread.dir
 
 build thread/CMakeFiles/thread.dir/WorkerThread.cpp.o: CXX_COMPILER__thread_unscanned_Debug /cygdrive/d/DDZ-network/Server/thread/WorkerThread.cpp || cmake_object_order_depends_target_thread
   DEP_FILE = thread/CMakeFiles/thread.dir/WorkerThread.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = thread/CMakeFiles/thread.dir
   OBJECT_FILE_DIR = thread/CMakeFiles/thread.dir
 
@@ -455,6 +455,73 @@ build thread/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 build thread/rebuild_cache: phony thread/CMakeFiles/rebuild_cache.util
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /cygdrive/d/DDZ-network/Server/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target test
+
+
+#############################################
+# Order-only phony target for test
+
+build cmake_object_order_depends_target_test: phony || test/CMakeFiles/test.dir
+
+build test/CMakeFiles/test.dir/MyTest.cpp.o: CXX_COMPILER__test_unscanned_Debug /cygdrive/d/DDZ-network/Server/test/MyTest.cpp || cmake_object_order_depends_target_test
+  DEP_FILE = test/CMakeFiles/test.dir/MyTest.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/test
+  OBJECT_DIR = test/CMakeFiles/test.dir
+  OBJECT_FILE_DIR = test/CMakeFiles/test.dir
+
+build test/CMakeFiles/test.dir/person.pb.cc.o: CXX_COMPILER__test_unscanned_Debug /cygdrive/d/DDZ-network/Server/test/person.pb.cc || cmake_object_order_depends_target_test
+  DEP_FILE = test/CMakeFiles/test.dir/person.pb.cc.o.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/test
+  OBJECT_DIR = test/CMakeFiles/test.dir
+  OBJECT_FILE_DIR = test/CMakeFiles/test.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target test
+
+
+#############################################
+# Link the static library test/libtest.a
+
+build test/libtest.a: CXX_STATIC_LIBRARY_LINKER__test_Debug test/CMakeFiles/test.dir/MyTest.cpp.o test/CMakeFiles/test.dir/person.pb.cc.o
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = test/CMakeFiles/test.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = test/libtest.a
+  TARGET_PDB = test.a.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build test/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = /bin/sh test/CMakeFiles/edit_cache.dir/utility.sh a582a11a51a8b324
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build test/edit_cache: phony test/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build test/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = /bin/sh test/CMakeFiles/rebuild_cache.dir/utility.sh e842201fdf728633
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build test/rebuild_cache: phony test/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
 # Target aliases.
 
 build Server: phony /cygdrive/d/DDZ-network/Server/bin/Server.exe
@@ -473,11 +540,15 @@ build libreactor.a: phony reactor/libreactor.a
 
 build libtcp.a: phony tcp/libtcp.a
 
+build libtest.a: phony test/libtest.a
+
 build libthread.a: phony thread/libthread.a
 
 build reactor: phony reactor/libreactor.a
 
 build tcp: phony tcp/libtcp.a
+
+build test: phony test/libtest.a
 
 build thread: phony thread/libthread.a
 
@@ -489,7 +560,7 @@ build thread: phony thread/libthread.a
 #############################################
 # Folder: /cygdrive/d/DDZ-network/Server/cmake-build-debug
 
-build all: phony /cygdrive/d/DDZ-network/Server/bin/Server.exe common/all http/all reactor/all tcp/all thread/all
+build all: phony /cygdrive/d/DDZ-network/Server/bin/Server.exe common/all http/all reactor/all tcp/all thread/all test/all
 
 # =============================================================================
 
@@ -522,6 +593,13 @@ build tcp/all: phony tcp/libtcp.a
 # =============================================================================
 
 #############################################
+# Folder: /cygdrive/d/DDZ-network/Server/cmake-build-debug/test
+
+build test/all: phony test/libtest.a
+
+# =============================================================================
+
+#############################################
 # Folder: /cygdrive/d/DDZ-network/Server/cmake-build-debug/thread
 
 build thread/all: phony thread/libthread.a
@@ -533,14 +611,14 @@ build thread/all: phony thread/libthread.a
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeCInformation.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeCXXInformation.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeCommonLanguageInclude.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeGenericSystem.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeInitializeConfigs.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeLanguageInformation.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeRCInformation.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeSystemSpecificInformation.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeSystemSpecificInitialize.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Compiler/CMakeCommonCompilerMacros.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Compiler/GNU-C.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Compiler/GNU-CXX.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Compiler/GNU.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Platform/CYGWIN-GNU-C.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Platform/CYGWIN-GNU-CXX.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Platform/CYGWIN-GNU.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Platform/CYGWIN-Initialize.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Platform/CYGWIN-windres.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Platform/CYGWIN.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Platform/UnixPaths.cmake /cygdrive/d/DDZ-network/Server/CMakeLists.txt /cygdrive/d/DDZ-network/Server/common/CMakeLists.txt /cygdrive/d/DDZ-network/Server/http/CMakeLists.txt /cygdrive/d/DDZ-network/Server/reactor/CMakeLists.txt /cygdrive/d/DDZ-network/Server/tcp/CMakeLists.txt /cygdrive/d/DDZ-network/Server/thread/CMakeLists.txt CMakeCache.txt CMakeFiles/3.28.6/CMakeCCompiler.cmake CMakeFiles/3.28.6/CMakeCXXCompiler.cmake CMakeFiles/3.28.6/CMakeRCCompiler.cmake CMakeFiles/3.28.6/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeCInformation.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeCXXInformation.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeCommonLanguageInclude.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeGenericSystem.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeInitializeConfigs.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeLanguageInformation.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeRCInformation.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeSystemSpecificInformation.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeSystemSpecificInitialize.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Compiler/CMakeCommonCompilerMacros.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Compiler/GNU-C.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Compiler/GNU-CXX.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Compiler/GNU.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Platform/CYGWIN-GNU-C.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Platform/CYGWIN-GNU-CXX.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Platform/CYGWIN-GNU.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Platform/CYGWIN-Initialize.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Platform/CYGWIN-windres.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Platform/CYGWIN.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Platform/UnixPaths.cmake /cygdrive/d/DDZ-network/Server/CMakeLists.txt /cygdrive/d/DDZ-network/Server/common/CMakeLists.txt /cygdrive/d/DDZ-network/Server/http/CMakeLists.txt /cygdrive/d/DDZ-network/Server/reactor/CMakeLists.txt /cygdrive/d/DDZ-network/Server/tcp/CMakeLists.txt /cygdrive/d/DDZ-network/Server/test/CMakeLists.txt /cygdrive/d/DDZ-network/Server/thread/CMakeLists.txt CMakeCache.txt CMakeFiles/3.28.6/CMakeCCompiler.cmake CMakeFiles/3.28.6/CMakeCXXCompiler.cmake CMakeFiles/3.28.6/CMakeRCCompiler.cmake CMakeFiles/3.28.6/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeCInformation.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeCXXInformation.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeCommonLanguageInclude.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeGenericSystem.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeInitializeConfigs.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeLanguageInformation.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeRCInformation.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeSystemSpecificInformation.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeSystemSpecificInitialize.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Compiler/CMakeCommonCompilerMacros.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Compiler/GNU-C.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Compiler/GNU-CXX.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Compiler/GNU.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Platform/CYGWIN-GNU-C.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Platform/CYGWIN-GNU-CXX.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Platform/CYGWIN-GNU.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Platform/CYGWIN-Initialize.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Platform/CYGWIN-windres.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Platform/CYGWIN.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Platform/UnixPaths.cmake /cygdrive/d/DDZ-network/Server/CMakeLists.txt /cygdrive/d/DDZ-network/Server/common/CMakeLists.txt /cygdrive/d/DDZ-network/Server/http/CMakeLists.txt /cygdrive/d/DDZ-network/Server/reactor/CMakeLists.txt /cygdrive/d/DDZ-network/Server/tcp/CMakeLists.txt /cygdrive/d/DDZ-network/Server/thread/CMakeLists.txt CMakeCache.txt CMakeFiles/3.28.6/CMakeCCompiler.cmake CMakeFiles/3.28.6/CMakeCXXCompiler.cmake CMakeFiles/3.28.6/CMakeRCCompiler.cmake CMakeFiles/3.28.6/CMakeSystem.cmake: phony
+build /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeCInformation.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeCXXInformation.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeCommonLanguageInclude.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeGenericSystem.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeInitializeConfigs.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeLanguageInformation.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeRCInformation.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeSystemSpecificInformation.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/CMakeSystemSpecificInitialize.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Compiler/CMakeCommonCompilerMacros.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Compiler/GNU-C.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Compiler/GNU-CXX.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Compiler/GNU.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Platform/CYGWIN-GNU-C.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Platform/CYGWIN-GNU-CXX.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Platform/CYGWIN-GNU.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Platform/CYGWIN-Initialize.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Platform/CYGWIN-windres.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Platform/CYGWIN.cmake /cygdrive/c/Users/kongwenshuo/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.6/Modules/Platform/UnixPaths.cmake /cygdrive/d/DDZ-network/Server/CMakeLists.txt /cygdrive/d/DDZ-network/Server/common/CMakeLists.txt /cygdrive/d/DDZ-network/Server/http/CMakeLists.txt /cygdrive/d/DDZ-network/Server/reactor/CMakeLists.txt /cygdrive/d/DDZ-network/Server/tcp/CMakeLists.txt /cygdrive/d/DDZ-network/Server/test/CMakeLists.txt /cygdrive/d/DDZ-network/Server/thread/CMakeLists.txt CMakeCache.txt CMakeFiles/3.28.6/CMakeCCompiler.cmake CMakeFiles/3.28.6/CMakeCXXCompiler.cmake CMakeFiles/3.28.6/CMakeRCCompiler.cmake CMakeFiles/3.28.6/CMakeSystem.cmake: phony
 
 
 #############################################

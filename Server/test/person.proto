@@ -1,0 +1,32 @@
+//struct Person
+//{
+//int id;
+//    string name;
+//    string sex;
+//    int age;
+//};
+syntax="proto3";
+
+import "address.proto";
+package Xiaoaoqi;
+// 定义枚举类型
+enum Color
+{
+  Red = 0;
+  Green = 3;		// 第一个元素以外的元素值可以随意指定
+  Yellow = 6;
+  Blue = 9;
+}
+message Person
+{
+  int32 id=1;
+  bytes name=2;
+  bytes sex=3;
+  int32 age=4;
+  Aoqi.Address addr=5;
+  repeated bytes name2=6;//这是动态数组
+  // 枚举类型
+  Color color = 8;
+  int32 aaa=9;
+}
+

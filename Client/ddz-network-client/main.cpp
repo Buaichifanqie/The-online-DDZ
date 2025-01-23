@@ -1,5 +1,5 @@
 #include "cards.h"
-#include "loading.h"
+#include "login.h"
 
 #include <QApplication>
 #include <QResource>
@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
     qRegisterMetaType<Cards>("Cards&");
     qRegisterMetaType<Cards>("Cards");
     //QResource::registerResource("./resource.rcc");
-    Loading w;
+    Login w;
     w.show();
     return a.exec();
 }

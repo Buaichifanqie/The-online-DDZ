@@ -1,0 +1,26 @@
+syntax="proto3";
+
+enum RequestCode
+{
+  UserLogin=0;
+  Register=1;
+};
+
+enum RespondCode
+{
+  LoginOK=0;
+  RegisterOK=1;
+};
+
+
+message Information
+{
+  string userName=1;
+  //预留三个空位
+  string data1=2;
+  string data2=3;
+  string data3=4;
+
+  RequestCode reqcode=5;
+  RespondCode rescode=6;
+}

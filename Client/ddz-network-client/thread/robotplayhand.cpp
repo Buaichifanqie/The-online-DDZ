@@ -1,13 +1,15 @@
 #include "robotplayhand.h"
 #include <QDebug>
-
-RobotPlayHand::RobotPlayHand(Player* player, QObject *parent) : QThread(parent)
+#include <QThread>
+RobotPlayHand::RobotPlayHand(Player* player, QObject *parent) : QObject(parent),QRunnable()
 {
     m_player = player;
+    //设置自动销毁
+    setAutoDelete(true);
 }
 
 void RobotPlayHand::run()
 {
-    msleep(2000);
+    QThread::msleep(2000);
     m_player->thinkPlayHand();
 }
