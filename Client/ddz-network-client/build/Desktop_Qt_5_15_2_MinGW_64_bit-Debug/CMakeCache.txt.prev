@@ -321,7 +321,7 @@ crypto_BINARY_DIR:STATIC=D:/DDZ-network/Client/ddz-network-client/build/Desktop_
 crypto_IS_TOP_LEVEL:STATIC=OFF
 
 //Dependencies for the target
-crypto_LIB_DEPENDS:STATIC=general;Qt5::Core;
+crypto_LIB_DEPENDS:STATIC=general;Qt5::Core;general;D:\OpenSSL-Win64\lib\VC\x64\MD\libcrypto.lib;
 
 //Value Computed by CMake
 crypto_SOURCE_DIR:STATIC=D:/DDZ-network/Client/ddz-network-client/crypto

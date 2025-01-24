@@ -27,7 +27,8 @@
 			"windows/CMakeLists.txt",
 			"D:/Qt/5.15.2/mingw81_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake",
 			"D:/Qt/5.15.2/mingw81_64/lib/cmake/Qt5/Qt5Config.cmake",
-			"D:/Qt/5.15.2/mingw81_64/lib/cmake/Qt5Multimedia/Qt5MultimediaConfig.cmake"
+			"D:/Qt/5.15.2/mingw81_64/lib/cmake/Qt5Multimedia/Qt5MultimediaConfig.cmake",
+			"crypto/CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -110,6 +111,15 @@
 				"parent" : 13
 			},
 			{
+				"file" : 5
+			},
+			{
+				"command" : 1,
+				"file" : 5,
+				"line" : 16,
+				"parent" : 15
+			},
+			{
 				"command" : 6,
 				"file" : 0,
 				"line" : 43,
@@ -154,43 +164,43 @@
 					"path" : "D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/ddz-network-client_autogen/include"
 				},
 				{
-					"backtrace" : 15,
+					"backtrace" : 17,
 					"path" : "D:/DDZ-network/Client/ddz-network-client/card"
 				},
 				{
-					"backtrace" : 15,
+					"backtrace" : 17,
 					"path" : "D:/DDZ-network/Client/ddz-network-client/windows"
 				},
 				{
-					"backtrace" : 15,
+					"backtrace" : 17,
 					"path" : "D:/DDZ-network/Client/ddz-network-client/control"
 				},
 				{
-					"backtrace" : 15,
+					"backtrace" : 17,
 					"path" : "D:/DDZ-network/Client/ddz-network-client/player"
 				},
 				{
-					"backtrace" : 15,
+					"backtrace" : 17,
 					"path" : "D:/DDZ-network/Client/ddz-network-client/strategy"
 				},
 				{
-					"backtrace" : 15,
+					"backtrace" : 17,
 					"path" : "D:/DDZ-network/Client/ddz-network-client/thread"
 				},
 				{
-					"backtrace" : 15,
+					"backtrace" : 17,
 					"path" : "D:/DDZ-network/Client/ddz-network-client/tcp"
 				},
 				{
-					"backtrace" : 15,
+					"backtrace" : 17,
 					"path" : "D:/DDZ-network/Client/ddz-network-client/serialize"
 				},
 				{
-					"backtrace" : 15,
+					"backtrace" : 17,
 					"path" : "D:/DDZ-network/Client/ddz-network-client/crypto"
 				},
 				{
-					"backtrace" : 15,
+					"backtrace" : 17,
 					"path" : "D:/OpenSSL-Win64/include"
 				},
 				{
@@ -245,7 +255,7 @@
 	[
 		{
 			"backtrace" : 2,
-			"id" : "strategy::@241ee8dc02c6c148167d"
+			"id" : "card::@182f1c272d1d9a15b9e1"
 		},
 		{
 			"backtrace" : 2,
@@ -253,26 +263,30 @@
 		},
 		{
 			"backtrace" : 2,
-			"id" : "control::@a06da966ec71d8a337a9"
-		},
-		{
-			"backtrace" : 2,
 			"id" : "player::@6e497030d9506a5b7385"
 		},
 		{
 			"backtrace" : 2,
-			"id" : "card::@182f1c272d1d9a15b9e1"
+			"id" : "control::@a06da966ec71d8a337a9"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "crypto::@1d62b725e69adc70ad4a"
 		},
 		{
 			"backtrace" : 2,
 			"id" : "thread::@1994991b6c1bd8685afc"
 		},
 		{
-			"id" : "ddz-network-client_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 0,
 			"id" : "ddz-network-client_autogen::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "strategy::@241ee8dc02c6c148167d"
+		},
+		{
+			"id" : "ddz-network-client_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "ddz-network-client::@6890427a1f51a3e7e1df",
@@ -320,6 +334,11 @@
 			},
 			{
 				"backtrace" : 2,
+				"fragment" : "crypto\\libcrypto.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
 				"fragment" : "D:\\Qt\\5.15.2\\mingw81_64\\lib\\libQt5Widgets.a",
 				"role" : "libraries"
 			},
@@ -341,6 +360,11 @@
 			{
 				"backtrace" : 10,
 				"fragment" : "D:\\Qt\\5.15.2\\mingw81_64\\lib\\libQt5Core.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 16,
+				"fragment" : "D:\\OpenSSL-Win64\\lib\\VC\\x64\\MD\\libcrypto.lib",
 				"role" : "libraries"
 			},
 			{

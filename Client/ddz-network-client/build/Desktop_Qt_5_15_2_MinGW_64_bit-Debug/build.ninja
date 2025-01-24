@@ -1111,6 +1111,22 @@ build crypto/CMakeFiles/crypto.dir/aescrypto.cpp.obj: CXX_COMPILER__crypto_unsca
   OBJECT_DIR = crypto\CMakeFiles\crypto.dir
   OBJECT_FILE_DIR = crypto\CMakeFiles\crypto.dir
 
+build crypto/CMakeFiles/crypto.dir/base64.cpp.obj: CXX_COMPILER__crypto_unscanned_Debug D$:/DDZ-network/Client/ddz-network-client/crypto/base64.cpp || cmake_object_order_depends_target_crypto
+  DEFINES = -DQT_CORE_LIB
+  DEP_FILE = crypto\CMakeFiles\crypto.dir\base64.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/crypto -ID:/DDZ-network/Client/ddz-network-client/crypto -ID:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/crypto/crypto_autogen/include -ID:/DDZ-network/Client/ddz-network-client/card -ID:/DDZ-network/Client/ddz-network-client/windows -ID:/DDZ-network/Client/ddz-network-client/control -ID:/DDZ-network/Client/ddz-network-client/player -ID:/DDZ-network/Client/ddz-network-client/strategy -ID:/DDZ-network/Client/ddz-network-client/thread -ID:/DDZ-network/Client/ddz-network-client/tcp -ID:/DDZ-network/Client/ddz-network-client/serialize -ID:/OpenSSL-Win64/include -isystem D:/Qt/5.15.2/mingw81_64/include -isystem D:/Qt/5.15.2/mingw81_64/include/QtCore -isystem D:/Qt/5.15.2/mingw81_64/./mkspecs/win32-g++
+  OBJECT_DIR = crypto\CMakeFiles\crypto.dir
+  OBJECT_FILE_DIR = crypto\CMakeFiles\crypto.dir
+
+build crypto/CMakeFiles/crypto.dir/rsacrypto.cpp.obj: CXX_COMPILER__crypto_unscanned_Debug D$:/DDZ-network/Client/ddz-network-client/crypto/rsacrypto.cpp || cmake_object_order_depends_target_crypto
+  DEFINES = -DQT_CORE_LIB
+  DEP_FILE = crypto\CMakeFiles\crypto.dir\rsacrypto.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/crypto -ID:/DDZ-network/Client/ddz-network-client/crypto -ID:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/crypto/crypto_autogen/include -ID:/DDZ-network/Client/ddz-network-client/card -ID:/DDZ-network/Client/ddz-network-client/windows -ID:/DDZ-network/Client/ddz-network-client/control -ID:/DDZ-network/Client/ddz-network-client/player -ID:/DDZ-network/Client/ddz-network-client/strategy -ID:/DDZ-network/Client/ddz-network-client/thread -ID:/DDZ-network/Client/ddz-network-client/tcp -ID:/DDZ-network/Client/ddz-network-client/serialize -ID:/OpenSSL-Win64/include -isystem D:/Qt/5.15.2/mingw81_64/include -isystem D:/Qt/5.15.2/mingw81_64/include/QtCore -isystem D:/Qt/5.15.2/mingw81_64/./mkspecs/win32-g++
+  OBJECT_DIR = crypto\CMakeFiles\crypto.dir
+  OBJECT_FILE_DIR = crypto\CMakeFiles\crypto.dir
+
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target crypto
@@ -1119,7 +1135,7 @@ build crypto/CMakeFiles/crypto.dir/aescrypto.cpp.obj: CXX_COMPILER__crypto_unsca
 #############################################
 # Link the static library crypto\libcrypto.a
 
-build crypto/libcrypto.a: CXX_STATIC_LIBRARY_LINKER__crypto_Debug crypto/CMakeFiles/crypto.dir/crypto_autogen/mocs_compilation.cpp.obj crypto/CMakeFiles/crypto.dir/aescrypto.cpp.obj || crypto/crypto_autogen crypto/crypto_autogen_timestamp_deps
+build crypto/libcrypto.a: CXX_STATIC_LIBRARY_LINKER__crypto_Debug crypto/CMakeFiles/crypto.dir/crypto_autogen/mocs_compilation.cpp.obj crypto/CMakeFiles/crypto.dir/aescrypto.cpp.obj crypto/CMakeFiles/crypto.dir/base64.cpp.obj crypto/CMakeFiles/crypto.dir/rsacrypto.cpp.obj || crypto/crypto_autogen crypto/crypto_autogen_timestamp_deps
   LANGUAGE_COMPILE_FLAGS = -DQT_QML_DEBUG -g
   OBJECT_DIR = crypto\CMakeFiles\crypto.dir
   POST_BUILD = cd .

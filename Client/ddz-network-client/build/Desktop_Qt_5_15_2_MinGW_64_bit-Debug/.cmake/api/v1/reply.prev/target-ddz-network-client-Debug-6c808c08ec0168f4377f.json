@@ -263,14 +263,22 @@
 		},
 		{
 			"backtrace" : 2,
+			"id" : "card::@182f1c272d1d9a15b9e1"
+		},
+		{
+			"backtrace" : 2,
 			"id" : "windows::@f197aaf5197350ad3995"
 		},
 		{
 			"backtrace" : 2,
-			"id" : "card::@182f1c272d1d9a15b9e1"
+			"id" : "crypto::@1d62b725e69adc70ad4a"
 		},
 		{
 			"id" : "ddz-network-client_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "ddz-network-client_autogen::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 2,
@@ -279,14 +287,6 @@
 		{
 			"backtrace" : 2,
 			"id" : "thread::@1994991b6c1bd8685afc"
-		},
-		{
-			"backtrace" : 2,
-			"id" : "crypto::@1d62b725e69adc70ad4a"
-		},
-		{
-			"backtrace" : 0,
-			"id" : "ddz-network-client_autogen::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "ddz-network-client::@6890427a1f51a3e7e1df",

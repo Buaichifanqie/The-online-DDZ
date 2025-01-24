@@ -197,11 +197,11 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 0,
-			"id" : "windows_autogen::@f197aaf5197350ad3995"
+			"id" : "windows_autogen_timestamp_deps::@f197aaf5197350ad3995"
 		},
 		{
-			"id" : "windows_autogen_timestamp_deps::@f197aaf5197350ad3995"
+			"backtrace" : 0,
+			"id" : "windows_autogen::@f197aaf5197350ad3995"
 		}
 	],
 	"id" : "windows::@f197aaf5197350ad3995",

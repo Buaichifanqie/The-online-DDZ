@@ -18,11 +18,7 @@
 	[
 		{
 			"backtrace" : 0,
-			"id" : "control::@a06da966ec71d8a337a9"
-		},
-		{
-			"backtrace" : 0,
-			"id" : "player::@6e497030d9506a5b7385"
+			"id" : "card::@182f1c272d1d9a15b9e1"
 		},
 		{
 			"backtrace" : 0,
@@ -30,11 +26,15 @@
 		},
 		{
 			"backtrace" : 0,
-			"id" : "card::@182f1c272d1d9a15b9e1"
+			"id" : "player::@6e497030d9506a5b7385"
 		},
 		{
 			"backtrace" : 0,
-			"id" : "strategy::@241ee8dc02c6c148167d"
+			"id" : "control::@a06da966ec71d8a337a9"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "crypto::@1d62b725e69adc70ad4a"
 		},
 		{
 			"backtrace" : 0,
@@ -42,7 +42,7 @@
 		},
 		{
 			"backtrace" : 0,
-			"id" : "crypto::@1d62b725e69adc70ad4a"
+			"id" : "strategy::@241ee8dc02c6c148167d"
 		}
 	],
 	"id" : "ddz-network-client_autogen_timestamp_deps::@6890427a1f51a3e7e1df",

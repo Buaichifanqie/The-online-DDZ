@@ -18,14 +18,6 @@
 	[
 		{
 			"backtrace" : 0,
-			"id" : "strategy::@241ee8dc02c6c148167d"
-		},
-		{
-			"backtrace" : 0,
-			"id" : "windows::@f197aaf5197350ad3995"
-		},
-		{
-			"backtrace" : 0,
 			"id" : "control::@a06da966ec71d8a337a9"
 		},
 		{
@@ -35,6 +27,18 @@
 		{
 			"backtrace" : 0,
 			"id" : "card::@182f1c272d1d9a15b9e1"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "windows::@f197aaf5197350ad3995"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "crypto::@1d62b725e69adc70ad4a"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "strategy::@241ee8dc02c6c148167d"
 		},
 		{
 			"backtrace" : 0,

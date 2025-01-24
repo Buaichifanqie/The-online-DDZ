@@ -1635,7 +1635,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "general;Qt5::Core;"
+			"value" : "general;Qt5::Core;general;D:\\OpenSSL-Win64\\lib\\VC\\x64\\MD\\libcrypto.lib;"
 		},
 		{
 			"name" : "crypto_SOURCE_DIR",

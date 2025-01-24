@@ -346,7 +346,7 @@
 				{
 					"directoryIndex" : 1,
 					"id" : "card::@182f1c272d1d9a15b9e1",
-					"jsonFile" : "target-card-Debug-529cef35ea675239ff3f.json",
+					"jsonFile" : "target-card-Debug-aac5189f03f241fec7c0.json",
 					"name" : "card",
 					"projectIndex" : 1
 				},
@@ -367,7 +367,7 @@
 				{
 					"directoryIndex" : 3,
 					"id" : "control::@a06da966ec71d8a337a9",
-					"jsonFile" : "target-control-Debug-4fd1b0dd13a354bedfa9.json",
+					"jsonFile" : "target-control-Debug-b9f96a2ff389963e5f85.json",
 					"name" : "control",
 					"projectIndex" : 3
 				},
@@ -388,7 +388,7 @@
 				{
 					"directoryIndex" : 9,
 					"id" : "crypto::@1d62b725e69adc70ad4a",
-					"jsonFile" : "target-crypto-Debug-3a00687e7164fe3e06f1.json",
+					"jsonFile" : "target-crypto-Debug-b12c0ebd1e6db059f0b3.json",
 					"name" : "crypto",
 					"projectIndex" : 9
 				},
@@ -409,7 +409,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ddz-network-client::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ddz-network-client-Debug-54afe33c487aa6216c61.json",
+					"jsonFile" : "target-ddz-network-client-Debug-28187fcc185adb6d16d9.json",
 					"name" : "ddz-network-client",
 					"projectIndex" : 0
 				},
@@ -423,7 +423,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ddz-network-client_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ddz-network-client_autogen_timestamp_deps-Debug-6cb3a81523a099226a2c.json",
+					"jsonFile" : "target-ddz-network-client_autogen_timestamp_deps-Debug-03ef85798363336db356.json",
 					"name" : "ddz-network-client_autogen_timestamp_deps",
 					"projectIndex" : 0
 				},
@@ -451,7 +451,7 @@
 				{
 					"directoryIndex" : 8,
 					"id" : "serialize::@f3c3b027229a9a158e24",
-					"jsonFile" : "target-serialize-Debug-0fba23f9aa46aa936ec4.json",
+					"jsonFile" : "target-serialize-Debug-dc4551481dee76070e6e.json",
 					"name" : "serialize",
 					"projectIndex" : 8
 				},
@@ -472,7 +472,7 @@
 				{
 					"directoryIndex" : 5,
 					"id" : "strategy::@241ee8dc02c6c148167d",
-					"jsonFile" : "target-strategy-Debug-84d612d90ccf4b299769.json",
+					"jsonFile" : "target-strategy-Debug-89e73128378c7b23ca3b.json",
 					"name" : "strategy",
 					"projectIndex" : 5
 				},
@@ -493,7 +493,7 @@
 				{
 					"directoryIndex" : 7,
 					"id" : "tcp::@8966b6d2f8df3a1515e1",
-					"jsonFile" : "target-tcp-Debug-f7de67a2598ebb4e847d.json",
+					"jsonFile" : "target-tcp-Debug-a573b157acfbe6d36bfc.json",
 					"name" : "tcp",
 					"projectIndex" : 7
 				},
@@ -535,7 +535,7 @@
 				{
 					"directoryIndex" : 2,
 					"id" : "windows::@f197aaf5197350ad3995",
-					"jsonFile" : "target-windows-Debug-ef4b1d28c772bf2c3db7.json",
+					"jsonFile" : "target-windows-Debug-88d0d10147d6534d5573.json",
 					"name" : "windows",
 					"projectIndex" : 2
 				},

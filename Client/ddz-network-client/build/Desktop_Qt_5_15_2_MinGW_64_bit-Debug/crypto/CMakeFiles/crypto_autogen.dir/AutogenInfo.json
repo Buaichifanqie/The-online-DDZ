@@ -36,6 +36,18 @@
 			"MU",
 			"EWIEGA46WW/moc_aescrypto.cpp",
 			null
+		],
+		[
+			"D:/DDZ-network/Client/ddz-network-client/crypto/base64.h",
+			"MU",
+			"EWIEGA46WW/moc_base64.cpp",
+			null
+		],
+		[
+			"D:/DDZ-network/Client/ddz-network-client/crypto/rsacrypto.h",
+			"MU",
+			"EWIEGA46WW/moc_rsacrypto.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -99,6 +111,16 @@
 	[
 		[
 			"D:/DDZ-network/Client/ddz-network-client/crypto/aescrypto.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/DDZ-network/Client/ddz-network-client/crypto/base64.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/DDZ-network/Client/ddz-network-client/crypto/rsacrypto.cpp",
 			"MU",
 			null
 		]

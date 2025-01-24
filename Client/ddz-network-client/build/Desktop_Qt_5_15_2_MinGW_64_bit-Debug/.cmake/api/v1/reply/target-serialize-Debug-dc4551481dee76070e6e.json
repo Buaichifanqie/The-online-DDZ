@@ -158,11 +158,11 @@
 	"dependencies" : 
 	[
 		{
-			"id" : "serialize_autogen_timestamp_deps::@f3c3b027229a9a158e24"
-		},
-		{
 			"backtrace" : 0,
 			"id" : "serialize_autogen::@f3c3b027229a9a158e24"
+		},
+		{
+			"id" : "serialize_autogen_timestamp_deps::@f3c3b027229a9a158e24"
 		}
 	],
 	"id" : "serialize::@f3c3b027229a9a158e24",

@@ -5,6 +5,10 @@ crypto_autogen/timestamp: \
 	D:/DDZ-network/Client/ddz-network-client/crypto/CMakeLists.txt \
 	D:/DDZ-network/Client/ddz-network-client/crypto/aescrypto.cpp \
 	D:/DDZ-network/Client/ddz-network-client/crypto/aescrypto.h \
+	D:/DDZ-network/Client/ddz-network-client/crypto/base64.cpp \
+	D:/DDZ-network/Client/ddz-network-client/crypto/base64.h \
+	D:/DDZ-network/Client/ddz-network-client/crypto/rsacrypto.cpp \
+	D:/DDZ-network/Client/ddz-network-client/crypto/rsacrypto.h \
 	D:/OpenSSL-Win64/include/openssl/asn1.h \
 	D:/OpenSSL-Win64/include/openssl/asn1err.h \
 	D:/OpenSSL-Win64/include/openssl/bio.h \
@@ -33,6 +37,7 @@ crypto_autogen/timestamp: \
 	D:/OpenSSL-Win64/include/openssl/symhacks.h \
 	D:/OpenSSL-Win64/include/openssl/types.h \
 	D:/Qt/5.15.2/mingw81_64/include/QtCore/QByteArray \
+	D:/Qt/5.15.2/mingw81_64/include/QtCore/QCryptographicHash \
 	D:/Qt/5.15.2/mingw81_64/include/QtCore/QMap \
 	D:/Qt/5.15.2/mingw81_64/include/QtCore/QObject \
 	D:/Qt/5.15.2/mingw81_64/include/QtCore/qalgorithms.h \
@@ -47,6 +52,7 @@ crypto_autogen/timestamp: \
 	D:/Qt/5.15.2/mingw81_64/include/QtCore/qconfig.h \
 	D:/Qt/5.15.2/mingw81_64/include/QtCore/qcontainerfwd.h \
 	D:/Qt/5.15.2/mingw81_64/include/QtCore/qcontainertools_impl.h \
+	D:/Qt/5.15.2/mingw81_64/include/QtCore/qcryptographichash.h \
 	D:/Qt/5.15.2/mingw81_64/include/QtCore/qflags.h \
 	D:/Qt/5.15.2/mingw81_64/include/QtCore/qgenericatomic.h \
 	D:/Qt/5.15.2/mingw81_64/include/QtCore/qglobal.h \

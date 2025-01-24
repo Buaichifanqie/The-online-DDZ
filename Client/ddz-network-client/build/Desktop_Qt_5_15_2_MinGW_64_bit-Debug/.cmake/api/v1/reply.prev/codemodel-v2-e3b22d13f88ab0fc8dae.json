@@ -346,7 +346,7 @@
 				{
 					"directoryIndex" : 1,
 					"id" : "card::@182f1c272d1d9a15b9e1",
-					"jsonFile" : "target-card-Debug-aac5189f03f241fec7c0.json",
+					"jsonFile" : "target-card-Debug-529cef35ea675239ff3f.json",
 					"name" : "card",
 					"projectIndex" : 1
 				},
@@ -388,7 +388,7 @@
 				{
 					"directoryIndex" : 9,
 					"id" : "crypto::@1d62b725e69adc70ad4a",
-					"jsonFile" : "target-crypto-Debug-3a00687e7164fe3e06f1.json",
+					"jsonFile" : "target-crypto-Debug-220e5589143af2a7722b.json",
 					"name" : "crypto",
 					"projectIndex" : 9
 				},
@@ -409,7 +409,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ddz-network-client::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ddz-network-client-Debug-15d1ee1b44b52eb96ef9.json",
+					"jsonFile" : "target-ddz-network-client-Debug-6c808c08ec0168f4377f.json",
 					"name" : "ddz-network-client",
 					"projectIndex" : 0
 				},
@@ -423,7 +423,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ddz-network-client_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ddz-network-client_autogen_timestamp_deps-Debug-ed9b9b891c1b59d080b7.json",
+					"jsonFile" : "target-ddz-network-client_autogen_timestamp_deps-Debug-816b621dcfa77d3ea6b3.json",
 					"name" : "ddz-network-client_autogen_timestamp_deps",
 					"projectIndex" : 0
 				},
@@ -472,7 +472,7 @@
 				{
 					"directoryIndex" : 5,
 					"id" : "strategy::@241ee8dc02c6c148167d",
-					"jsonFile" : "target-strategy-Debug-89e73128378c7b23ca3b.json",
+					"jsonFile" : "target-strategy-Debug-84d612d90ccf4b299769.json",
 					"name" : "strategy",
 					"projectIndex" : 5
 				},
