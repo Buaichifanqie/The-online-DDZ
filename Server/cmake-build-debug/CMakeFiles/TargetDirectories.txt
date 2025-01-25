@@ -16,6 +16,9 @@
 /cygdrive/d/DDZ-network/Server/cmake-build-debug/thread/CMakeFiles/thread.dir
 /cygdrive/d/DDZ-network/Server/cmake-build-debug/thread/CMakeFiles/edit_cache.dir
 /cygdrive/d/DDZ-network/Server/cmake-build-debug/thread/CMakeFiles/rebuild_cache.dir
+/cygdrive/d/DDZ-network/Server/cmake-build-debug/Crypto/CMakeFiles/Crypto.dir
+/cygdrive/d/DDZ-network/Server/cmake-build-debug/Crypto/CMakeFiles/edit_cache.dir
+/cygdrive/d/DDZ-network/Server/cmake-build-debug/Crypto/CMakeFiles/rebuild_cache.dir
 /cygdrive/d/DDZ-network/Server/cmake-build-debug/test/CMakeFiles/test.dir
 /cygdrive/d/DDZ-network/Server/cmake-build-debug/test/CMakeFiles/edit_cache.dir
 /cygdrive/d/DDZ-network/Server/cmake-build-debug/test/CMakeFiles/rebuild_cache.dir

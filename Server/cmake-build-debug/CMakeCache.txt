@@ -234,6 +234,15 @@ CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
+Crypto_BINARY_DIR:STATIC=/cygdrive/d/DDZ-network/Server/cmake-build-debug/Crypto
+
+//Value Computed by CMake
+Crypto_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+Crypto_SOURCE_DIR:STATIC=/cygdrive/d/DDZ-network/Server/Crypto
+
+//Value Computed by CMake
 Server_BINARY_DIR:STATIC=/cygdrive/d/DDZ-network/Server/cmake-build-debug
 
 //Value Computed by CMake
@@ -404,7 +413,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=8
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
