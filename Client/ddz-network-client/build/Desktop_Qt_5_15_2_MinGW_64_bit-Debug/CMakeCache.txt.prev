@@ -354,7 +354,7 @@ serialize_BINARY_DIR:STATIC=D:/DDZ-network/Client/ddz-network-client/build/Deskt
 serialize_IS_TOP_LEVEL:STATIC=OFF
 
 //Dependencies for the target
-serialize_LIB_DEPENDS:STATIC=general;Qt5::Core;
+serialize_LIB_DEPENDS:STATIC=general;Qt5::Core;general;protobufd;
 
 //Value Computed by CMake
 serialize_SOURCE_DIR:STATIC=D:/DDZ-network/Client/ddz-network-client/serialize
@@ -378,7 +378,7 @@ tcp_BINARY_DIR:STATIC=D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_
 tcp_IS_TOP_LEVEL:STATIC=OFF
 
 //Dependencies for the target
-tcp_LIB_DEPENDS:STATIC=general;Qt5::Core;
+tcp_LIB_DEPENDS:STATIC=general;Qt5::Core;general;Ws2_32;
 
 //Value Computed by CMake
 tcp_SOURCE_DIR:STATIC=D:/DDZ-network/Client/ddz-network-client/tcp

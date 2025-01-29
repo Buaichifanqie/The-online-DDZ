@@ -4,15 +4,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Log.h"
+#include "RsaCrypto.h"
 
 int TcpServer::acceptConnection(void* arg)
 {
     TcpServer* server = static_cast<TcpServer*>(arg);
-    // ºÍ¿Í»§¶Ë½¨Á¢Á¬½Ó
+    // å’Œå®¢æˆ·ç«¯å»ºç«‹è¿žæŽ¥
     int cfd = accept(server->m_lfd, NULL, NULL);
-    // ´ÓÏß³Ì³ØÖÐÈ¡³öÒ»¸ö×ÓÏß³ÌµÄ·´Ó¦¶ÑÊµÀý, È¥´¦ÀíÕâ¸öcfd
+    // ä»Žçº¿ç¨‹æ± ä¸­å–å‡ºä¸€ä¸ªå­çº¿ç¨‹çš„ååº”å †å®žä¾‹, åŽ»å¤„ç†è¿™ä¸ªcfd
     EventLoop* evLoop = server->m_threadPool->takeWorkerEventLoop();
-    // ½«cfd·Åµ½ TcpConnectionÖÐ´¦Àí
+    // å°†cfdæ”¾åˆ° TcpConnectionä¸­å¤„ç†
     new TcpConnection(cfd, evLoop);
     return 0;
 }
@@ -28,14 +29,14 @@ TcpServer::TcpServer(unsigned short port, int threadNum)
 
 void TcpServer::setListen()
 {
-    // 1. ´´½¨¼àÌýµÄfd
+    // 1. åˆ›å»ºç›‘å¬çš„fd
     m_lfd = socket(AF_INET, SOCK_STREAM, 0);
     if (m_lfd == -1)
     {
         perror("socket");
         return;
     }
-    // 2. ÉèÖÃ¶Ë¿Ú¸´ÓÃ
+    // 2. è®¾ç½®ç«¯å£å¤ç”¨
     int opt = 1;
     int ret = setsockopt(m_lfd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof opt);
     if (ret == -1)
@@ -43,7 +44,7 @@ void TcpServer::setListen()
         perror("setsockopt");
         return;
     }
-    // 3. °ó¶¨
+    // 3. ç»‘å®š
     struct sockaddr_in addr;
     addr.sin_family = AF_INET;
     addr.sin_port = htons(m_port);
@@ -54,7 +55,7 @@ void TcpServer::setListen()
         perror("bind");
         return;
     }
-    // 4. ÉèÖÃ¼àÌý
+    // 4. è®¾ç½®ç›‘å¬
     ret = listen(m_lfd, 128);
     if (ret == -1)
     {
@@ -65,13 +66,17 @@ void TcpServer::setListen()
 
 void TcpServer::run()
 {
-    Debug("·þÎñÆ÷³ÌÐòÒÑ¾­Æô¶¯ÁË...");
-    // Æô¶¯Ïß³Ì³Ø
+    Debug("æœåŠ¡å™¨ç¨‹åºå·²ç»å¯åŠ¨äº†...");
+    //ç”Ÿæˆå¯†é’¥å¯¹
+    RsaCrypto *rsa= new RsaCrypto;
+    rsa->generateRsaKey(RsaCrypto::BITS_2k);
+    delete rsa;
+    // å¯åŠ¨çº¿ç¨‹æ± 
     m_threadPool->run();
-    // Ìí¼Ó¼ì²âµÄÈÎÎñ
-    // ³õÊ¼»¯Ò»¸öchannelÊµÀý
+    // æ·»åŠ æ£€æµ‹çš„ä»»åŠ¡
+    // åˆå§‹åŒ–ä¸€ä¸ªchannelå®žä¾‹
     Channel* channel = new Channel(m_lfd, FDEvent::ReadEvent, acceptConnection, nullptr, nullptr, this);
     m_mainLoop->addTask(channel, ElemType::ADD);
-    // Æô¶¯·´Ó¦¶ÑÄ£ÐÍ
+    // å¯åŠ¨ååº”å †æ¨¡åž‹
     m_mainLoop->run();
 }

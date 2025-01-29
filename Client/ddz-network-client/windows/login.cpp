@@ -3,9 +3,16 @@
 #include "ui_login.h"
 #include "gamepanel.h"
 
+
+#include <QCryptographicHash>
+#include <QMessageBox>
 #include <QRegularExpression>
 #include <QRegularExpressionValidator>
+#include "communication.h"
 #include <qthreadpool.h>
+
+
+
 
 Login::Login(QWidget *parent)
     : QDialog(parent)
@@ -66,6 +73,11 @@ Login::Login(QWidget *parent)
     //设置线程池最大线程数量
     QThreadPool::globalInstance()->setMaxThreadCount(8);
 
+    //test code
+    ui->userName->setText("hello");
+    ui->password->setText("Ab1*");
+
+
 }
 
 // 验证输入框数据的有效性
@@ -86,14 +98,59 @@ bool Login::verifyData(QLineEdit* edit)
     return true; // 返回 true，表示数据有效
 }
 
+void Login::startConnect(Message *msg)
+{
+    if(!m_isConnected)
+    {
+        Communication *task=new Communication(msg);
+        connect(task,&Communication::connectFailed,this,[=](){
+            //弹出窗口告诉使用者连接失败了
+            QMessageBox::critical(this,"连接服务器","连接服务器失败");
+            m_isConnected=false;
+        });
+
+        connect(task,&Communication::loginOk,this,[=](){
+            //将用户名保存到单例对象
+            DataManager::getInstance()->setUserName(ui->userName->text().toUtf8());
+            //加载用户名和密码
+
+            //显示游戏模式->单机->网络
+
+        });
+        connect(task,&Communication::registerOk,this,[=](){
+            //从注册窗口切换到登录窗口
+            ui->stackedWidget->setCurrentIndex(0);
+        });
+        connect(task,&Communication::failedMsg,this,[=](QByteArray msg){
+            QMessageBox::critical(this,"ERROR",msg);
+        });
+        m_isConnected=true;
+        QThreadPool::globalInstance()->start(task);
+        DataManager::getInstance()->setCommuncation(task);
+    }
+    else
+    {
+        //和服务器进行通信(用于通信的套接字在当前Login拿不到 它在Communication类里)
+        //如果我们想要全局都可以访问最简单的方法就是存储到单例类里
+        DataManager::getInstance()->getCommunication()->sendMessage(msg);
+    }
+}
+
 void Login::onLogin()
 {
     bool flag1=verifyData(ui->userName);
     bool flag2=verifyData(ui->password);
     if(flag1&&flag2)
     {
-        GamePanel* panel=new GamePanel;
-        panel->show();
+        Message msg;
+        msg.userName=ui->userName->text().toUtf8();
+        msg.reqcode=RequestCode::UserLogin;
+        QByteArray passwd=ui->password->text().toUtf8();
+        //对密码进行加密
+        passwd=QCryptographicHash::hash(passwd,QCryptographicHash::Sha224);
+        msg.data1=passwd;
+        //连接服务器
+        startConnect(&msg);
     }
 }
 
@@ -104,7 +161,16 @@ void Login::onRegister()
     bool flag3=verifyData(ui->phone);
     if(flag1 && flag2 && flag3)
     {
-
+        Message msg;
+        msg.userName=ui->regUserName->text().toUtf8();
+        msg.reqcode=RequestCode::UserLogin;
+        QByteArray passwd=ui->regPassword->text().toUtf8();
+        //对密码进行加密
+        passwd=QCryptographicHash::hash(passwd,QCryptographicHash::Sha224);
+        msg.data1=passwd;
+        msg.data2=ui->phone->text().toUtf8();
+        //连接服务器
+        startConnect(&msg);
     }
 }
 

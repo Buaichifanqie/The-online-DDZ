@@ -69,6 +69,21 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/cygdrive/d/DDZ-network/Server/cmake-build-debug/serialize/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/cygdrive/d/DDZ-network/Server/cmake-build-debug/game/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/cygdrive/d/DDZ-network/Server/cmake-build-debug/database/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/cygdrive/d/DDZ-network/Server/cmake-build-debug/test/cmake_install.cmake")
 endif()
 

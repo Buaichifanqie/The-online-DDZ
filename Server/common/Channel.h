@@ -26,8 +26,14 @@ public:
     handleFunc destroyCallback;
     // 修改fd的写事件(检测 or 不检测)
     void writeEventEnable(bool flag);
+
+    //对当前要检测的事件进行检测
+    void setCurrentEvent(FDEvent ev);
+
     // 判断是否需要检测文件描述符的写事件
     bool isWriteEventEnable();
+    bool isReadEventEnable();
+
     // 取出私有成员的值
     inline int getEvent()
     {

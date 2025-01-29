@@ -7,7 +7,8 @@
 #include <unistd.h>
 #include <strings.h>
 #include <sys/socket.h>
-
+#include <netinet/in.h>
+#include "Log.h"
 Buffer::Buffer(int size) :m_capacity(size)
 {
     m_data = (char*)malloc(size);
@@ -24,33 +25,33 @@ Buffer::~Buffer()
 
 void Buffer::extendRoom(int size)
 {
-    // 1. ÄÚ´æ¹»ÓÃ - ²»ĞèÒªÀ©Èİ
+    // 1. å†…å­˜å¤Ÿç”¨ - ä¸éœ€è¦æ‰©å®¹
     if (writeableSize() >= size)
     {
         return;
     }
-    // 2. ÄÚ´æĞèÒªºÏ²¢²Å¹»ÓÃ - ²»ĞèÒªÀ©Èİ
-    // Ê£ÓàµÄ¿ÉĞ´µÄÄÚ´æ + ÒÑ¶ÁµÄÄÚ´æ > size
+    // 2. å†…å­˜éœ€è¦åˆå¹¶æ‰å¤Ÿç”¨ - ä¸éœ€è¦æ‰©å®¹
+    // å‰©ä½™çš„å¯å†™çš„å†…å­˜ + å·²è¯»çš„å†…å­˜ > size
     else if (m_readPos + writeableSize() >= size)
     {
-        // µÃµ½Î´¶ÁµÄÄÚ´æ´óĞ¡
+        // å¾—åˆ°æœªè¯»çš„å†…å­˜å¤§å°
         int readable = readableSize();
-        // ÒÆ¶¯ÄÚ´æ
+        // ç§»åŠ¨å†…å­˜
         memcpy(m_data, m_data + m_readPos, readable);
-        // ¸üĞÂÎ»ÖÃ
+        // æ›´æ–°ä½ç½®
         m_readPos = 0;
         m_writePos = readable;
     }
-    // 3. ÄÚ´æ²»¹»ÓÃ - À©Èİ
+    // 3. å†…å­˜ä¸å¤Ÿç”¨ - æ‰©å®¹
     else
     {
         void* temp = realloc(m_data, m_capacity + size);
         if (temp == NULL)
         {
-            return; // Ê§°ÜÁË
+            return; // å¤±è´¥äº†
         }
         memset((char*)temp + m_capacity, 0, size);
-        // ¸üĞÂÊı¾İ
+        // æ›´æ–°æ•°æ®
         m_data = static_cast<char*>(temp);
         m_capacity += size;
     }
@@ -62,9 +63,9 @@ int Buffer::appendString(const char* data, int size)
     {
         return -1;
     }
-    // À©Èİ
+    // æ‰©å®¹
     extendRoom(size);
-    // Êı¾İ¿½±´
+    // æ•°æ®æ‹·è´
     memcpy(m_data + m_writePos, data, size);
     m_writePos += size;
     return 0;
@@ -79,7 +80,7 @@ int Buffer::appendString(const char* data)
 
 int Buffer::appendString(const string data)
 {
-    int ret = appendString(data.data());
+    int ret = appendString(data.c_str(),data.size());
     return ret;
 }
 
@@ -87,7 +88,7 @@ int Buffer::socketRead(int fd)
 {
     // read/recv/readv
     struct iovec vec[2];
-    // ³õÊ¼»¯Êı×éÔªËØ
+    // åˆå§‹åŒ–æ•°ç»„å…ƒç´ 
     int writeable = writeableSize();
     vec[0].iov_base = m_data + m_writePos;
     vec[0].iov_len = writeable;
@@ -120,7 +121,7 @@ char* Buffer::findCRLF()
 
 int Buffer::sendData(int socket)
 {
-    // ÅĞ¶ÏÓĞÎŞÊı¾İ
+    // åˆ¤æ–­æœ‰æ— æ•°æ®
     int readable = readableSize();
     if (readable > 0)
     {
@@ -132,6 +133,27 @@ int Buffer::sendData(int socket)
         }
         return count;
     }
+    return 0;
+}
+
+int Buffer::appendHead(const long length) {
+    //è½¬æ¢ä¸ºå¤§ç«¯å­—èŠ‚åº
+    Debug("å°ç«¯æ•°æ®å¤´é•¿åº¦:%ld",length);
+    long len=htonl(length);
+    Debug("å¤§ç«¯æ•°æ®å¤´é•¿åº¦:%ld",len);
+
+    //ç±»å‹è½¬æ¢int -> string
+    //é€šè¿‡å¼ºåˆ¶ç±»å‹è½¬æ¢æ•´å‹æ•°æœ‰å¯èƒ½ä¼šå˜æˆä¸€ä¸ªäºŒè¿›åˆ¶æ ¼å¼çš„å­—ç¬¦ä¸²
+    //å†ç”¨dataè¿›è¡Œè½¬æ¢çš„æ—¶å€™ ä¸­é—´é‡åˆ°'\0'å°±ä¼šç›´æ¥ç»“æŸ æ‰€ä»¥åº”è¯¥ç”¨c_str()
+    //83è¡Œ
+    string head(reinterpret_cast<char*>(&len),sizeof(int));
+    appendString(head);
+    return 0;
+}
+
+int Buffer::appendPackage(const string data) {
+    appendHead(data.size());
+    appendString(data);
     return 0;
 }
 

@@ -1,5 +1,55 @@
 D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/windows/windows_autogen/EWIEGA46WW/moc_login.cpp: D:/DDZ-network/Client/ddz-network-client/windows/login.h \
   D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/windows/windows_autogen/moc_predefs.h \
+  C:/Protobuf/include/google/protobuf/any.h \
+  C:/Protobuf/include/google/protobuf/arena.h \
+  C:/Protobuf/include/google/protobuf/arena_impl.h \
+  C:/Protobuf/include/google/protobuf/arenastring.h \
+  C:/Protobuf/include/google/protobuf/arenaz_sampler.h \
+  C:/Protobuf/include/google/protobuf/descriptor.h \
+  C:/Protobuf/include/google/protobuf/endian.h \
+  C:/Protobuf/include/google/protobuf/explicitly_constructed.h \
+  C:/Protobuf/include/google/protobuf/extension_set.h \
+  C:/Protobuf/include/google/protobuf/generated_enum_reflection.h \
+  C:/Protobuf/include/google/protobuf/generated_enum_util.h \
+  C:/Protobuf/include/google/protobuf/generated_message_reflection.h \
+  C:/Protobuf/include/google/protobuf/generated_message_util.h \
+  C:/Protobuf/include/google/protobuf/has_bits.h \
+  C:/Protobuf/include/google/protobuf/implicit_weak_message.h \
+  C:/Protobuf/include/google/protobuf/inlined_string_field.h \
+  C:/Protobuf/include/google/protobuf/io/coded_stream.h \
+  C:/Protobuf/include/google/protobuf/io/zero_copy_stream.h \
+  C:/Protobuf/include/google/protobuf/io/zero_copy_stream_impl_lite.h \
+  C:/Protobuf/include/google/protobuf/map.h \
+  C:/Protobuf/include/google/protobuf/map_type_handler.h \
+  C:/Protobuf/include/google/protobuf/message.h \
+  C:/Protobuf/include/google/protobuf/message_lite.h \
+  C:/Protobuf/include/google/protobuf/metadata_lite.h \
+  C:/Protobuf/include/google/protobuf/parse_context.h \
+  C:/Protobuf/include/google/protobuf/port.h \
+  C:/Protobuf/include/google/protobuf/port_def.inc \
+  C:/Protobuf/include/google/protobuf/port_undef.inc \
+  C:/Protobuf/include/google/protobuf/repeated_field.h \
+  C:/Protobuf/include/google/protobuf/repeated_ptr_field.h \
+  C:/Protobuf/include/google/protobuf/stubs/callback.h \
+  C:/Protobuf/include/google/protobuf/stubs/casts.h \
+  C:/Protobuf/include/google/protobuf/stubs/common.h \
+  C:/Protobuf/include/google/protobuf/stubs/hash.h \
+  C:/Protobuf/include/google/protobuf/stubs/logging.h \
+  C:/Protobuf/include/google/protobuf/stubs/macros.h \
+  C:/Protobuf/include/google/protobuf/stubs/mutex.h \
+  C:/Protobuf/include/google/protobuf/stubs/once.h \
+  C:/Protobuf/include/google/protobuf/stubs/platform_macros.h \
+  C:/Protobuf/include/google/protobuf/stubs/port.h \
+  C:/Protobuf/include/google/protobuf/stubs/status.h \
+  C:/Protobuf/include/google/protobuf/stubs/stl_util.h \
+  C:/Protobuf/include/google/protobuf/stubs/stringpiece.h \
+  C:/Protobuf/include/google/protobuf/stubs/strutil.h \
+  C:/Protobuf/include/google/protobuf/unknown_field_set.h \
+  C:/Protobuf/include/google/protobuf/wire_format_lite.h \
+  D:/DDZ-network/Client/ddz-network-client/serialize/codec.h \
+  D:/DDZ-network/Client/ddz-network-client/serialize/information.pb.h \
+  D:/Qt/5.15.2/mingw81_64/include/QtCore/QByteArray \
+  D:/Qt/5.15.2/mingw81_64/include/QtCore/QSharedPointer \
   D:/Qt/5.15.2/mingw81_64/include/QtCore/qalgorithms.h \
   D:/Qt/5.15.2/mingw81_64/include/QtCore/qarraydata.h \
   D:/Qt/5.15.2/mingw81_64/include/QtCore/qatomic.h \
@@ -160,10 +210,12 @@ D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-De
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_list.h \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_map.h \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_multimap.h \
+  D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_multiset.h \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_numeric.h \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_pair.h \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_raw_storage_iter.h \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_relops.h \
+  D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_set.h \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_tempbuf.h \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_tree.h \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_uninitialized.h \
@@ -177,11 +229,14 @@ D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-De
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/unique_ptr.h \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/uses_allocator.h \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/vector.tcc \
+  D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cassert \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cctype \
+  D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/climits \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/clocale \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cstddef \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cstdint \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cstdlib \
+  D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cstring \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cwchar \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cwctype \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/debug/assertions.h \
@@ -199,16 +254,19 @@ D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-De
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/initializer_list \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ios \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/iosfwd \
+  D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/iostream \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/istream \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/iterator \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/limits \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/list \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/map \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/memory \
+  D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/mutex \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/new \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/numeric \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/optional \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ostream \
+  D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/set \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/stdexcept \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/stdlib.h \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/streambuf \
@@ -218,6 +276,7 @@ D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-De
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/type_traits \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/typeinfo \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/unordered_map \
+  D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/unordered_set \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/utility \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/vector \
   D:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/atomic_word.h \

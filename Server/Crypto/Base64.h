@@ -1,17 +1,16 @@
 //
-// Created by kongwenshuo on 25-1-25.
+// Created by subingwen
 //
 
-#ifndef SERVER_BASE64_H
-#define SERVER_BASE64_H
-
-
+#ifndef SERVER_DDZ_BASE64_H
+#define SERVER_DDZ_BASE64_H
 #include <string>
 using namespace std;
+
 class Base64
 {
 public:
-    explicit Base64()=default;
+    explicit Base64() = default;
 
     // 编码
     string encode(string data);
@@ -19,9 +18,7 @@ public:
     // 解码
     string decode(string data);
     string decode(const char* data, int length);
-
 };
 
 
-
-#endif //SERVER_BASE64_H
+#endif //SERVER_DDZ_BASE64_H

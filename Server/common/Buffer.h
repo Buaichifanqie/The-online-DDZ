@@ -24,6 +24,9 @@ public:
     int appendString(const char* data, int size);
     int appendString(const char* data);
     int appendString(const string data);
+    int appendHead(const long length);
+    //添加数据包带包头
+    int appendPackage(const string data);
     int socketRead(int fd);
     // 根据\r\n取出一行, 找到其在数据块中的位置, 返回该位置
     char* findCRLF();
@@ -33,6 +36,13 @@ public:
     inline char* data()
     {
         return m_data + m_readPos;
+    }
+    //根据数据读出指定数量的数据
+    inline string data(int length)
+    {
+        string msg(m_data+m_readPos,length);
+        m_readPos+=length;
+        return msg;
     }
     inline int readPosIncrease(int count)
     {

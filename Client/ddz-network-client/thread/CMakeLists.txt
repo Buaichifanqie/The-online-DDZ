@@ -6,7 +6,8 @@ project(thread)
 aux_source_directory(./ SRC)
 
 #将当前目录下的源文件打包成静态库
-add_library(thread ${SRC})
+add_library(thread ${SRC}
+    communication.h communication.cpp)
 
 # 链接核心模块库
 target_link_libraries(thread PRIVATE Qt${QT_VERSION_MAJOR}::Core)

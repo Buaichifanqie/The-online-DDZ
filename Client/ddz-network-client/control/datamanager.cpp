@@ -23,6 +23,11 @@ void DataManager::setPort(QByteArray port)
     m_port=port;
 }
 
+void DataManager::setCommuncation(Communication *comm)
+{
+    m_commun=comm;
+}
+
 QByteArray DataManager::getUserName()
 {
     return m_userName;
@@ -36,6 +41,11 @@ QByteArray DataManager::getIP()
 QByteArray DataManager::getPort()
 {
     return m_port;
+}
+
+Communication *DataManager::getCommunication()
+{
+    return m_commun;
 }
 
 

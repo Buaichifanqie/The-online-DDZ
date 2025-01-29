@@ -1,5 +1,5 @@
 #include "tcpsocket.h"
-
+#include <QDebug>
 Tcpsocket::Tcpsocket(QObject *parent)
 {
 #ifdef Q_OS_WIN
@@ -42,18 +42,23 @@ bool Tcpsocket::connectToHost(QByteArray ip, unsigned short port)
 
 QByteArray Tcpsocket::recvMsg(int timeout)
 {
-    QByteArray arry;
     bool flag=readTimeout(timeout);
+    QByteArray arry;
+
     if(flag)
     {
         //发送数据=数据头+数据块
-        int headLen=0;
+        long headLen=0;
         int ret=readn((char*)&headLen,sizeof(int));
         if(ret==0)
         {
             return QByteArray();
         }
+
+        qDebug()<<"大端接收数据块的长度"<<headLen;
         headLen=ntohl(headLen);//大端转小端
+        qDebug()<<"小端接收数据块的长度"<<headLen;
+
         //申请一块新的内存
         char* data=new char[headLen];
         assert(data);

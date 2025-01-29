@@ -28,3 +28,12 @@ bool Channel::isWriteEventEnable()
 {
     return m_events & (int)FDEvent::WriteEvent;
 }
+
+bool Channel::isReadEventEnable()
+{
+    return m_events & (int)FDEvent::ReadEvent;
+}
+
+void Channel::setCurrentEvent(FDEvent ev) {
+    m_events=static_cast<int>(ev);
+}

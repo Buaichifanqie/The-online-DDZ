@@ -6,3 +6,4 @@ set(CMAKE_CXX_STANDARD 17)
 aux_source_directory(./ SRC)
 # 把源文件制作成静态库
 add_library(Crypto STATIC ${SRC})
+target_link_libraries(Crypto crypto)

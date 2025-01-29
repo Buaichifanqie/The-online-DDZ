@@ -114,6 +114,7 @@
 		"D:/DDZ-network/Client/ddz-network-client/serialize",
 		"D:/DDZ-network/Client/ddz-network-client/crypto",
 		"D:/OpenSSL-Win64/include",
+		"C:/Protobuf/include",
 		"D:/Qt/5.15.2/mingw81_64/include",
 		"D:/Qt/5.15.2/mingw81_64/include/QtWidgets",
 		"D:/Qt/5.15.2/mingw81_64/include/QtGui",

@@ -1,13 +1,13 @@
 //
-// Created by kongwenshuo on 25-1-25.
+// Created by subingwen
 //
 
-#include "Base64.h"
 #include "RsaCrypto.h"
+#include "Base64.h"
 #include <openssl/rsa.h>
 #include <openssl/pem.h>
-#include <cassert>
-
+#include <openssl/err.h>
+#include <assert.h>
 
 RsaCrypto::RsaCrypto(string fileName, KeyType type)
 {
@@ -149,7 +149,7 @@ string RsaCrypto::sign(string data, HashType hash)
     // 计算哈希值
     Hash h(hash);
     h.addData(data);
-    string md = h.result();
+    string md = h.result(Hash::Type::Binary);
 
     // 创建上下文
     EVP_PKEY_CTX * ctx = EVP_PKEY_CTX_new(m_priKey, NULL);
@@ -173,6 +173,7 @@ string RsaCrypto::sign(string data, HashType hash)
     unsigned char *out = new unsigned char[outlen];
     ret = EVP_PKEY_sign(ctx, out, &outlen,
                         reinterpret_cast<const unsigned char *>(md.data()), md.size());
+    ERR_print_errors_fp(stderr);
     assert(ret == 1);
 
     Base64 base;
@@ -188,9 +189,9 @@ bool RsaCrypto::verify(string sign, string data, HashType hash)
     Base64 base;
     sign = base.decode(sign);
     // 计算哈希值
-    Hash h(hash);
+      Hash h(hash);
     h.addData(data);
-    string md = h.result();
+    string md = h.result(Hash::Type::Binary);
 
     // 创建上下文
     EVP_PKEY_CTX * ctx = EVP_PKEY_CTX_new(m_pubKey, NULL);

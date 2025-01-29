@@ -2,7 +2,11 @@
 #include "HttpRequest.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <fstream>
+#include <sstream>
+#include "Codec.h"
 #include "Log.h"
+#include "RsaCrypto.h"
 
 int TcpConnection::processRead(void* arg)
 {
@@ -14,33 +18,15 @@ int TcpConnection::processRead(void* arg)
     Debug("接收到的http请求数据: %s", conn->m_readBuf->data());
     if (count > 0)
     {
-        // 接收到了 http 请求, 解析http请求
-#ifdef MSG_SEND_AUTO
-        conn->m_channel->writeEventEnable(true);
-        conn->m_evLoop->addTask(conn->m_channel, ElemType::MODIFY);
-#endif
-        bool flag = conn->m_request->parseHttpRequest(
-            conn->m_readBuf, conn->m_response,
-            conn->m_writeBuf, socket);
-        if (!flag)
-        {
-            // 解析失败, 回复一个简单的html
-            string errMsg = "Http/1.1 400 Bad Request\r\n\r\n";
-            conn->m_writeBuf->appendString(errMsg);
-        }
+        //解析斗地主数据
+        conn->m_reply->parseRequest(conn->m_readBuf);
     }
-    else
+    else if(count<=0)
     {
-#ifdef MSG_SEND_AUTO
-        // 断开连接
-        conn->m_evLoop->addTask(conn->m_channel, ElemType::DELETE);
-#endif
-
+        //断开和客户端的连接
+        conn->addDeleteTask();
+        Debug("已经和客户端断开连接了");
     }
-#ifndef MSG_SEND_AUTO
-    // 断开连接
-    conn->m_evLoop->addTask(conn->m_channel, ElemType::DELETE);
-#endif
     return 0;
 }
 
@@ -56,11 +42,10 @@ int TcpConnection::processWrite(void* arg)
         if (conn->m_writeBuf->readableSize() == 0)
         {
             // 1. 不再检测写事件 -- 修改channel中保存的事件
-            conn->m_channel->writeEventEnable(false);
+            conn->m_channel->setCurrentEvent(FDEvent::ReadEvent);
             // 2. 修改dispatcher检测的集合 -- 添加任务节点
             conn->m_evLoop->addTask(conn->m_channel, ElemType::MODIFY);
-            // 3. 删除这个节点
-            conn->m_evLoop->addTask(conn->m_channel, ElemType::DELETE);
+            Debug("数据发送完毕....................");
         }
     }
     return 0;
@@ -81,11 +66,16 @@ TcpConnection::TcpConnection(int fd, EventLoop* evloop)
     m_evLoop = evloop;
     m_readBuf = new Buffer(10240);
     m_writeBuf = new Buffer(10240);
-    // http
-    m_request = new HttpRequest;
-    m_response = new HttpResponse;
+
+    m_reply=new Communication;
+
+    auto delFunc=std::bind(&TcpConnection::addDeleteTask,this);
+    auto writeFunc=std::bind(&TcpConnection::addWriteTask,this,std::placeholders::_1);
+    m_reply->setCallback(writeFunc,delFunc);
+
     m_name = "Connection-" + to_string(fd);
-    m_channel = new Channel(fd, FDEvent::ReadEvent, processRead, processWrite, destroy, this);
+    prepareSecreKey();
+    m_channel = new Channel(fd, FDEvent::WriteEvent, processRead, processWrite, destroy, this);
     evloop->addTask(m_channel, ElemType::ADD);
 }
 
@@ -96,9 +86,45 @@ TcpConnection::~TcpConnection()
     {
         delete m_readBuf;
         delete m_writeBuf;
-        delete m_request;
-        delete m_response;
         m_evLoop->freeChannel(m_channel);
     }
-    Debug("连接断开, 释放资源, gameover, connName: %s", m_name);
 }
+
+void TcpConnection::prepareSecreKey() {
+    //读公钥
+    ifstream ifs("public.pem");
+    stringstream sstr;
+    sstr<<ifs.rdbuf();
+    string data=sstr.str();
+    //发送数据
+    Message msg;
+    msg.rescode=RespondCode::RsaFenFa;
+    msg.data1=data;
+    RsaCrypto rsa("private.pem",RsaCrypto::PrivateKey);
+    rsa.sign(data);
+    msg.data2=data;
+    Codec codec(&msg);
+    data=codec.encodeMsg();
+    //写数据
+    m_writeBuf->appendPackage(data);
+}
+
+void TcpConnection::addWriteTask(std::string data) {
+    //把数据写进写缓冲区
+    m_writeBuf->appendPackage(data);
+#if 0//通过事件进行发送
+    // 1. 不再检测写事件 -- 修改channel中保存的事件
+    m_channel->setCurrentEvent(FDEvent::WriteEvent);
+    // 2. 修改dispatcher检测的集合 -- 添加任务节点
+    m_evLoop->addTask(m_channel, ElemType::MODIFY);
+    Debug("数据发送完毕....................");
+#else //直接发送   (数据量大推荐用这种)
+    m_writeBuf->sendData(m_channel->getSocket());
+#endif
+}
+
+void TcpConnection::addDeleteTask() {
+    m_evLoop->addTask(m_channel, ElemType::DELETE);
+    Debug("断开了和客户端的连接，connName=%s",m_name.data());
+}
+

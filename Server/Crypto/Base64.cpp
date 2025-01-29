@@ -1,12 +1,11 @@
 //
-// Created by kongwenshuo on 25-1-25.
+// Created by subingwen
 //
 
 #include "Base64.h"
 #include <openssl/bio.h>
 #include <openssl/evp.h>
 #include <openssl/buffer.h>
-
 
 string Base64::encode(string data)
 {

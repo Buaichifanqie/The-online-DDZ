@@ -19,6 +19,15 @@
 /cygdrive/d/DDZ-network/Server/cmake-build-debug/Crypto/CMakeFiles/Crypto.dir
 /cygdrive/d/DDZ-network/Server/cmake-build-debug/Crypto/CMakeFiles/edit_cache.dir
 /cygdrive/d/DDZ-network/Server/cmake-build-debug/Crypto/CMakeFiles/rebuild_cache.dir
+/cygdrive/d/DDZ-network/Server/cmake-build-debug/serialize/CMakeFiles/serialize.dir
+/cygdrive/d/DDZ-network/Server/cmake-build-debug/serialize/CMakeFiles/edit_cache.dir
+/cygdrive/d/DDZ-network/Server/cmake-build-debug/serialize/CMakeFiles/rebuild_cache.dir
+/cygdrive/d/DDZ-network/Server/cmake-build-debug/game/CMakeFiles/game.dir
+/cygdrive/d/DDZ-network/Server/cmake-build-debug/game/CMakeFiles/edit_cache.dir
+/cygdrive/d/DDZ-network/Server/cmake-build-debug/game/CMakeFiles/rebuild_cache.dir
+/cygdrive/d/DDZ-network/Server/cmake-build-debug/database/CMakeFiles/database.dir
+/cygdrive/d/DDZ-network/Server/cmake-build-debug/database/CMakeFiles/edit_cache.dir
+/cygdrive/d/DDZ-network/Server/cmake-build-debug/database/CMakeFiles/rebuild_cache.dir
 /cygdrive/d/DDZ-network/Server/cmake-build-debug/test/CMakeFiles/test.dir
 /cygdrive/d/DDZ-network/Server/cmake-build-debug/test/CMakeFiles/edit_cache.dir
 /cygdrive/d/DDZ-network/Server/cmake-build-debug/test/CMakeFiles/rebuild_cache.dir

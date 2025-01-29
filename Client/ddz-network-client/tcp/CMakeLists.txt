@@ -11,4 +11,4 @@ file(GLOB HEAD ./*.h)
 add_library(tcp ${SRC} ${HEAD})
 
 # 链接核心模块库
-target_link_libraries(tcp PRIVATE Qt${QT_VERSION_MAJOR}::Core)
+target_link_libraries(tcp PRIVATE Qt${QT_VERSION_MAJOR}::Core Ws2_32)

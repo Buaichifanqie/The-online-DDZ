@@ -1,15 +1,16 @@
 //
-// Created by kongwenshuo on 25-1-25.
+// Created by subingwen
 //
 
-#ifndef SERVER_AESCROPTO_H
-#define SERVER_AESCROPTO_H
+#ifndef SERVER_DDZ_AESCRYPTO_H
+#define SERVER_DDZ_AESCRYPTO_H
 
 
 #include <string>
 #include <map>
 #include <openssl/evp.h>
 using namespace std;
+
 class AesCrypto
 {
 public:
@@ -72,5 +73,4 @@ private:
     string m_key;
 };
 
-
-#endif //SERVER_AESCROPTO_H
+#endif //SERVER_DDZ_AESCRYPTO_H

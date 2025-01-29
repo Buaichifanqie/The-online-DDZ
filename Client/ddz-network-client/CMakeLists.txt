@@ -51,7 +51,11 @@ include_directories(
     ${PROJECT_SOURCE_DIR}/serialize
     ${PROJECT_SOURCE_DIR}/crypto
     "D:\\OpenSSL-Win64\\include"
+    "C:\\Protobuf\\include"
 )
+# link_directories("C:\\Protobuf\\lib")
+link_directories("D:\\protobuf-cpp-3.21.12\\protobuf-3.21.12\\build\\Desktop_Qt_5_15_2_MinGW_64_bit-Debug")
+
 
 # 添加子目录
 add_subdirectory(card)
@@ -79,5 +83,5 @@ else()
 endif()
 
 target_link_libraries(ddz-network-client PRIVATE Qt${QT_VERSION_MAJOR}::Widgets
-    card windows control player strategy thread crypto
+    card windows control player strategy thread crypto serialize tcp
 )

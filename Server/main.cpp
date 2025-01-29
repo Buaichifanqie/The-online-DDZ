@@ -19,10 +19,10 @@ int main(int argc, char* argv[])
     unsigned short port = 9999;
     chdir("/home/buaichifanqie/network/aoqi");
 #endif
-//    // 启动服务器
-//    TcpServer* server = new TcpServer(port, 4);
-//    server->run();
-    MyTest t;
-    t.test();
+    // 启动服务器
+    TcpServer* server = new TcpServer(port, 4);
+    server->run();
+//    MyTest t;
+//    t.test();
     return 0;
 }

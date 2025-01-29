@@ -74,6 +74,7 @@
 		"D:/DDZ-network/Client/ddz-network-client/tcp",
 		"D:/DDZ-network/Client/ddz-network-client/serialize",
 		"D:/OpenSSL-Win64/include",
+		"C:/Protobuf/include",
 		"D:/Qt/5.15.2/mingw81_64/include",
 		"D:/Qt/5.15.2/mingw81_64/include/QtCore",
 		"D:/Qt/5.15.2/mingw81_64/mkspecs/win32-g++",

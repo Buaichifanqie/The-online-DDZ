@@ -235,6 +235,9 @@ Crypto_IS_TOP_LEVEL:STATIC=OFF
 //Value Computed by CMake
 Crypto_SOURCE_DIR:STATIC=/home/buaichifanqie/projects/project2/ddz-net/Crypto
 
+//Path to a library.
+MYSQL_CLIENT_LIB:FILEPATH=MYSQL_CLIENT_LIB-NOTFOUND
+
 //Path to a program.
 ProcessorCount_cmd_nproc:FILEPATH=/usr/bin/nproc
 
@@ -249,6 +252,15 @@ Server_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 Server_SOURCE_DIR:STATIC=/home/buaichifanqie/projects/project2/ddz-net
+
+//Value Computed by CMake
+Server_ddz_BINARY_DIR:STATIC=/home/buaichifanqie/projects/project2/ddz-net/cmake-build-remote-debug
+
+//Value Computed by CMake
+Server_ddz_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+Server_ddz_SOURCE_DIR:STATIC=/home/buaichifanqie/projects/project2/ddz-net
 
 //Value Computed by CMake
 Test_BINARY_DIR:STATIC=/home/buaichifanqie/projects/project2/ddz-net/cmake-build-remote-debug/test
@@ -269,6 +281,24 @@ common_IS_TOP_LEVEL:STATIC=OFF
 common_SOURCE_DIR:STATIC=/home/buaichifanqie/projects/project2/ddz-net/common
 
 //Value Computed by CMake
+database_BINARY_DIR:STATIC=/home/buaichifanqie/projects/project2/ddz-net/cmake-build-remote-debug/database
+
+//Value Computed by CMake
+database_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+database_SOURCE_DIR:STATIC=/home/buaichifanqie/projects/project2/ddz-net/database
+
+//Value Computed by CMake
+game_BINARY_DIR:STATIC=/home/buaichifanqie/projects/project2/ddz-net/cmake-build-remote-debug/game
+
+//Value Computed by CMake
+game_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+game_SOURCE_DIR:STATIC=/home/buaichifanqie/projects/project2/ddz-net/game
+
+//Value Computed by CMake
 http_BINARY_DIR:STATIC=/home/buaichifanqie/projects/project2/ddz-net/cmake-build-remote-debug/http
 
 //Value Computed by CMake
@@ -278,6 +308,33 @@ http_IS_TOP_LEVEL:STATIC=OFF
 http_SOURCE_DIR:STATIC=/home/buaichifanqie/projects/project2/ddz-net/http
 
 //Value Computed by CMake
+mCrypto_BINARY_DIR:STATIC=/home/buaichifanqie/projects/project2/ddz-net/cmake-build-remote-debug/Crypto
+
+//Value Computed by CMake
+mCrypto_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+mCrypto_SOURCE_DIR:STATIC=/home/buaichifanqie/projects/project2/ddz-net/Crypto
+
+//Value Computed by CMake
+mcrypto_BINARY_DIR:STATIC=/home/buaichifanqie/projects/project2/ddz-net/cmake-build-remote-debug/mycrypto
+
+//Value Computed by CMake
+mcrypto_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+mcrypto_SOURCE_DIR:STATIC=/home/buaichifanqie/projects/project2/ddz-net/mycrypto
+
+//Value Computed by CMake
+mycrypto_BINARY_DIR:STATIC=/home/buaichifanqie/projects/project2/ddz-net/cmake-build-remote-debug/mycrypto
+
+//Value Computed by CMake
+mycrypto_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+mycrypto_SOURCE_DIR:STATIC=/home/buaichifanqie/projects/project2/ddz-net/mycrypto
+
+//Value Computed by CMake
 reactor_BINARY_DIR:STATIC=/home/buaichifanqie/projects/project2/ddz-net/cmake-build-remote-debug/reactor
 
 //Value Computed by CMake
@@ -285,6 +342,15 @@ reactor_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 reactor_SOURCE_DIR:STATIC=/home/buaichifanqie/projects/project2/ddz-net/reactor
+
+//Value Computed by CMake
+serialize_BINARY_DIR:STATIC=/home/buaichifanqie/projects/project2/ddz-net/cmake-build-remote-debug/serialize
+
+//Value Computed by CMake
+serialize_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+serialize_SOURCE_DIR:STATIC=/home/buaichifanqie/projects/project2/ddz-net/serialize
 
 //Value Computed by CMake
 tcp_BINARY_DIR:STATIC=/home/buaichifanqie/projects/project2/ddz-net/cmake-build-remote-debug/tcp
@@ -424,7 +490,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=8
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=10
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

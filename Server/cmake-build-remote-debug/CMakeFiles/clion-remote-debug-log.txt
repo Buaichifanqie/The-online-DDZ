@@ -8,6 +8,9 @@ CMake Deprecation Warning:
   use the cmake-file-api(7) to view CMake-generated project build trees.
 
 
--- Configuring done (0.0s)
--- Generating done (0.0s)
--- Build files have been written to: /home/buaichifanqie/projects/project2/ddz-net/cmake-build-remote-debug
+CMake Error at Crypto/CMakeLists.txt:9 (target_link_libraries):
+  Cannot specify link libraries for target "mcrypto" which is not built by
+  this project.
+
+
+-- Configuring incomplete, errors occurred!
