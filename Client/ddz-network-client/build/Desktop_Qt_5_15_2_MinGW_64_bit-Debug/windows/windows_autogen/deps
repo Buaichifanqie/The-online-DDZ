@@ -68,8 +68,12 @@ windows_autogen/timestamp: \
 	D:/DDZ-network/Client/ddz-network-client/windows/countdown.h \
 	D:/DDZ-network/Client/ddz-network-client/windows/endingpanel.cpp \
 	D:/DDZ-network/Client/ddz-network-client/windows/endingpanel.h \
+	D:/DDZ-network/Client/ddz-network-client/windows/gamemode.cpp \
+	D:/DDZ-network/Client/ddz-network-client/windows/gamemode.h \
 	D:/DDZ-network/Client/ddz-network-client/windows/gamepanel.cpp \
 	D:/DDZ-network/Client/ddz-network-client/windows/gamepanel.h \
+	D:/DDZ-network/Client/ddz-network-client/windows/joinroom.cpp \
+	D:/DDZ-network/Client/ddz-network-client/windows/joinroom.h \
 	D:/DDZ-network/Client/ddz-network-client/windows/loading.cpp \
 	D:/DDZ-network/Client/ddz-network-client/windows/loading.h \
 	D:/DDZ-network/Client/ddz-network-client/windows/login.cpp \
@@ -415,7 +419,9 @@ windows_autogen/timestamp: \
 	D:/cmake/share/cmake-3.31/Modules/Platform/Windows-GNU-C.cmake \
 	D:/cmake/share/cmake-3.31/Modules/Platform/Windows-GNU.cmake \
 	D:/DDZ-network/Client/ddz-network-client/windows/buttongroup.ui \
+	D:/DDZ-network/Client/ddz-network-client/windows/gamemode.ui \
 	D:/DDZ-network/Client/ddz-network-client/windows/gamepanel.ui \
+	D:/DDZ-network/Client/ddz-network-client/windows/joinroom.ui \
 	D:/DDZ-network/Client/ddz-network-client/windows/login.ui \
 	D:/DDZ-network/Client/ddz-network-client/windows/scorepanel.ui \
 	D:/cmake/bin/cmake.exe

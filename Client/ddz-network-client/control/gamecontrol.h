@@ -83,6 +83,9 @@ public:
     // 处理出牌
     void onPlayHand(Player *player, Cards &card);
 
+    //设置当前玩家
+    void setCurrentPlayer(int index);
+
 signals:
     void playerStatusChanged(Player* player, PlayerStatus status);
     // 通知玩家抢地主了

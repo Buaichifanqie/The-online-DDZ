@@ -6,10 +6,12 @@ class TcpServer
 {
 public:
     TcpServer(unsigned short port, int threadNum);
-    // ³õÊ¼»¯¼àÌı
+    // åˆå§‹åŒ–ç›‘å¬
     void setListen();
-    // Æô¶¯·şÎñÆ÷
+    // å¯åŠ¨æœåŠ¡å™¨
     void run();
+    //å­˜å‚¨rsaå¯†é’¥å¯¹
+    void saveRsaKey();
     static int acceptConnection(void* arg);
 
 private:
@@ -19,4 +21,3 @@ private:
     int m_lfd;
     unsigned short m_port;
 };
-

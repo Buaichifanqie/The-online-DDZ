@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.27)
+cmake_minimum_required(VERSION 3.24)
 project(Server)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -15,7 +15,11 @@ include_directories(
         ${PROJECT_SOURCE_DIR}/game
         ${PROJECT_SOURCE_DIR}/database
         "/usr/local/ssl/include/"
-        "/usr/include/mysql"
+        "/usr/include/mysql/"
+#        "/usr/local/include/"
+        "/usr/local/include/json/"
+        "/usr/local/include/sw/redis++/"
+
         # test测试
         ${PROJECT_SOURCE_DIR}/test
 
@@ -37,7 +41,11 @@ add_subdirectory(database)
 add_subdirectory(test)
 
 link_directories(/usr/local/ssl/lib64/)
-link_directories(/usr/lib64/mysql/)
+link_directories(/usr/lib/mysql)
+link_directories(/usr/local/lib64/)
+link_directories(/usr/local/lib/)
+
+# link_directories(/home/buaichifanqie/tool/jsoncpp-master/build/lib/)
 
 # 链接子目录中的静态库文件
 link_libraries(tcp http reactor thread common test Crypto serialize game database)
@@ -46,4 +54,5 @@ link_libraries(tcp http reactor thread common test Crypto serialize game databas
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 
 add_executable(Server main.cpp)
+
 

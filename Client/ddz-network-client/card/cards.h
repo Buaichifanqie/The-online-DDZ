@@ -53,7 +53,8 @@ public:
     void printAllCardInfo();
 
 private:
-    QSet<Card> m_cards;
+    //QSet<Card> m_cards;
+    QList<Card> m_cards;
 };
 
 #endif // CARDS_H

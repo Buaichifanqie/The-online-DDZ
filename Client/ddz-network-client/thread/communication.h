@@ -17,7 +17,8 @@ public:
         L32=32
     };
 
-    explicit Communication(Message* msg,QObject *parent = nullptr);
+    explicit Communication(Message& msg,QObject *parent = nullptr);
+    ~Communication();
     inline void stopLoop()
     {
         m_stop=true;
@@ -30,6 +31,8 @@ public:
     void handleRsaFenfa(Message* msg);
     //生成密钥函数aes
     QByteArray generateAseKey(KeyLen len);
+    //解析扑克牌信息
+    void parseCards(QByteArray data1,QByteArray data2);
 
 
 protected:
@@ -40,8 +43,10 @@ signals:
     void loginOk();
     void registerOk();
     void failedMsg(QByteArray msg);
+    void playerCount(int number);
+    void startGame(QByteArray msg);
 private:
-    Message* m_msgInfo=nullptr;
+    Message m_msgInfo;
     bool m_stop=false;
     Tcpsocket* m_socket=nullptr;
     QByteArray m_aesKey;

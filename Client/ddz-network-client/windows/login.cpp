@@ -2,9 +2,13 @@
 #include "datamanager.h"
 #include "ui_login.h"
 #include "gamepanel.h"
+#include "gamemode.h"
 
 
 #include <QCryptographicHash>
+#include <QFile>
+#include <QJsonDocument>
+#include <QJsonObject>
 #include <QMessageBox>
 #include <QRegularExpression>
 #include <QRegularExpressionValidator>
@@ -77,6 +81,7 @@ Login::Login(QWidget *parent)
     ui->userName->setText("hello");
     ui->password->setText("Ab1*");
 
+    loadUserInfo();
 
 }
 
@@ -102,7 +107,7 @@ void Login::startConnect(Message *msg)
 {
     if(!m_isConnected)
     {
-        Communication *task=new Communication(msg);
+        Communication *task=new Communication(*msg);
         connect(task,&Communication::connectFailed,this,[=](){
             //弹出窗口告诉使用者连接失败了
             QMessageBox::critical(this,"连接服务器","连接服务器失败");
@@ -112,9 +117,11 @@ void Login::startConnect(Message *msg)
         connect(task,&Communication::loginOk,this,[=](){
             //将用户名保存到单例对象
             DataManager::getInstance()->setUserName(ui->userName->text().toUtf8());
-            //加载用户名和密码
-
+            //保存用户名和密码
+            saveUserInfo();
             //显示游戏模式->单机->网络
+            GameMode* mode=new GameMode;
+            mode->show();
 
         });
         connect(task,&Communication::registerOk,this,[=](){
@@ -147,7 +154,7 @@ void Login::onLogin()
         msg.reqcode=RequestCode::UserLogin;
         QByteArray passwd=ui->password->text().toUtf8();
         //对密码进行加密
-        passwd=QCryptographicHash::hash(passwd,QCryptographicHash::Sha224);
+        passwd=QCryptographicHash::hash(passwd,QCryptographicHash::Sha224).toHex();
         msg.data1=passwd;
         //连接服务器
         startConnect(&msg);
@@ -166,7 +173,7 @@ void Login::onRegister()
         msg.reqcode=RequestCode::UserLogin;
         QByteArray passwd=ui->regPassword->text().toUtf8();
         //对密码进行加密
-        passwd=QCryptographicHash::hash(passwd,QCryptographicHash::Sha224);
+        passwd=QCryptographicHash::hash(passwd,QCryptographicHash::Sha224).toHex();
         msg.data1=passwd;
         msg.data2=ui->phone->text().toUtf8();
         //连接服务器
@@ -185,6 +192,57 @@ void Login::onNetOK()
         //将ip和端口存储起来
         instance->setIP(ui->ipAddr->text().toUtf8());//从Qstring->QByteArray
         instance->setPort(ui->port->text().toUtf8());
+    }
+}
+
+void Login::saveUserInfo()
+{
+    if(ui->savePwd->isChecked())
+    {
+        QJsonObject obj;
+        obj.insert("user",ui->userName->text());
+        obj.insert("passwd",ui->password->text());
+        QJsonDocument doc(obj);
+        QByteArray json = doc.toJson();
+        //aes加密
+        AesCrypto aes(AesCrypto::AES_CBC_128,KEY.left(16));
+        json=aes.encrypt(json);
+        //写文件
+        QFile file("passwd.bin");
+        //打开文件
+        file.open(QFile::WriteOnly);
+        file.write(json);
+        file.close();
+    }
+    else
+    {
+        QFile file("passwd.bin");
+        file.remove();
+    }
+}
+
+void Login::loadUserInfo()
+{
+    QFile file("passwd.bin");
+    //打开文件
+    bool flag=file.open(QFile::ReadOnly);
+    if(flag)
+    {
+        ui->savePwd->setChecked(true);
+        QByteArray all= file.readAll();
+        AesCrypto aes(AesCrypto::AES_CBC_128,KEY.left(16));
+        all=aes.decrypt(all);
+        QJsonDocument doc=QJsonDocument::fromJson(all);
+        QJsonObject obj = doc.object();
+        QString name=obj.value("user").toString();
+        QString passwd=obj.value("passwd").toString();
+        //初始化到编辑框
+        ui->userName->setText(name);
+        ui->password->setText(passwd);
+    }
+    else
+    {
+        ui->savePwd->setChecked(false);
     }
 }
 

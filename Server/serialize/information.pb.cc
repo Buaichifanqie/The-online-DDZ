@@ -71,21 +71,18 @@ const char descriptor_table_protodef_information_2eproto[] PROTOBUF_SECTION_VARI
   "serName\030\001 \001(\t\022\020\n\010roomName\030\002 \001(\t\022\r\n\005data1"
   "\030\003 \001(\t\022\r\n\005data2\030\004 \001(\t\022\r\n\005data3\030\005 \001(\t\022\035\n\007"
   "reqcode\030\006 \001(\0162\014.RequestCode\022\035\n\007rescode\030\007"
-  " \001(\0162\014.RespondCode*\273\001\n\013RequestCode\022\r\n\tUs"
-  "erLogin\020\000\022\014\n\010Register\020\001\022\014\n\010AesFenfa\020\002\022\014\n"
-  "\010AutoRoom\020\003\022\016\n\nManualRoom\020\004\022\016\n\nSearchRoo"
-  "m\020\005\022\014\n\010GrabLord\020\006\022\r\n\tPlayAHand\020\007\022\014\n\010Game"
-  "Over\020\010\022\014\n\010Continue\020\t\022\r\n\tLeaveRoom\020\n\022\013\n\007G"
-  "oodbye\020\013*\317\001\n\013RespondCode\022\013\n\007LoginOk\020\000\022\016\n"
-  "\nRegisterOk\020\001\022\014\n\010RsaFenFa\020\002\022\017\n\013AesVerify"
-  "OK\020\003\022\016\n\nJoinRoomOK\020\004\022\r\n\tStartGame\020\005\022\020\n\014S"
-  "earchRoomOK\020\006\022\r\n\tDealCards\020\007\022\021\n\rOtherGra"
-  "bLord\020\010\022\021\n\rOtherPlayHand\020\t\022\022\n\016OtherLeave"
-  "Room\020\n\022\n\n\006Failed\020\013b\006proto3"
+  " \001(\0162\014.RespondCode*f\n\013RequestCode\022\r\n\tUse"
+  "rLogin\020\000\022\014\n\010Register\020\001\022\014\n\010AesFenfa\020\002\022\014\n\010"
+  "AutoRoom\020\003\022\016\n\nManualRoom\020\004\022\016\n\nSearchRoom"
+  "\020\005*\225\001\n\013RespondCode\022\013\n\007LoginOK\020\000\022\016\n\nRegis"
+  "terOK\020\001\022\014\n\010RsaFenFa\020\002\022\017\n\013AesVerifyOK\020\003\022\016"
+  "\n\nJoinRoomOK\020\004\022\r\n\tStartGame\020\005\022\020\n\014SearchR"
+  "oomOK\020\006\022\r\n\tDealCards\020\007\022\n\n\006Failed\020\010b\006prot"
+  "o3"
   ;
 static ::_pbi::once_flag descriptor_table_information_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_information_2eproto = {
-    false, false, 586, descriptor_table_protodef_information_2eproto,
+    false, false, 442, descriptor_table_protodef_information_2eproto,
     "information.proto",
     &descriptor_table_information_2eproto_once, nullptr, 0, 1,
     schemas, file_default_instances, TableStruct_information_2eproto::offsets,
@@ -110,12 +107,6 @@ bool RequestCode_IsValid(int value) {
     case 3:
     case 4:
     case 5:
-    case 6:
-    case 7:
-    case 8:
-    case 9:
-    case 10:
-    case 11:
       return true;
     default:
       return false;
@@ -137,9 +128,6 @@ bool RespondCode_IsValid(int value) {
     case 6:
     case 7:
     case 8:
-    case 9:
-    case 10:
-    case 11:
       return true;
     default:
       return false;

@@ -1,4 +1,4 @@
-﻿#include <stdio.h>
+#include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include "TcpServer.h"
@@ -6,6 +6,7 @@
 #include "MyTest.h"
 int main(int argc, char* argv[])
 {
+    setbuf(stdout,NULL);//puts到输出台上
 #if 0
     if (argc < 3)
     {
@@ -21,7 +22,9 @@ int main(int argc, char* argv[])
 #endif
     // 启动服务器
     TcpServer* server = new TcpServer(port, 4);
+    printf("你好");
     server->run();
+
 //    MyTest t;
 //    t.test();
     return 0;

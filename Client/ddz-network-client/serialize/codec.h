@@ -9,6 +9,7 @@
 //反序列化->将解析出来的数据存储到这个结构体中
 struct Message{
     QByteArray userName;
+    QByteArray roomName;
     QByteArray data1;
     QByteArray data2;
     QByteArray data3;

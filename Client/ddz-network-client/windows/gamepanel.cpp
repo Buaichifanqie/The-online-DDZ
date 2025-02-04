@@ -9,6 +9,7 @@
 #include <QTimer>
 #include <QDebug>
 #include <QPropertyAnimation>
+#include <datamanager.h>
 
 GamePanel::GamePanel(QWidget *parent)
     : QMainWindow(parent)
@@ -78,6 +79,9 @@ void GamePanel::gameControlInit()
     connect(leftRobot, &Player::notifyPickCards, this, &GamePanel::disposeCard);
     connect(rightRobot, &Player::notifyPickCards, this, &GamePanel::disposeCard);
     connect(user, &Player::notifyPickCards, this, &GamePanel::disposeCard);
+    m_nameList<<leftRobot->getName().toUtf8()
+               <<user->getName().toUtf8()
+               <<rightRobot->getName().toUtf8();
 }
 
 void GamePanel::updatePlayerScore()
@@ -135,16 +139,8 @@ void GamePanel::initButtonsGroup()
     ui->btnGroup->initButtons();
     ui->btnGroup->selectPanel(ButtonGroup::Start);
 
-    connect(ui->btnGroup, &ButtonGroup::startGame, this, [=](){
-        // 界面的初始化
-        ui->btnGroup->selectPanel(ButtonGroup::Empty);
-        m_gameCtl->clearPlayerScore();
-        updatePlayerScore();
-        // 修改游戏状态 -> 发牌
-        gameStatusPrecess(GameControl::DispatchCard);
-        // 播放背景音乐
-        m_bgm->startBGM(80);
-    });
+    void (GamePanel::*startGame)()=&GamePanel::startGame;
+    connect(ui->btnGroup, &ButtonGroup::startGame, this,startGame);
     connect(ui->btnGroup, &ButtonGroup::playHand, this, &GamePanel::onUserPlayHand);
     connect(ui->btnGroup, &ButtonGroup::pass, this, &GamePanel::onUserPass);
     connect(ui->btnGroup, &ButtonGroup::betPoint, this, [=](int bet){
@@ -843,6 +839,9 @@ void GamePanel::showEndingScorePanel()
     panel->setPlayerScore(m_gameCtl->getLeftRobot()->getScore(),
                          m_gameCtl->getRightRobot()->getScore(),
                          m_gameCtl->getUserPlayer()->getScore());
+
+    panel->setPlayerName(m_nameList);
+
     if(isWin)
     {
         m_bgm->playEndingMusic(true);
@@ -894,6 +893,92 @@ void GamePanel::initCountDown()
     });
 }
 
+void GamePanel::initGamePanel(QByteArray msg)
+{
+    int index;
+    //格式    用户名-次序-分数#用户名-次序-分数#用户名-次序-分数#
+    orderMap order;
+    //去掉数据中最后一个# 并分割
+    auto lst=msg.left(msg.length()-1).split('#');
+    for(const auto& item:lst)
+    {
+        auto sub=item.split('-');
+        order.insert(sub.at(1).toInt(),QPair(sub.at(0),sub.at(2).toInt()));
+        if(sub.at(0)==DataManager::getInstance()->getUserName())
+        {
+            index=sub.at(1).toInt();
+        }
+    }
+    updatePlayerInfo(order);
+    //开始游戏
+    startGame(index);
+
+}
+
+void GamePanel::updatePlayerInfo(orderMap &info)
+{
+    int lscore,rscore,mscore;
+    QByteArray left,right,mid;
+    QByteArray current=DataManager::getInstance()->getUserName();
+    //取玩家的名字和分数
+    if(current==info.value(1).first)
+    {
+        mid=info.value(1).first;
+        right=info.value(2).first;
+        left=info.value(3).first;
+        mscore=info.value(1).second;
+        rscore=info.value(2).second;
+        lscore=info.value(3).second;
+    }
+    else if(current==info.value(2).first)
+    {
+        mid=info.value(2).first;
+        right=info.value(3).first;
+        left=info.value(1).first;
+        mscore=info.value(2).second;
+        rscore=info.value(3).second;
+        lscore=info.value(1).second;
+    }
+    else if(current==info.value(3).first)
+    {
+        mid=info.value(3).first;
+        right=info.value(1).first;
+        left=info.value(2).first;
+        mscore=info.value(3).second;
+        rscore=info.value(1).second;
+        lscore=info.value(2).second;
+    }
+    //将数据显示到分数面板
+    ui->scorePanel->setPlayerName(left,mid,right);
+    //将解析出的数据设置给各个玩家
+    m_gameCtl->getLeftRobot()->setScore(lscore);
+    m_gameCtl->getRightRobot()->setScore(rscore);
+    m_gameCtl->getUserPlayer()->setScore(lscore);
+    //存储玩家名字
+    m_nameList.clear();
+    m_nameList<<left<<mid<<right;
+}
+
+void GamePanel::startGame()
+{
+    int index=QRandomGenerator::global()->bounded(3);
+    startGame(index+1);
+}
+
+void GamePanel::startGame(int index)
+{
+    //设置当前被发牌的玩家
+    m_gameCtl->setCurrentPlayer(index);
+    // 界面的初始化
+    ui->btnGroup->selectPanel(ButtonGroup::Empty);
+    //m_gameCtl->clearPlayerScore();
+    updatePlayerScore();
+    // 修改游戏状态 -> 发牌
+    gameStatusPrecess(GameControl::DispatchCard);
+    // 播放背景音乐
+    m_bgm->startBGM(80);
+}
+
 void GamePanel::paintEvent(QPaintEvent *ev)
 {
     Q_UNUSED(ev)
@@ -926,5 +1011,12 @@ void GamePanel::mouseMoveEvent(QMouseEvent *ev)
             }
         }
     }
+}
+
+void GamePanel::closeEvent(QCloseEvent *ev)
+{
+    emit panelClose();
+    ev->accept();
+    deleteLater();
 }
 

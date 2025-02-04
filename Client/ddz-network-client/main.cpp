@@ -45,8 +45,11 @@ int main(int argc, char *argv[])
     qRegisterMetaType<Cards>("Cards");
     //QResource::registerResource("./resource.rcc");
     Login w;
-    w.show();
-    test();
+    int ret=w.exec();
+    if(ret==QDialog::Accepted)
+    {
+        test();
+        return a.exec();
+    }
 
-    return a.exec();
 }

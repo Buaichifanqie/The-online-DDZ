@@ -3,8 +3,13 @@
 #include "TcpConnection.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <fstream>
 #include "Log.h"
 #include "RsaCrypto.h"
+#include "Room.h"
+#include <sstream>
+#include <csignal>
+#include <cassert>
 
 int TcpServer::acceptConnection(void* arg)
 {
@@ -67,10 +72,8 @@ void TcpServer::setListen()
 void TcpServer::run()
 {
     Debug("服务器程序已经启动了...");
-    //生成密钥对
-    RsaCrypto *rsa= new RsaCrypto;
-    rsa->generateRsaKey(RsaCrypto::BITS_2k);
-    delete rsa;
+    std::cout<<"服务器已经启动了...\n";
+    saveRsaKey();
     // 启动线程池
     m_threadPool->run();
     // 添加检测的任务
@@ -79,4 +82,34 @@ void TcpServer::run()
     m_mainLoop->addTask(channel, ElemType::ADD);
     // 启动反应堆模型
     m_mainLoop->run();
+}
+
+void TcpServer::saveRsaKey() {
+    //生成密钥对
+    RsaCrypto *rsa= new RsaCrypto;
+    rsa->generateRsaKey(RsaCrypto::BITS_2k);
+    delete rsa;
+    //读磁盘文件
+    //读公钥
+    ifstream ifs("public.pem");
+    stringstream sstr;
+    sstr<<ifs.rdbuf();
+    string data=sstr.str();
+    ifs.close();
+
+    //创建redis对象
+    Room redis;
+    assert(redis.initEnvironment());
+    redis.clear();
+    redis.saveRsaSecKey("PublicKey",data);
+
+    //读私钥
+    ifs.open("private.pem");
+    sstr<<ifs.rdbuf();
+    data=sstr.str();
+    ifs.close();
+    redis.saveRsaSecKey("PrivateKey",data);
+
+    unlink("public.pem");
+    unlink("private.pem");
 }

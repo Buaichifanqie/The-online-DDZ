@@ -4,11 +4,21 @@
 #include <QThread>
 #include <QDebug>
 #include <QDateTime>
-Communication::Communication(Message* msg,QObject *parent)
+#include <card.h>
+#include <cards.h>
+Communication::Communication(Message& msg,QObject *parent)
     : QObject{parent},m_msgInfo(msg)
 {
     //设置自动销毁
     setAutoDelete(true);
+}
+
+Communication::~Communication()
+{
+    if(m_aes)
+    {
+        delete m_aes;
+    }
 }
 
 void Communication::sendMessage(Message *msg,bool encrypt)
@@ -53,19 +63,34 @@ void Communication::parseRecvMessage()
     {
     case RespondCode::LoginOK:
         emit loginOk();
+        qDebug()<<"登录成功了...";
         break;
     case RespondCode::RegisterOK:
         emit registerOk();
+        qDebug()<<"注册成功了...";
         break;
     case RespondCode::RsaFenFa:
         handleRsaFenfa(ptr.get());
         break;
     case RespondCode::AesVerifyOK:
-        m_aes=new AesCrypto(AesCrypto::AES_CBC_256,m_aesKey,this);
-        sendMessage(m_msgInfo);
+        //在任务类里创建对象时是不允许给这个对象指定父对象的
+        m_aes=new AesCrypto(AesCrypto::AES_CBC_256,m_aesKey);
+        sendMessage(&m_msgInfo);
         qDebug()<<"Aes的密钥分发成功了...";
+        break;
+    case RespondCode::JoinRoomOK:
+        DataManager::getInstance()->setRoomName(ptr->roomName);
+        emit playerCount(ptr->data1.toInt());
+        break;
+    case RespondCode::DealCards:
+        parseCards(ptr->data1,ptr->data2);
+        break;
+    case RespondCode::StartGame:
+        emit startGame(ptr->data1);
+        break;
     case RespondCode::Failed:
         emit failedMsg(ptr->data1);
+        break;
     default:
         break;
     }
@@ -107,6 +132,28 @@ QByteArray Communication::generateAseKey(KeyLen len)
     time=hash.result();
     time=time.left(len);
     return time;
+}
+
+void Communication::parseCards(QByteArray data1, QByteArray data2)
+{
+    auto func=std::bind([=](QByteArray msg)
+    {
+        //去掉数据中最后一个# 并分割
+        auto lst=msg.left(msg.length()-1).split('#');
+        Cards cs;
+        for(const auto& item:lst)
+        {
+            auto sub=item.split('-');
+            Card card(static_cast<Card::CardPoint>(sub.last().toInt()),
+                      static_cast<Card::CardSuit>(sub.first().toInt()));
+            cs.add(card);
+        }
+        return cs;
+    },std::placeholders::_1);
+    Cards cards=func(data1);
+    Cards last=func(data2);
+    //存储数据到单例类
+    DataManager::getInstance()->setCards(cards,last);
 }
 
 void Communication::run()

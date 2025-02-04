@@ -29,6 +29,7 @@ std::shared_ptr<Message> Codec::decodeMsg()
     Message* msg=new Message;
     //把数据从m_obj中取出 并且存入msg中
     msg->userName=m_obj.username();
+    msg->roomName=m_obj.roomname();
     msg->data1=m_obj.data1();
     msg->data2=m_obj.data2();
     msg->data3=m_obj.data3();
@@ -52,6 +53,7 @@ void Codec::reLoad(Message *msg)
 {
     //把msg中的数据给到了用于序列化的m_obj对象
     m_obj.set_username(msg->userName);
+    m_obj.set_roomname(msg->roomName);
     m_obj.set_data1(msg->data1);
     m_obj.set_data2(msg->data2);
     m_obj.set_data3(msg->data3);

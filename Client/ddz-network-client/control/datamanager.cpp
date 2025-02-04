@@ -28,9 +28,30 @@ void DataManager::setCommuncation(Communication *comm)
     m_commun=comm;
 }
 
+void DataManager::setRoomName(QByteArray roomName)
+{
+    m_roomName=roomName;
+}
+
+void DataManager::setCards(Cards cs, Cards last)
+{
+    m_cs=cs;
+    m_last=last;
+}
+
+void DataManager::setGameMode(GameMode mode)
+{
+    m_mode=mode;
+}
+
 QByteArray DataManager::getUserName()
 {
     return m_userName;
+}
+
+QByteArray DataManager::getRoomName()
+{
+    return m_roomName;
 }
 
 QByteArray DataManager::getIP()
@@ -46,6 +67,21 @@ QByteArray DataManager::getPort()
 Communication *DataManager::getCommunication()
 {
     return m_commun;
+}
+
+Cards DataManager::getCards()
+{
+    return m_cs;
+}
+
+Cards DataManager::getLast3Cards()
+{
+    return m_last;
+}
+
+DataManager::GameMode DataManager::getGameMode()
+{
+    return m_mode;
 }
 
 

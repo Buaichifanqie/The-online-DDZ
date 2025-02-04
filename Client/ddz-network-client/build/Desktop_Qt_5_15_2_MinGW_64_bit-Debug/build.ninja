@@ -323,9 +323,25 @@ build windows/CMakeFiles/windows.dir/endingpanel.cpp.obj: CXX_COMPILER__windows_
   OBJECT_DIR = windows\CMakeFiles\windows.dir
   OBJECT_FILE_DIR = windows\CMakeFiles\windows.dir
 
+build windows/CMakeFiles/windows.dir/gamemode.cpp.obj: CXX_COMPILER__windows_unscanned_Debug D$:/DDZ-network/Client/ddz-network-client/windows/gamemode.cpp || cmake_object_order_depends_target_windows
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = windows\CMakeFiles\windows.dir\gamemode.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/windows -ID:/DDZ-network/Client/ddz-network-client/windows -ID:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/windows/windows_autogen/include -ID:/DDZ-network/Client/ddz-network-client/card -ID:/DDZ-network/Client/ddz-network-client/control -ID:/DDZ-network/Client/ddz-network-client/player -ID:/DDZ-network/Client/ddz-network-client/strategy -ID:/DDZ-network/Client/ddz-network-client/thread -ID:/DDZ-network/Client/ddz-network-client/tcp -ID:/DDZ-network/Client/ddz-network-client/serialize -ID:/DDZ-network/Client/ddz-network-client/crypto -ID:/OpenSSL-Win64/include -IC:/Protobuf/include -isystem D:/Qt/5.15.2/mingw81_64/include -isystem D:/Qt/5.15.2/mingw81_64/include/QtCore -isystem D:/Qt/5.15.2/mingw81_64/./mkspecs/win32-g++ -isystem D:/Qt/5.15.2/mingw81_64/include/QtWidgets -isystem D:/Qt/5.15.2/mingw81_64/include/QtGui -isystem D:/Qt/5.15.2/mingw81_64/include/QtANGLE -isystem D:/Qt/5.15.2/mingw81_64/include/QtMultimedia -isystem D:/Qt/5.15.2/mingw81_64/include/QtNetwork
+  OBJECT_DIR = windows\CMakeFiles\windows.dir
+  OBJECT_FILE_DIR = windows\CMakeFiles\windows.dir
+
 build windows/CMakeFiles/windows.dir/gamepanel.cpp.obj: CXX_COMPILER__windows_unscanned_Debug D$:/DDZ-network/Client/ddz-network-client/windows/gamepanel.cpp || cmake_object_order_depends_target_windows
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB
   DEP_FILE = windows\CMakeFiles\windows.dir\gamepanel.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/windows -ID:/DDZ-network/Client/ddz-network-client/windows -ID:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/windows/windows_autogen/include -ID:/DDZ-network/Client/ddz-network-client/card -ID:/DDZ-network/Client/ddz-network-client/control -ID:/DDZ-network/Client/ddz-network-client/player -ID:/DDZ-network/Client/ddz-network-client/strategy -ID:/DDZ-network/Client/ddz-network-client/thread -ID:/DDZ-network/Client/ddz-network-client/tcp -ID:/DDZ-network/Client/ddz-network-client/serialize -ID:/DDZ-network/Client/ddz-network-client/crypto -ID:/OpenSSL-Win64/include -IC:/Protobuf/include -isystem D:/Qt/5.15.2/mingw81_64/include -isystem D:/Qt/5.15.2/mingw81_64/include/QtCore -isystem D:/Qt/5.15.2/mingw81_64/./mkspecs/win32-g++ -isystem D:/Qt/5.15.2/mingw81_64/include/QtWidgets -isystem D:/Qt/5.15.2/mingw81_64/include/QtGui -isystem D:/Qt/5.15.2/mingw81_64/include/QtANGLE -isystem D:/Qt/5.15.2/mingw81_64/include/QtMultimedia -isystem D:/Qt/5.15.2/mingw81_64/include/QtNetwork
+  OBJECT_DIR = windows\CMakeFiles\windows.dir
+  OBJECT_FILE_DIR = windows\CMakeFiles\windows.dir
+
+build windows/CMakeFiles/windows.dir/joinroom.cpp.obj: CXX_COMPILER__windows_unscanned_Debug D$:/DDZ-network/Client/ddz-network-client/windows/joinroom.cpp || cmake_object_order_depends_target_windows
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = windows\CMakeFiles\windows.dir\joinroom.cpp.obj.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
   INCLUDES = -ID:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/windows -ID:/DDZ-network/Client/ddz-network-client/windows -ID:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/windows/windows_autogen/include -ID:/DDZ-network/Client/ddz-network-client/card -ID:/DDZ-network/Client/ddz-network-client/control -ID:/DDZ-network/Client/ddz-network-client/player -ID:/DDZ-network/Client/ddz-network-client/strategy -ID:/DDZ-network/Client/ddz-network-client/thread -ID:/DDZ-network/Client/ddz-network-client/tcp -ID:/DDZ-network/Client/ddz-network-client/serialize -ID:/DDZ-network/Client/ddz-network-client/crypto -ID:/OpenSSL-Win64/include -IC:/Protobuf/include -isystem D:/Qt/5.15.2/mingw81_64/include -isystem D:/Qt/5.15.2/mingw81_64/include/QtCore -isystem D:/Qt/5.15.2/mingw81_64/./mkspecs/win32-g++ -isystem D:/Qt/5.15.2/mingw81_64/include/QtWidgets -isystem D:/Qt/5.15.2/mingw81_64/include/QtGui -isystem D:/Qt/5.15.2/mingw81_64/include/QtANGLE -isystem D:/Qt/5.15.2/mingw81_64/include/QtMultimedia -isystem D:/Qt/5.15.2/mingw81_64/include/QtNetwork
   OBJECT_DIR = windows\CMakeFiles\windows.dir
@@ -371,7 +387,7 @@ build windows/CMakeFiles/windows.dir/scorepanel.cpp.obj: CXX_COMPILER__windows_u
 #############################################
 # Link the static library windows\libwindows.a
 
-build windows/libwindows.a: CXX_STATIC_LIBRARY_LINKER__windows_Debug windows/CMakeFiles/windows.dir/windows_autogen/mocs_compilation.cpp.obj windows/CMakeFiles/windows.dir/animationwindow.cpp.obj windows/CMakeFiles/windows.dir/buttongroup.cpp.obj windows/CMakeFiles/windows.dir/cardpanel.cpp.obj windows/CMakeFiles/windows.dir/countdown.cpp.obj windows/CMakeFiles/windows.dir/endingpanel.cpp.obj windows/CMakeFiles/windows.dir/gamepanel.cpp.obj windows/CMakeFiles/windows.dir/loading.cpp.obj windows/CMakeFiles/windows.dir/login.cpp.obj windows/CMakeFiles/windows.dir/mybutton.cpp.obj windows/CMakeFiles/windows.dir/scorepanel.cpp.obj || windows/windows_autogen windows/windows_autogen_timestamp_deps
+build windows/libwindows.a: CXX_STATIC_LIBRARY_LINKER__windows_Debug windows/CMakeFiles/windows.dir/windows_autogen/mocs_compilation.cpp.obj windows/CMakeFiles/windows.dir/animationwindow.cpp.obj windows/CMakeFiles/windows.dir/buttongroup.cpp.obj windows/CMakeFiles/windows.dir/cardpanel.cpp.obj windows/CMakeFiles/windows.dir/countdown.cpp.obj windows/CMakeFiles/windows.dir/endingpanel.cpp.obj windows/CMakeFiles/windows.dir/gamemode.cpp.obj windows/CMakeFiles/windows.dir/gamepanel.cpp.obj windows/CMakeFiles/windows.dir/joinroom.cpp.obj windows/CMakeFiles/windows.dir/loading.cpp.obj windows/CMakeFiles/windows.dir/login.cpp.obj windows/CMakeFiles/windows.dir/mybutton.cpp.obj windows/CMakeFiles/windows.dir/scorepanel.cpp.obj || windows/windows_autogen windows/windows_autogen_timestamp_deps
   LANGUAGE_COMPILE_FLAGS = -DQT_QML_DEBUG -g
   OBJECT_DIR = windows\CMakeFiles\windows.dir
   POST_BUILD = cd .
@@ -413,7 +429,7 @@ build windows/windows_autogen_timestamp_deps: phony
 #############################################
 # Utility command for windows_autogen
 
-build windows/windows_autogen: phony windows/CMakeFiles/windows_autogen windows/windows_autogen/include/ui_buttongroup.h windows/windows_autogen/include/ui_gamepanel.h windows/windows_autogen/include/ui_login.h windows/windows_autogen/include/ui_scorepanel.h windows/windows_autogen/timestamp windows/windows_autogen/mocs_compilation.cpp windows/windows_autogen_timestamp_deps
+build windows/windows_autogen: phony windows/CMakeFiles/windows_autogen windows/windows_autogen/include/ui_buttongroup.h windows/windows_autogen/include/ui_gamemode.h windows/windows_autogen/include/ui_gamepanel.h windows/windows_autogen/include/ui_joinroom.h windows/windows_autogen/include/ui_login.h windows/windows_autogen/include/ui_scorepanel.h windows/windows_autogen/timestamp windows/windows_autogen/mocs_compilation.cpp windows/windows_autogen_timestamp_deps
 
 
 #############################################
@@ -430,7 +446,7 @@ build windows/windows_autogen/timestamp windows/windows_autogen/mocs_compilation
 #############################################
 # Phony custom command for windows\CMakeFiles\windows_autogen
 
-build windows/CMakeFiles/windows_autogen windows/windows_autogen/include/ui_buttongroup.h windows/windows_autogen/include/ui_gamepanel.h windows/windows_autogen/include/ui_login.h windows/windows_autogen/include/ui_scorepanel.h | ${cmake_ninja_workdir}windows/CMakeFiles/windows_autogen ${cmake_ninja_workdir}windows/windows_autogen/include/ui_buttongroup.h ${cmake_ninja_workdir}windows/windows_autogen/include/ui_gamepanel.h ${cmake_ninja_workdir}windows/windows_autogen/include/ui_login.h ${cmake_ninja_workdir}windows/windows_autogen/include/ui_scorepanel.h: phony windows/windows_autogen/timestamp || windows/windows_autogen_timestamp_deps
+build windows/CMakeFiles/windows_autogen windows/windows_autogen/include/ui_buttongroup.h windows/windows_autogen/include/ui_gamemode.h windows/windows_autogen/include/ui_gamepanel.h windows/windows_autogen/include/ui_joinroom.h windows/windows_autogen/include/ui_login.h windows/windows_autogen/include/ui_scorepanel.h | ${cmake_ninja_workdir}windows/CMakeFiles/windows_autogen ${cmake_ninja_workdir}windows/windows_autogen/include/ui_buttongroup.h ${cmake_ninja_workdir}windows/windows_autogen/include/ui_gamemode.h ${cmake_ninja_workdir}windows/windows_autogen/include/ui_gamepanel.h ${cmake_ninja_workdir}windows/windows_autogen/include/ui_joinroom.h ${cmake_ninja_workdir}windows/windows_autogen/include/ui_login.h ${cmake_ninja_workdir}windows/windows_autogen/include/ui_scorepanel.h: phony windows/windows_autogen/timestamp || windows/windows_autogen_timestamp_deps
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:

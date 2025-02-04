@@ -13,11 +13,11 @@ public:
     TcpConnection(int fd, EventLoop* evloop);
     ~TcpConnection();
 
-    //·¢ËÍÊı¾İ
+    //å‘é€æ•°æ®
     void addWriteTask(std::string data);
-    //ÊÍ·Å×ÊÔ´
+    //é‡Šæ”¾èµ„æº
     void addDeleteTask();
-    //×¼±¸ÃÜÔ¿
+    //å‡†å¤‡å¯†é’¥
     void prepareSecreKey();
     static int processRead(void* arg);
     static int processWrite(void* arg);

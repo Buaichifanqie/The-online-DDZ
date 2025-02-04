@@ -7,45 +7,46 @@
 #include "Codec.h"
 #include "Log.h"
 #include "RsaCrypto.h"
+#include "Room.h"
 
 int TcpConnection::processRead(void* arg)
 {
     TcpConnection* conn = static_cast<TcpConnection*>(arg);
-    // ½ÓÊÕÊı¾İ
+    // æ¥æ”¶æ•°æ®
     int socket = conn->m_channel->getSocket();
     int count = conn->m_readBuf->socketRead(socket);
 
-    Debug("½ÓÊÕµ½µÄhttpÇëÇóÊı¾İ: %s", conn->m_readBuf->data());
+    Debug("æ¥æ”¶åˆ°çš„httpè¯·æ±‚æ•°æ®: %s", conn->m_readBuf->data());
     if (count > 0)
     {
-        //½âÎö¶·µØÖ÷Êı¾İ
+        //è§£ææ–—åœ°ä¸»æ•°æ®
         conn->m_reply->parseRequest(conn->m_readBuf);
     }
     else if(count<=0)
     {
-        //¶Ï¿ªºÍ¿Í»§¶ËµÄÁ¬½Ó
+        //æ–­å¼€å’Œå®¢æˆ·ç«¯çš„è¿æ¥
         conn->addDeleteTask();
-        Debug("ÒÑ¾­ºÍ¿Í»§¶Ë¶Ï¿ªÁ¬½ÓÁË");
+        Debug("å·²ç»å’Œå®¢æˆ·ç«¯æ–­å¼€è¿æ¥äº†");
     }
     return 0;
 }
 
 int TcpConnection::processWrite(void* arg)
 {
-    Debug("¿ªÊ¼·¢ËÍÊı¾İÁË(»ùÓÚĞ´ÊÂ¼ş·¢ËÍ)....");
+    Debug("å¼€å§‹å‘é€æ•°æ®äº†(åŸºäºå†™äº‹ä»¶å‘é€)....");
     TcpConnection* conn = static_cast<TcpConnection*>(arg);
-    // ·¢ËÍÊı¾İ
+    // å‘é€æ•°æ®
     int count = conn->m_writeBuf->sendData(conn->m_channel->getSocket());
     if (count > 0)
     {
-        // ÅĞ¶ÏÊı¾İÊÇ·ñ±»È«²¿·¢ËÍ³öÈ¥ÁË
+        // åˆ¤æ–­æ•°æ®æ˜¯å¦è¢«å…¨éƒ¨å‘é€å‡ºå»äº†
         if (conn->m_writeBuf->readableSize() == 0)
         {
-            // 1. ²»ÔÙ¼ì²âĞ´ÊÂ¼ş -- ĞŞ¸ÄchannelÖĞ±£´æµÄÊÂ¼ş
+            // 1. ä¸å†æ£€æµ‹å†™äº‹ä»¶ -- ä¿®æ”¹channelä¸­ä¿å­˜çš„äº‹ä»¶
             conn->m_channel->setCurrentEvent(FDEvent::ReadEvent);
-            // 2. ĞŞ¸Ädispatcher¼ì²âµÄ¼¯ºÏ -- Ìí¼ÓÈÎÎñ½Úµã
+            // 2. ä¿®æ”¹dispatcheræ£€æµ‹çš„é›†åˆ -- æ·»åŠ ä»»åŠ¡èŠ‚ç‚¹
             conn->m_evLoop->addTask(conn->m_channel, ElemType::MODIFY);
-            Debug("Êı¾İ·¢ËÍÍê±Ï....................");
+            Debug("æ•°æ®å‘é€å®Œæ¯•....................");
         }
     }
     return 0;
@@ -91,40 +92,40 @@ TcpConnection::~TcpConnection()
 }
 
 void TcpConnection::prepareSecreKey() {
-    //¶Á¹«Ô¿
-    ifstream ifs("public.pem");
-    stringstream sstr;
-    sstr<<ifs.rdbuf();
-    string data=sstr.str();
-    //·¢ËÍÊı¾İ
+    Room redis;
+    redis.initEnvironment();
+    //è¯»å…¬é’¥
+    std::string pubkey=redis.rsaSecKey("PublicKey");
+    //å‘é€æ•°æ®
     Message msg;
     msg.rescode=RespondCode::RsaFenFa;
-    msg.data1=data;
-    RsaCrypto rsa("private.pem",RsaCrypto::PrivateKey);
-    rsa.sign(data);
+    msg.data1=pubkey;
+    RsaCrypto rsa;
+    rsa.parseStringToKey(redis.rsaSecKey("PrivateKey"),RsaCrypto::PrivateKey);
+    std::string data= rsa.sign(pubkey);
     msg.data2=data;
     Codec codec(&msg);
     data=codec.encodeMsg();
-    //Ğ´Êı¾İ
+    //å†™æ•°æ®
     m_writeBuf->appendPackage(data);
 }
 
 void TcpConnection::addWriteTask(std::string data) {
-    //°ÑÊı¾İĞ´½øĞ´»º³åÇø
+    //æŠŠæ•°æ®å†™è¿›å†™ç¼“å†²åŒº
     m_writeBuf->appendPackage(data);
-#if 0//Í¨¹ıÊÂ¼ş½øĞĞ·¢ËÍ
-    // 1. ²»ÔÙ¼ì²âĞ´ÊÂ¼ş -- ĞŞ¸ÄchannelÖĞ±£´æµÄÊÂ¼ş
+#if 0//é€šè¿‡äº‹ä»¶è¿›è¡Œå‘é€
+    // 1. ä¸å†æ£€æµ‹å†™äº‹ä»¶ -- ä¿®æ”¹channelä¸­ä¿å­˜çš„äº‹ä»¶
     m_channel->setCurrentEvent(FDEvent::WriteEvent);
-    // 2. ĞŞ¸Ädispatcher¼ì²âµÄ¼¯ºÏ -- Ìí¼ÓÈÎÎñ½Úµã
+    // 2. ä¿®æ”¹dispatcheræ£€æµ‹çš„é›†åˆ -- æ·»åŠ ä»»åŠ¡èŠ‚ç‚¹
     m_evLoop->addTask(m_channel, ElemType::MODIFY);
-    Debug("Êı¾İ·¢ËÍÍê±Ï....................");
-#else //Ö±½Ó·¢ËÍ   (Êı¾İÁ¿´óÍÆ¼öÓÃÕâÖÖ)
+    Debug("æ•°æ®å‘é€å®Œæ¯•....................");
+#else //ç›´æ¥å‘é€   (æ•°æ®é‡å¤§æ¨èç”¨è¿™ç§)
     m_writeBuf->sendData(m_channel->getSocket());
 #endif
 }
 
 void TcpConnection::addDeleteTask() {
     m_evLoop->addTask(m_channel, ElemType::DELETE);
-    Debug("¶Ï¿ªÁËºÍ¿Í»§¶ËµÄÁ¬½Ó£¬connName=%s",m_name.data());
+    Debug("æ–­å¼€äº†å’Œå®¢æˆ·ç«¯çš„è¿æ¥ï¼ŒconnName=%s",m_name.data());
 }
 

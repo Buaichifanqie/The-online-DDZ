@@ -23,11 +23,16 @@ public:
     void onLogin();
     void onRegister();
     void onNetOK();
+    //保存数据
+    void saveUserInfo();
+    //加载数据
+    void loadUserInfo();
     ~Login();
 
 private:
     Ui::Login *ui;
     bool m_isConnected=false;
+    const QByteArray KEY ="奥奇传说启动！好玩爱玩！";
 };
 
 #endif // LOGIN_H

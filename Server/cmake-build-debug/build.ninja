@@ -52,7 +52,7 @@ build cmake_object_order_depends_target_Server: phony || cmake_object_order_depe
 build CMakeFiles/Server.dir/main.cpp.o: CXX_COMPILER__Server_unscanned_Debug /cygdrive/d/DDZ-network/Server/main.cpp || cmake_object_order_depends_target_Server
   DEP_FILE = CMakeFiles/Server.dir/main.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/cygdrive/d/DDZ-network/Server/test
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/usr/local/include -I/usr/local/include/json -I/usr/local/include/sw/redis++ -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = CMakeFiles/Server.dir
   OBJECT_FILE_DIR = CMakeFiles/Server.dir
 
@@ -64,11 +64,11 @@ build CMakeFiles/Server.dir/main.cpp.o: CXX_COMPILER__Server_unscanned_Debug /cy
 #############################################
 # Link the executable /cygdrive/d/DDZ-network/Server/bin/Server.exe
 
-build /cygdrive/d/DDZ-network/Server/bin/Server.exe: CXX_EXECUTABLE_LINKER__Server_Debug CMakeFiles/Server.dir/main.cpp.o | tcp/libtcp.a http/libhttp.a reactor/libreactor.a thread/libthread.a common/libcommon.a test/libtest.a Crypto/libCrypto.a serialize/libserialize.a game/libgame.a database/libdatabase.a Crypto/libCrypto.a || Crypto/libCrypto.a common/libcommon.a database/libdatabase.a game/libgame.a http/libhttp.a reactor/libreactor.a serialize/libserialize.a tcp/libtcp.a test/libtest.a thread/libthread.a
+build /cygdrive/d/DDZ-network/Server/bin/Server.exe: CXX_EXECUTABLE_LINKER__Server_Debug CMakeFiles/Server.dir/main.cpp.o | tcp/libtcp.a http/libhttp.a reactor/libreactor.a thread/libthread.a common/libcommon.a test/libtest.a Crypto/libCrypto.a serialize/libserialize.a game/libgame.a database/libdatabase.a common/libcommon.a /usr/local/lib64/libjsoncpp.so /usr/local/lib64/libjsoncpp.so.1.9.7 /usr/local/lib64/libjsoncpp.so.27 /usr/local/lib64/libjsoncpp.a Crypto/libCrypto.a || Crypto/libCrypto.a common/libcommon.a database/libdatabase.a game/libgame.a http/libhttp.a reactor/libreactor.a serialize/libserialize.a tcp/libtcp.a test/libtest.a thread/libthread.a
   FLAGS = -g
   LINK_FLAGS = -Wl,--enable-auto-import
-  LINK_LIBRARIES = tcp/libtcp.a  http/libhttp.a  reactor/libreactor.a  thread/libthread.a  common/libcommon.a  test/libtest.a  Crypto/libCrypto.a  serialize/libserialize.a  game/libgame.a  database/libdatabase.a  -lpthread  -lprotobuf  Crypto/libCrypto.a  -lcrypto  -lmysqlclient
-  LINK_PATH = -L/usr/local/ssl/lib64   -L/usr/lib64/mysql
+  LINK_LIBRARIES = tcp/libtcp.a  http/libhttp.a  reactor/libreactor.a  thread/libthread.a  common/libcommon.a  test/libtest.a  Crypto/libCrypto.a  serialize/libserialize.a  game/libgame.a  database/libdatabase.a  -lpthread  -lprotobuf  common/libcommon.a  /usr/local/lib64/libjsoncpp.so  /usr/local/lib64/libjsoncpp.so.1.9.7  /usr/local/lib64/libjsoncpp.so.27  /usr/local/lib64/libjsoncpp.a  Crypto/libCrypto.a  -lcrypto  -lhiredis  -lredis++  -lmysqlclient
+  LINK_PATH = -L/usr/local/ssl/lib64   -L/usr/lib64/mysql   -L/usr/local/lib64
   OBJECT_DIR = CMakeFiles/Server.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -116,14 +116,21 @@ build cmake_object_order_depends_target_common: phony || common/CMakeFiles/commo
 build common/CMakeFiles/common.dir/Buffer.cpp.o: CXX_COMPILER__common_unscanned_Debug /cygdrive/d/DDZ-network/Server/common/Buffer.cpp || cmake_object_order_depends_target_common
   DEP_FILE = common/CMakeFiles/common.dir/Buffer.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/cygdrive/d/DDZ-network/Server/test
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/usr/local/include -I/usr/local/include/json -I/usr/local/include/sw/redis++ -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = common/CMakeFiles/common.dir
   OBJECT_FILE_DIR = common/CMakeFiles/common.dir
 
 build common/CMakeFiles/common.dir/Channel.cpp.o: CXX_COMPILER__common_unscanned_Debug /cygdrive/d/DDZ-network/Server/common/Channel.cpp || cmake_object_order_depends_target_common
   DEP_FILE = common/CMakeFiles/common.dir/Channel.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/cygdrive/d/DDZ-network/Server/test
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/usr/local/include -I/usr/local/include/json -I/usr/local/include/sw/redis++ -I/cygdrive/d/DDZ-network/Server/test
+  OBJECT_DIR = common/CMakeFiles/common.dir
+  OBJECT_FILE_DIR = common/CMakeFiles/common.dir
+
+build common/CMakeFiles/common.dir/JsonParse.cpp.o: CXX_COMPILER__common_unscanned_Debug /cygdrive/d/DDZ-network/Server/common/JsonParse.cpp || cmake_object_order_depends_target_common
+  DEP_FILE = common/CMakeFiles/common.dir/JsonParse.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/usr/local/include -I/usr/local/include/json -I/usr/local/include/sw/redis++ -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = common/CMakeFiles/common.dir
   OBJECT_FILE_DIR = common/CMakeFiles/common.dir
 
@@ -135,7 +142,7 @@ build common/CMakeFiles/common.dir/Channel.cpp.o: CXX_COMPILER__common_unscanned
 #############################################
 # Link the static library common/libcommon.a
 
-build common/libcommon.a: CXX_STATIC_LIBRARY_LINKER__common_Debug common/CMakeFiles/common.dir/Buffer.cpp.o common/CMakeFiles/common.dir/Channel.cpp.o
+build common/libcommon.a: CXX_STATIC_LIBRARY_LINKER__common_Debug common/CMakeFiles/common.dir/Buffer.cpp.o common/CMakeFiles/common.dir/Channel.cpp.o common/CMakeFiles/common.dir/JsonParse.cpp.o
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = common/CMakeFiles/common.dir
   POST_BUILD = :
@@ -183,14 +190,14 @@ build cmake_object_order_depends_target_http: phony || http/CMakeFiles/http.dir
 build http/CMakeFiles/http.dir/HttpRequest.cpp.o: CXX_COMPILER__http_unscanned_Debug /cygdrive/d/DDZ-network/Server/http/HttpRequest.cpp || cmake_object_order_depends_target_http
   DEP_FILE = http/CMakeFiles/http.dir/HttpRequest.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/cygdrive/d/DDZ-network/Server/test
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/usr/local/include -I/usr/local/include/json -I/usr/local/include/sw/redis++ -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = http/CMakeFiles/http.dir
   OBJECT_FILE_DIR = http/CMakeFiles/http.dir
 
 build http/CMakeFiles/http.dir/HttpResponse.cpp.o: CXX_COMPILER__http_unscanned_Debug /cygdrive/d/DDZ-network/Server/http/HttpResponse.cpp || cmake_object_order_depends_target_http
   DEP_FILE = http/CMakeFiles/http.dir/HttpResponse.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/cygdrive/d/DDZ-network/Server/test
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/usr/local/include -I/usr/local/include/json -I/usr/local/include/sw/redis++ -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = http/CMakeFiles/http.dir
   OBJECT_FILE_DIR = http/CMakeFiles/http.dir
 
@@ -250,35 +257,35 @@ build cmake_object_order_depends_target_reactor: phony || reactor/CMakeFiles/rea
 build reactor/CMakeFiles/reactor.dir/Dispatcher.cpp.o: CXX_COMPILER__reactor_unscanned_Debug /cygdrive/d/DDZ-network/Server/reactor/Dispatcher.cpp || cmake_object_order_depends_target_reactor
   DEP_FILE = reactor/CMakeFiles/reactor.dir/Dispatcher.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/cygdrive/d/DDZ-network/Server/test
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/usr/local/include -I/usr/local/include/json -I/usr/local/include/sw/redis++ -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = reactor/CMakeFiles/reactor.dir
   OBJECT_FILE_DIR = reactor/CMakeFiles/reactor.dir
 
 build reactor/CMakeFiles/reactor.dir/EpollDispatcher.cpp.o: CXX_COMPILER__reactor_unscanned_Debug /cygdrive/d/DDZ-network/Server/reactor/EpollDispatcher.cpp || cmake_object_order_depends_target_reactor
   DEP_FILE = reactor/CMakeFiles/reactor.dir/EpollDispatcher.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/cygdrive/d/DDZ-network/Server/test
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/usr/local/include -I/usr/local/include/json -I/usr/local/include/sw/redis++ -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = reactor/CMakeFiles/reactor.dir
   OBJECT_FILE_DIR = reactor/CMakeFiles/reactor.dir
 
 build reactor/CMakeFiles/reactor.dir/EventLoop.cpp.o: CXX_COMPILER__reactor_unscanned_Debug /cygdrive/d/DDZ-network/Server/reactor/EventLoop.cpp || cmake_object_order_depends_target_reactor
   DEP_FILE = reactor/CMakeFiles/reactor.dir/EventLoop.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/cygdrive/d/DDZ-network/Server/test
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/usr/local/include -I/usr/local/include/json -I/usr/local/include/sw/redis++ -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = reactor/CMakeFiles/reactor.dir
   OBJECT_FILE_DIR = reactor/CMakeFiles/reactor.dir
 
 build reactor/CMakeFiles/reactor.dir/PollDispatcher.cpp.o: CXX_COMPILER__reactor_unscanned_Debug /cygdrive/d/DDZ-network/Server/reactor/PollDispatcher.cpp || cmake_object_order_depends_target_reactor
   DEP_FILE = reactor/CMakeFiles/reactor.dir/PollDispatcher.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/cygdrive/d/DDZ-network/Server/test
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/usr/local/include -I/usr/local/include/json -I/usr/local/include/sw/redis++ -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = reactor/CMakeFiles/reactor.dir
   OBJECT_FILE_DIR = reactor/CMakeFiles/reactor.dir
 
 build reactor/CMakeFiles/reactor.dir/SelectDispatcher.cpp.o: CXX_COMPILER__reactor_unscanned_Debug /cygdrive/d/DDZ-network/Server/reactor/SelectDispatcher.cpp || cmake_object_order_depends_target_reactor
   DEP_FILE = reactor/CMakeFiles/reactor.dir/SelectDispatcher.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/cygdrive/d/DDZ-network/Server/test
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/usr/local/include -I/usr/local/include/json -I/usr/local/include/sw/redis++ -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = reactor/CMakeFiles/reactor.dir
   OBJECT_FILE_DIR = reactor/CMakeFiles/reactor.dir
 
@@ -338,14 +345,14 @@ build cmake_object_order_depends_target_tcp: phony || tcp/CMakeFiles/tcp.dir
 build tcp/CMakeFiles/tcp.dir/TcpConnection.cpp.o: CXX_COMPILER__tcp_unscanned_Debug /cygdrive/d/DDZ-network/Server/tcp/TcpConnection.cpp || cmake_object_order_depends_target_tcp
   DEP_FILE = tcp/CMakeFiles/tcp.dir/TcpConnection.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/cygdrive/d/DDZ-network/Server/test
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/usr/local/include -I/usr/local/include/json -I/usr/local/include/sw/redis++ -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = tcp/CMakeFiles/tcp.dir
   OBJECT_FILE_DIR = tcp/CMakeFiles/tcp.dir
 
 build tcp/CMakeFiles/tcp.dir/TcpServer.cpp.o: CXX_COMPILER__tcp_unscanned_Debug /cygdrive/d/DDZ-network/Server/tcp/TcpServer.cpp || cmake_object_order_depends_target_tcp
   DEP_FILE = tcp/CMakeFiles/tcp.dir/TcpServer.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/cygdrive/d/DDZ-network/Server/test
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/usr/local/include -I/usr/local/include/json -I/usr/local/include/sw/redis++ -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = tcp/CMakeFiles/tcp.dir
   OBJECT_FILE_DIR = tcp/CMakeFiles/tcp.dir
 
@@ -405,14 +412,14 @@ build cmake_object_order_depends_target_thread: phony || thread/CMakeFiles/threa
 build thread/CMakeFiles/thread.dir/ThreadPool.cpp.o: CXX_COMPILER__thread_unscanned_Debug /cygdrive/d/DDZ-network/Server/thread/ThreadPool.cpp || cmake_object_order_depends_target_thread
   DEP_FILE = thread/CMakeFiles/thread.dir/ThreadPool.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/cygdrive/d/DDZ-network/Server/test
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/usr/local/include -I/usr/local/include/json -I/usr/local/include/sw/redis++ -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = thread/CMakeFiles/thread.dir
   OBJECT_FILE_DIR = thread/CMakeFiles/thread.dir
 
 build thread/CMakeFiles/thread.dir/WorkerThread.cpp.o: CXX_COMPILER__thread_unscanned_Debug /cygdrive/d/DDZ-network/Server/thread/WorkerThread.cpp || cmake_object_order_depends_target_thread
   DEP_FILE = thread/CMakeFiles/thread.dir/WorkerThread.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/cygdrive/d/DDZ-network/Server/test
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/usr/local/include -I/usr/local/include/json -I/usr/local/include/sw/redis++ -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = thread/CMakeFiles/thread.dir
   OBJECT_FILE_DIR = thread/CMakeFiles/thread.dir
 
@@ -472,28 +479,28 @@ build cmake_object_order_depends_target_Crypto: phony || Crypto/CMakeFiles/Crypt
 build Crypto/CMakeFiles/Crypto.dir/AesCropto.cpp.o: CXX_COMPILER__Crypto_unscanned_Debug /cygdrive/d/DDZ-network/Server/Crypto/AesCropto.cpp || cmake_object_order_depends_target_Crypto
   DEP_FILE = Crypto/CMakeFiles/Crypto.dir/AesCropto.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/cygdrive/d/DDZ-network/Server/test
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/usr/local/include -I/usr/local/include/json -I/usr/local/include/sw/redis++ -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = Crypto/CMakeFiles/Crypto.dir
   OBJECT_FILE_DIR = Crypto/CMakeFiles/Crypto.dir
 
 build Crypto/CMakeFiles/Crypto.dir/Base64.cpp.o: CXX_COMPILER__Crypto_unscanned_Debug /cygdrive/d/DDZ-network/Server/Crypto/Base64.cpp || cmake_object_order_depends_target_Crypto
   DEP_FILE = Crypto/CMakeFiles/Crypto.dir/Base64.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/cygdrive/d/DDZ-network/Server/test
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/usr/local/include -I/usr/local/include/json -I/usr/local/include/sw/redis++ -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = Crypto/CMakeFiles/Crypto.dir
   OBJECT_FILE_DIR = Crypto/CMakeFiles/Crypto.dir
 
 build Crypto/CMakeFiles/Crypto.dir/Hash.cpp.o: CXX_COMPILER__Crypto_unscanned_Debug /cygdrive/d/DDZ-network/Server/Crypto/Hash.cpp || cmake_object_order_depends_target_Crypto
   DEP_FILE = Crypto/CMakeFiles/Crypto.dir/Hash.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/cygdrive/d/DDZ-network/Server/test
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/usr/local/include -I/usr/local/include/json -I/usr/local/include/sw/redis++ -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = Crypto/CMakeFiles/Crypto.dir
   OBJECT_FILE_DIR = Crypto/CMakeFiles/Crypto.dir
 
 build Crypto/CMakeFiles/Crypto.dir/RsaCrypto.cpp.o: CXX_COMPILER__Crypto_unscanned_Debug /cygdrive/d/DDZ-network/Server/Crypto/RsaCrypto.cpp || cmake_object_order_depends_target_Crypto
   DEP_FILE = Crypto/CMakeFiles/Crypto.dir/RsaCrypto.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/cygdrive/d/DDZ-network/Server/test
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/usr/local/include -I/usr/local/include/json -I/usr/local/include/sw/redis++ -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = Crypto/CMakeFiles/Crypto.dir
   OBJECT_FILE_DIR = Crypto/CMakeFiles/Crypto.dir
 
@@ -553,14 +560,14 @@ build cmake_object_order_depends_target_serialize: phony || serialize/CMakeFiles
 build serialize/CMakeFiles/serialize.dir/Codec.cpp.o: CXX_COMPILER__serialize_unscanned_Debug /cygdrive/d/DDZ-network/Server/serialize/Codec.cpp || cmake_object_order_depends_target_serialize
   DEP_FILE = serialize/CMakeFiles/serialize.dir/Codec.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/cygdrive/d/DDZ-network/Server/test
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/usr/local/include -I/usr/local/include/json -I/usr/local/include/sw/redis++ -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = serialize/CMakeFiles/serialize.dir
   OBJECT_FILE_DIR = serialize/CMakeFiles/serialize.dir
 
 build serialize/CMakeFiles/serialize.dir/information.pb.cc.o: CXX_COMPILER__serialize_unscanned_Debug /cygdrive/d/DDZ-network/Server/serialize/information.pb.cc || cmake_object_order_depends_target_serialize
   DEP_FILE = serialize/CMakeFiles/serialize.dir/information.pb.cc.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/cygdrive/d/DDZ-network/Server/test
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/usr/local/include -I/usr/local/include/json -I/usr/local/include/sw/redis++ -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = serialize/CMakeFiles/serialize.dir
   OBJECT_FILE_DIR = serialize/CMakeFiles/serialize.dir
 
@@ -615,12 +622,26 @@ build serialize/rebuild_cache: phony serialize/CMakeFiles/rebuild_cache.util
 #############################################
 # Order-only phony target for game
 
-build cmake_object_order_depends_target_game: phony || cmake_object_order_depends_target_Crypto
+build cmake_object_order_depends_target_game: phony || cmake_object_order_depends_target_Crypto cmake_object_order_depends_target_common
 
 build game/CMakeFiles/game.dir/Communication.cpp.o: CXX_COMPILER__game_unscanned_Debug /cygdrive/d/DDZ-network/Server/game/Communication.cpp || cmake_object_order_depends_target_game
   DEP_FILE = game/CMakeFiles/game.dir/Communication.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/cygdrive/d/DDZ-network/Server/test
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/usr/local/include -I/usr/local/include/json -I/usr/local/include/sw/redis++ -I/cygdrive/d/DDZ-network/Server/test
+  OBJECT_DIR = game/CMakeFiles/game.dir
+  OBJECT_FILE_DIR = game/CMakeFiles/game.dir
+
+build game/CMakeFiles/game.dir/Room.cpp.o: CXX_COMPILER__game_unscanned_Debug /cygdrive/d/DDZ-network/Server/game/Room.cpp || cmake_object_order_depends_target_game
+  DEP_FILE = game/CMakeFiles/game.dir/Room.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/usr/local/include -I/usr/local/include/json -I/usr/local/include/sw/redis++ -I/cygdrive/d/DDZ-network/Server/test
+  OBJECT_DIR = game/CMakeFiles/game.dir
+  OBJECT_FILE_DIR = game/CMakeFiles/game.dir
+
+build game/CMakeFiles/game.dir/RoomList.cpp.o: CXX_COMPILER__game_unscanned_Debug /cygdrive/d/DDZ-network/Server/game/RoomList.cpp || cmake_object_order_depends_target_game
+  DEP_FILE = game/CMakeFiles/game.dir/RoomList.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/usr/local/include -I/usr/local/include/json -I/usr/local/include/sw/redis++ -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = game/CMakeFiles/game.dir
   OBJECT_FILE_DIR = game/CMakeFiles/game.dir
 
@@ -632,7 +653,7 @@ build game/CMakeFiles/game.dir/Communication.cpp.o: CXX_COMPILER__game_unscanned
 #############################################
 # Link the static library game/libgame.a
 
-build game/libgame.a: CXX_STATIC_LIBRARY_LINKER__game_Debug game/CMakeFiles/game.dir/Communication.cpp.o || Crypto/libCrypto.a
+build game/libgame.a: CXX_STATIC_LIBRARY_LINKER__game_Debug game/CMakeFiles/game.dir/Communication.cpp.o game/CMakeFiles/game.dir/Room.cpp.o game/CMakeFiles/game.dir/RoomList.cpp.o || Crypto/libCrypto.a common/libcommon.a
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = game/CMakeFiles/game.dir
   POST_BUILD = :
@@ -680,7 +701,7 @@ build cmake_object_order_depends_target_database: phony || database/CMakeFiles/d
 build database/CMakeFiles/database.dir/MySqlConn.cpp.o: CXX_COMPILER__database_unscanned_Debug /cygdrive/d/DDZ-network/Server/database/MySqlConn.cpp || cmake_object_order_depends_target_database
   DEP_FILE = database/CMakeFiles/database.dir/MySqlConn.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/cygdrive/d/DDZ-network/Server/test
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/usr/local/include -I/usr/local/include/json -I/usr/local/include/sw/redis++ -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = database/CMakeFiles/database.dir
   OBJECT_FILE_DIR = database/CMakeFiles/database.dir
 
@@ -740,21 +761,21 @@ build cmake_object_order_depends_target_test: phony || test/CMakeFiles/test.dir
 build test/CMakeFiles/test.dir/MyTest.cpp.o: CXX_COMPILER__test_unscanned_Debug /cygdrive/d/DDZ-network/Server/test/MyTest.cpp || cmake_object_order_depends_target_test
   DEP_FILE = test/CMakeFiles/test.dir/MyTest.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/cygdrive/d/DDZ-network/Server/test
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/usr/local/include -I/usr/local/include/json -I/usr/local/include/sw/redis++ -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = test/CMakeFiles/test.dir
   OBJECT_FILE_DIR = test/CMakeFiles/test.dir
 
 build test/CMakeFiles/test.dir/address.pb.cc.o: CXX_COMPILER__test_unscanned_Debug /cygdrive/d/DDZ-network/Server/test/address.pb.cc || cmake_object_order_depends_target_test
   DEP_FILE = test/CMakeFiles/test.dir/address.pb.cc.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/cygdrive/d/DDZ-network/Server/test
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/usr/local/include -I/usr/local/include/json -I/usr/local/include/sw/redis++ -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = test/CMakeFiles/test.dir
   OBJECT_FILE_DIR = test/CMakeFiles/test.dir
 
 build test/CMakeFiles/test.dir/person.pb.cc.o: CXX_COMPILER__test_unscanned_Debug /cygdrive/d/DDZ-network/Server/test/person.pb.cc || cmake_object_order_depends_target_test
   DEP_FILE = test/CMakeFiles/test.dir/person.pb.cc.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/cygdrive/d/DDZ-network/Server/test
+  INCLUDES = -I/cygdrive/d/DDZ-network/Server/common -I/cygdrive/d/DDZ-network/Server/http -I/cygdrive/d/DDZ-network/Server/reactor -I/cygdrive/d/DDZ-network/Server/tcp -I/cygdrive/d/DDZ-network/Server/thread -I/cygdrive/d/DDZ-network/Server/Crypto -I/cygdrive/d/DDZ-network/Server/serialize -I/cygdrive/d/DDZ-network/Server/game -I/cygdrive/d/DDZ-network/Server/database -I/usr/local/ssl/include -I/usr/include/mysql -I/usr/local/include -I/usr/local/include/json -I/usr/local/include/sw/redis++ -I/cygdrive/d/DDZ-network/Server/test
   OBJECT_DIR = test/CMakeFiles/test.dir
   OBJECT_FILE_DIR = test/CMakeFiles/test.dir
 

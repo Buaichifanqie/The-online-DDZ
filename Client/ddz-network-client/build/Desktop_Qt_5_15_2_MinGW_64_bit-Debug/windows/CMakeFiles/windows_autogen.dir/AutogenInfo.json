@@ -62,9 +62,21 @@
 			null
 		],
 		[
+			"D:/DDZ-network/Client/ddz-network-client/windows/gamemode.h",
+			"MU",
+			"EWIEGA46WW/moc_gamemode.cpp",
+			null
+		],
+		[
 			"D:/DDZ-network/Client/ddz-network-client/windows/gamepanel.h",
 			"MU",
 			"EWIEGA46WW/moc_gamepanel.cpp",
+			null
+		],
+		[
+			"D:/DDZ-network/Client/ddz-network-client/windows/joinroom.h",
+			"MU",
+			"EWIEGA46WW/moc_joinroom.cpp",
 			null
 		],
 		[
@@ -190,7 +202,17 @@
 			null
 		],
 		[
+			"D:/DDZ-network/Client/ddz-network-client/windows/gamemode.cpp",
+			"MU",
+			null
+		],
+		[
 			"D:/DDZ-network/Client/ddz-network-client/windows/gamepanel.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/DDZ-network/Client/ddz-network-client/windows/joinroom.cpp",
 			"MU",
 			null
 		],

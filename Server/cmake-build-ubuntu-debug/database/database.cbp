@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="database"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\Crypto\;CMake Files\common\;CMake Files\http\;CMake Files\reactor\;CMake Files\tcp\;CMake Files\thread\;CMake Files\serialize\;CMake Files\game\;CMake Files\database\;CMake Files\test\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/kws/project/ddz-net/cmake-build-ubuntu-debug/database"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j2 -f &quot;/home/kws/project/ddz-net/cmake-build-ubuntu-debug/database/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j2 -f &quot;/home/kws/project/ddz-net/cmake-build-ubuntu-debug/database/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j2 -f &quot;/home/kws/project/ddz-net/cmake-build-ubuntu-debug/database/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j2 -f &quot;/home/kws/project/ddz-net/cmake-build-ubuntu-debug/database/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="database">
+				<Option output="/home/kws/project/ddz-net/cmake-build-ubuntu-debug/database/libdatabase.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/kws/project/ddz-net/cmake-build-ubuntu-debug/database"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/kws/project/ddz-net/common"/>
+					<Add directory="/home/kws/project/ddz-net/http"/>
+					<Add directory="/home/kws/project/ddz-net/reactor"/>
+					<Add directory="/home/kws/project/ddz-net/tcp"/>
+					<Add directory="/home/kws/project/ddz-net/thread"/>
+					<Add directory="/home/kws/project/ddz-net/Crypto"/>
+					<Add directory="/home/kws/project/ddz-net/serialize"/>
+					<Add directory="/home/kws/project/ddz-net/game"/>
+					<Add directory="/home/kws/project/ddz-net/database"/>
+					<Add directory="/usr/local/ssl/include"/>
+					<Add directory="/usr/include/mysql"/>
+					<Add directory="/usr/local/include/json"/>
+					<Add directory="/usr/local/include/sw/redis++"/>
+					<Add directory="/home/kws/project/ddz-net/test"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j2 -f &quot;/home/kws/project/ddz-net/cmake-build-ubuntu-debug/database/Makefile&quot;  VERBOSE=1 database"/>
+					<CompileFile command="/usr/bin/gmake -j2 -f &quot;/home/kws/project/ddz-net/cmake-build-ubuntu-debug/database/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j2 -f &quot;/home/kws/project/ddz-net/cmake-build-ubuntu-debug/database/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j2 -f &quot;/home/kws/project/ddz-net/cmake-build-ubuntu-debug/database/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="database/fast">
+				<Option output="/home/kws/project/ddz-net/cmake-build-ubuntu-debug/database/libdatabase.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/kws/project/ddz-net/cmake-build-ubuntu-debug/database"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/kws/project/ddz-net/common"/>
+					<Add directory="/home/kws/project/ddz-net/http"/>
+					<Add directory="/home/kws/project/ddz-net/reactor"/>
+					<Add directory="/home/kws/project/ddz-net/tcp"/>
+					<Add directory="/home/kws/project/ddz-net/thread"/>
+					<Add directory="/home/kws/project/ddz-net/Crypto"/>
+					<Add directory="/home/kws/project/ddz-net/serialize"/>
+					<Add directory="/home/kws/project/ddz-net/game"/>
+					<Add directory="/home/kws/project/ddz-net/database"/>
+					<Add directory="/usr/local/ssl/include"/>
+					<Add directory="/usr/include/mysql"/>
+					<Add directory="/usr/local/include/json"/>
+					<Add directory="/usr/local/include/sw/redis++"/>
+					<Add directory="/home/kws/project/ddz-net/test"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j2 -f &quot;/home/kws/project/ddz-net/cmake-build-ubuntu-debug/database/Makefile&quot;  VERBOSE=1 database/fast"/>
+					<CompileFile command="/usr/bin/gmake -j2 -f &quot;/home/kws/project/ddz-net/cmake-build-ubuntu-debug/database/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j2 -f &quot;/home/kws/project/ddz-net/cmake-build-ubuntu-debug/database/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j2 -f &quot;/home/kws/project/ddz-net/cmake-build-ubuntu-debug/database/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/kws/project/ddz-net/database/MySqlConn.cpp">
+			<Option target="database"/>
+		</Unit>
+		<Unit filename="/home/kws/project/ddz-net/database/MySqlConn.h">
+			<Option target="database"/>
+		</Unit>
+		<Unit filename="/home/kws/project/ddz-net/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/kws/project/ddz-net/Crypto/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Crypto\"/>
+		</Unit>
+		<Unit filename="/home/kws/project/ddz-net/common/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\common\"/>
+		</Unit>
+		<Unit filename="/home/kws/project/ddz-net/http/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\http\"/>
+		</Unit>
+		<Unit filename="/home/kws/project/ddz-net/reactor/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\reactor\"/>
+		</Unit>
+		<Unit filename="/home/kws/project/ddz-net/tcp/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\tcp\"/>
+		</Unit>
+		<Unit filename="/home/kws/project/ddz-net/thread/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thread\"/>
+		</Unit>
+		<Unit filename="/home/kws/project/ddz-net/serialize/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\serialize\"/>
+		</Unit>
+		<Unit filename="/home/kws/project/ddz-net/game/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\game\"/>
+		</Unit>
+		<Unit filename="/home/kws/project/ddz-net/database/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\database\"/>
+		</Unit>
+		<Unit filename="/home/kws/project/ddz-net/test/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\test\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

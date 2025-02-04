@@ -14,6 +14,7 @@
 //反序列化->将解析出来的数据存储到这个结构体中
 struct Message{
     std::string userName;
+    std::string roomName;
     std::string data1;
     std::string data2;
     std::string data3;

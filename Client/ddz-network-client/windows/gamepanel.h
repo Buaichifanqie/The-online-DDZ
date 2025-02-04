@@ -20,6 +20,7 @@ class GamePanel : public QMainWindow
     Q_OBJECT
 
 public:
+    using orderMap=QMap<int,QPair<QByteArray,int>>;
     GamePanel(QWidget *parent = nullptr);
     ~GamePanel();
     enum AnimationType{ShunZi, LianDui, Plane, JokerBomb, Bomb, Bet};
@@ -73,11 +74,19 @@ public:
     void showEndingScorePanel();
     // 初始化闹钟倒计时
     void initCountDown();
-
+    //处理网络模式下玩家的发牌顺序和分数
+    void initGamePanel(QByteArray msg);
+    //更新用户名和分数
+    void updatePlayerInfo(orderMap &info);
+    //开始游戏
+    void startGame();
+    void startGame(int index);
 protected:
     void paintEvent(QPaintEvent* ev);
     void mouseMoveEvent(QMouseEvent* ev);
-
+    void closeEvent(QCloseEvent* ev);
+signals:
+    void panelClose();
 
 private:
     enum CardAlign{Horizontal, Vertical};
@@ -120,5 +129,6 @@ private:
     QHash<CardPanel*, QRect> m_userCards;
     CountDown* m_countDown;
     BGMControl* m_bgm;
+    QByteArrayList m_nameList;
 };
 #endif // GAMEPANEL_H

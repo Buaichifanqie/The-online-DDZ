@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.24)
+cmake_minimum_required(VERSION 3.27)
 project(game)
 set(CMAKE_CXX_STANDARD 17)
 
@@ -6,5 +6,5 @@ set(CMAKE_CXX_STANDARD 17)
 aux_source_directory(./ SRC)
 # 把源文件制作成静态库
 add_library(game STATIC ${SRC}
-)
-target_link_libraries(game Crypto)
+        RoomList.h)
+target_link_libraries(game Crypto common hiredis redis++)

@@ -5,6 +5,9 @@ enum RequestCode
   UserLogin=0;
   Register=1;
   AesFenfa=2;
+  AutoRoom=3;
+  ManualRoom=4;
+  SearchRoom=5;
 };
 
 enum RespondCode
@@ -13,18 +16,24 @@ enum RespondCode
   RegisterOK=1;
   RsaFenFa=2;
   AesVerifyOK=3;
-  Failed=4;
+  JoinRoomOK=4;
+  StartGame=5;
+  SearchRoomOK=6;
+  DealCards=7;
+  Failed=8;
+
 };
 
 
 message Information
 {
   string userName=1;
+  string roomName=2;
   //预留三个空位
-  string data1=2;
-  string data2=3;
-  string data3=4;
+  string data1=3;
+  string data2=4;
+  string data3=5;
 
-  RequestCode reqcode=5;
-  RespondCode rescode=6;
+  RequestCode reqcode=6;
+  RespondCode rescode=7;
 }

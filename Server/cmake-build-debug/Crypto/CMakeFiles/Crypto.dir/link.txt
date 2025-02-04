@@ -1,0 +1,2 @@
+/usr/bin/ar qc libCrypto.a CMakeFiles/Crypto.dir/AesCropto.cpp.o CMakeFiles/Crypto.dir/AesCrypto.cpp.o CMakeFiles/Crypto.dir/Base64.cpp.o CMakeFiles/Crypto.dir/Hash.cpp.o CMakeFiles/Crypto.dir/RsaCrypto.cpp.o
+/usr/bin/ranlib libCrypto.a

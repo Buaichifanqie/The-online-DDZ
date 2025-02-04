@@ -1,4 +1,13 @@
-C:\Users\kongwenshuo\AppData\Local\JetBrains\CLion2024.1\cygwin_cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/cygdrive/d/CLion_2024.1.2/bin/ninja/cygwin/x64/ninja.exe -G Ninja -S /cygdrive/d/DDZ-network/Server -B /cygdrive/d/DDZ-network/Server/cmake-build-debug
--- Configuring done (0.3s)
--- Generating done (0.1s)
--- Build files have been written to: /cygdrive/d/DDZ-network/Server/cmake-build-debug
+/home/kws/tool/cmake-3.27.4/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /home/kws/project/ddz-net -B /home/kws/project/ddz-net/cmake-build-debug
+CMake Deprecation Warning:
+  Support for "Extra Generators" like
+
+    CodeBlocks
+
+  is deprecated and will be removed from a future version of CMake.  IDEs may
+  use the cmake-file-api(7) to view CMake-generated project build trees.
+
+
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/kws/project/ddz-net/cmake-build-debug
