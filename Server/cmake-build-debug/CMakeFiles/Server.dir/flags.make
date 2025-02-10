@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/kws/project/ddz-net/common -I/home/kws/project/ddz-net/http -I/home/kws/project/ddz-net/reactor -I/home/kws/project/ddz-net/tcp -I/home/kws/project/ddz-net/thread -I/home/kws/project/ddz-net/Crypto -I/home/kws/project/ddz-net/serialize -I/home/kws/project/ddz-net/game -I/home/kws/project/ddz-net/database -I/usr/local/ssl/include -I/usr/include/mysql -I/usr/local/include/json -I/usr/local/include/sw/redis++ -I/home/kws/project/ddz-net/test
+CXX_INCLUDES = -I/home/kws/project/ddz-net/common -I/home/kws/project/ddz-net/http -I/home/kws/project/ddz-net/reactor -I/home/kws/project/ddz-net/tcp -I/home/kws/project/ddz-net/thread -I/home/kws/project/ddz-net/Crypto -I/home/kws/project/ddz-net/serialize -I/home/kws/project/ddz-net/game -I/home/kws/project/ddz-net/database -I/usr/local/ssl/include -I/usr/include/mariadb -I/usr/local/include/json -I/usr/local/include/sw/redis++ -I/home/kws/project/ddz-net/test
 
 CXX_FLAGS = -g -fdiagnostics-color=always
 

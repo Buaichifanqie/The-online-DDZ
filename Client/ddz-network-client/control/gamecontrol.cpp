@@ -102,7 +102,7 @@ Cards GameControl::getPendCards()
 void GameControl::initAllCards()
 {
     //判断是不是网络模式
-    if(DataManager::getInstance()->getGameMode()==DataManager::NetWork)
+    if(DataManager::getInstance()->isNetworkMode())
     {
         m_allCards=DataManager::getInstance()->getCards();
         m_allCards.add(DataManager::getInstance()->getLast3Cards());

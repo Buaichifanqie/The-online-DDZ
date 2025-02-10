@@ -45,6 +45,8 @@ signals:
     void failedMsg(QByteArray msg);
     void playerCount(int number);
     void startGame(QByteArray msg);
+    void roomExist(bool);
+    void somebodyLeave(int count);
 private:
     Message m_msgInfo;
     bool m_stop=false;

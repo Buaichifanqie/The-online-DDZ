@@ -14,6 +14,7 @@ control_autogen/timestamp: \
 	D:/DDZ-network/Client/ddz-network-client/player/player.h \
 	D:/DDZ-network/Client/ddz-network-client/player/robot.h \
 	D:/DDZ-network/Client/ddz-network-client/player/userplayer.h \
+	D:/Qt/5.15.2/mingw81_64/include/QtCore/QDataStream \
 	D:/Qt/5.15.2/mingw81_64/include/QtCore/QObject \
 	D:/Qt/5.15.2/mingw81_64/include/QtCore/QSet \
 	D:/Qt/5.15.2/mingw81_64/include/QtCore/QSharedDataPointer \
@@ -34,6 +35,7 @@ control_autogen/timestamp: \
 	D:/Qt/5.15.2/mingw81_64/include/QtCore/qcontainerfwd.h \
 	D:/Qt/5.15.2/mingw81_64/include/QtCore/qcontainertools_impl.h \
 	D:/Qt/5.15.2/mingw81_64/include/QtCore/qcontiguouscache.h \
+	D:/Qt/5.15.2/mingw81_64/include/QtCore/qdatastream.h \
 	D:/Qt/5.15.2/mingw81_64/include/QtCore/qdebug.h \
 	D:/Qt/5.15.2/mingw81_64/include/QtCore/qflags.h \
 	D:/Qt/5.15.2/mingw81_64/include/QtCore/qgenericatomic.h \

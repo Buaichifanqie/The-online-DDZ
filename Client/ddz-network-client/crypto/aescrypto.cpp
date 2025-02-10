@@ -81,7 +81,6 @@ QByteArray AesCrypto::aesCrypto(QByteArray text, CryptoType type)
     EVP_CIPHER_CTX_free(ctx);
     return outtext;
 }
-
 void AesCrypto::generateIvec(unsigned char *ivec)
 {
     QCryptographicHash hs(QCryptographicHash::Md5);

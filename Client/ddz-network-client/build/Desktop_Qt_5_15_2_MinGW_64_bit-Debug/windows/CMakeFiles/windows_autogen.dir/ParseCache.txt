@@ -1049,6 +1049,7 @@ D:/DDZ-network/Client/ddz-network-client/windows/cardpanel.h
  mdp:D:/DDZ-network/Client/ddz-network-client/card/cards.h
  mdp:D:/DDZ-network/Client/ddz-network-client/player/player.h
  mdp:D:/DDZ-network/Client/ddz-network-client/windows/cardpanel.h
+ mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/QDataStream
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/QObject
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/QSet
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/QVector
@@ -2432,6 +2433,7 @@ D:/DDZ-network/Client/ddz-network-client/windows/gamepanel.h
  mdp:D:/DDZ-network/Client/ddz-network-client/windows/cardpanel.h
  mdp:D:/DDZ-network/Client/ddz-network-client/windows/countdown.h
  mdp:D:/DDZ-network/Client/ddz-network-client/windows/gamepanel.h
+ mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/QDataStream
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/QMap
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/QObject
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/QSet

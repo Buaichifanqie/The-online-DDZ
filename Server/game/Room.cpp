@@ -154,3 +154,30 @@ std::string Room::playersOder(std::string roomName) {
     return data;
     return std::string();
 }
+
+void Room::leaveRoom(std::string roomName, std::string userName) {
+    if(m_redis->sismember(ThreePlayer,roomName))
+    {
+        m_redis->smove(ThreePlayer,Invalid,roomName);
+    }
+    //从房间中删除玩家
+    m_redis->zrem(roomName,userName);
+    auto count=m_redis->zcard(roomName);
+    if(count==0)
+    {
+        //删除房间
+        m_redis->del(roomName);
+        m_redis->srem(Invalid,roomName);
+    }
+}
+
+bool Room::serchRoom(std::string roomName) {
+    //搜素二人间
+    bool flag=m_redis->sismember(TwoPlayer,roomName);
+    //搜索一人间
+    if(!flag)
+    {
+        flag=m_redis->sismember(OnePlayer,roomName);
+    }
+    return flag;
+}

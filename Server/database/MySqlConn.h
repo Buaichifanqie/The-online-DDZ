@@ -8,41 +8,41 @@ using namespace chrono;
 class MySqlConn
 {
 public:
-    // ³õÊ¼»¯Êı¾İ¿âÁ¬½Ó
+    // åˆå§‹åŒ–æ•°æ®åº“è¿æ¥
     MySqlConn();
-    // ÊÍ·ÅÊı¾İ¿âÁ¬½Ó×ÊÔ´
+    // é‡Šæ”¾æ•°æ®åº“è¿æ¥èµ„æº
     ~MySqlConn();
-    // Á¬½ÓÊı¾İ¿â
-    bool connect(string user, string dbname, 
-    string password, string ip, unsigned short port = 3306);
-    // ¸üĞÂ²Ù×÷ insert¡¢delete¡¢update
+    // è¿æ¥æ•°æ®åº“
+    bool connect(string user, string dbname,
+                 string password, string ip, unsigned short port = 3306);
+    // æ›´æ–°æ“ä½œ insertã€deleteã€update
     bool update(string sql);
-    // ²éÑ¯²Ù×÷ select
+    // æŸ¥è¯¢æ“ä½œ select
     bool query(string sql);
-    // ÏòÏÂ±éÀú½á¹û¼¯ÖĞµÄÒ»Ìõ¼ÇÂ¼
+    // å‘ä¸‹éå†ç»“æœé›†ä¸­çš„ä¸€æ¡è®°å½•
     bool next();
-    // µÃµ½Ö¸¶¨Ë÷Òı¶ÔÓ¦µÄ×Ö¶ÎÖµ
+    // å¾—åˆ°æŒ‡å®šç´¢å¼•å¯¹åº”çš„å­—æ®µå€¼
     string value(int index);
 
-    // Ë¢ĞÂÒ»ÏÂÁ¬½ÓµÄÆğÊ¼µÄ¿ÕÏĞÊ±¼äµã
+    // åˆ·æ–°ä¸€ä¸‹è¿æ¥çš„èµ·å§‹çš„ç©ºé—²æ—¶é—´ç‚¹
     void refreshAliveTime();
-    // ·µ»Ø´æ»îµÄÊ±¼ä
+    // è¿”å›å­˜æ´»çš„æ—¶é—´
     long long getAliveTime()const;
-    // ÊÂÎñ transaction
+    // äº‹åŠ¡ transaction
     void transaction();
-    // Ìá½»ÊÂÎñ
+    // æäº¤äº‹åŠ¡
     void commit();
-    // ÊÂÎñ»Ø¹ö
+    // äº‹åŠ¡å›æ»š
     void rollback();
 
 private:
     void freeResult();
 
 private:
-    // ¿ÕÖ¸ÕëĞèÒªÊ¹ÓÃC API, ĞèÒªÊ¹ÓÃCÓïÑÔ±ê×¼, ²»ÄÜ°´ÕÕc++Ö¸¶¨nullptr
-    MYSQL* m_conn = NULL;          // Á¬½Ó MySQL ·şÎñÆ÷µÄÊµÀı
-    MYSQL_ROW m_row = NULL;        // ´æ´¢µ±Ç°±éÀúµ½µÄ½á¹û¼¯(¶ş¼¶Ö¸Õë char**)
-    MYSQL_RES* m_result = NULL;    // ´æ´¢²éÑ¯µ½µÄ½á¹û¼¯
-    steady_clock::time_point m_alivetime;              // ¼ÇÂ¼½øÈë¿ÕÏĞ×´Ì¬ºóµÄÆğÊ¼´æ»îÊ±¼ä
+    // ç©ºæŒ‡é’ˆéœ€è¦ä½¿ç”¨C API, éœ€è¦ä½¿ç”¨Cè¯­è¨€æ ‡å‡†, ä¸èƒ½æŒ‰ç…§c++æŒ‡å®šnullptr
+    MYSQL* m_conn = NULL;          // è¿æ¥ MySQL æœåŠ¡å™¨çš„å®ä¾‹
+    MYSQL_ROW m_row = NULL;        // å­˜å‚¨å½“å‰éå†åˆ°çš„ç»“æœé›†(äºŒçº§æŒ‡é’ˆ char**)
+    MYSQL_RES* m_result = NULL;    // å­˜å‚¨æŸ¥è¯¢åˆ°çš„ç»“æœé›†
+    steady_clock::time_point m_alivetime;              // è®°å½•è¿›å…¥ç©ºé—²çŠ¶æ€åçš„èµ·å§‹å­˜æ´»æ—¶é—´
 };
 

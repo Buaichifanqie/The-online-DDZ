@@ -16,15 +16,17 @@ GameMode::GameMode(QWidget *parent)
     ui->stackedWidget->setCurrentIndex(0);
     ui->information->setVisible(false);
 
+    setFixedSize(1200,750);
+
     //取出通信类的实例对象
     Communication* comm= DataManager::getInstance()->getCommunication();
     connect(comm,&Communication::playerCount,this,[=](int count){
-        QString tip=QString("当前<%1>房间玩家的人数为%2人,正在等待其他玩家进入,请稍后")
-            .arg(DataManager::getInstance()->getRoomName().data())
-            .arg(count);
-        ui->information->setText(tip);
+        showInfo(count);
         ui->information->setVisible(true);
     });
+
+    //更新玩家中的数量-有玩家退出房间
+    connect(comm,&Communication::somebodyLeave,this,&GameMode::showInfo);
 
     //开始游戏
     connect(comm,&Communication::startGame,this,[=](QByteArray msg)
@@ -64,6 +66,9 @@ GameMode::GameMode(QWidget *parent)
         msg.userName=DataManager::getInstance()->getUserName();
         msg.reqcode=RequestCode::AutoRoom;
         DataManager::getInstance()->getCommunication()->sendMessage(&msg);
+        DataManager::getInstance()->setRoomMode(DataManager::Auto);
+
+
     });
 
     connect(ui->manualBtn,&QPushButton::clicked,this,[=](){
@@ -83,6 +88,14 @@ GameMode::~GameMode()
     delete ui;
 }
 
+void GameMode::showInfo(int count)
+{
+    QString tip=QString("当前<%1>房间玩家的人数为%2人,正在等待其他玩家进入,请稍后")
+                      .arg(DataManager::getInstance()->getRoomName().data())
+                      .arg(count);
+    ui->information->setText(tip);
+}
+
 void GameMode::closeEvent(QCloseEvent *ev)
 {
     if(ui->stackedWidget->currentIndex()==1)
@@ -93,5 +106,12 @@ void GameMode::closeEvent(QCloseEvent *ev)
     else
     {
         ev->accept();
+        Message msg;
+        msg.reqcode=RequestCode::Goodbye;
+        msg.userName=DataManager::getInstance()->getUserName();
+        msg.roomName=DataManager::getInstance()->getRoomName();
+        DataManager::getInstance()->getCommunication()->sendMessage(&msg);
+        DataManager::getInstance()->getCommunication()->stopLoop();
+
     }
 }

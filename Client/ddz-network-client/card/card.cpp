@@ -70,3 +70,19 @@ bool operator <(const Card& c1, const Card& c2)
     return lessSort(c1, c2);
 }
 
+QDataStream& operator<<(QDataStream& in,const Card& card)
+{
+    int suit=static_cast<int>(card.suit());
+    int point=static_cast<int>(card.point());
+    in<<suit<<point;
+    return in;
+}
+QDataStream& operator>>(QDataStream& out,Card& card)
+{
+    int suit;
+    int point;
+    out>>suit>>point;
+    card.setSuit(static_cast<Card::CardSuit>(suit));
+    card.setPoint(static_cast<Card::CardPoint>(point));
+    return out;
+}

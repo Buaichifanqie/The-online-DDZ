@@ -6,6 +6,7 @@ D:/DDZ-network/Client/ddz-network-client/player/player.h
  mdp:D:/DDZ-network/Client/ddz-network-client/card/card.h
  mdp:D:/DDZ-network/Client/ddz-network-client/card/cards.h
  mdp:D:/DDZ-network/Client/ddz-network-client/player/player.h
+ mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/QDataStream
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/QObject
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/QSet
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/QVector
@@ -21,12 +22,14 @@ D:/DDZ-network/Client/ddz-network-client/player/player.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qconfig.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qcontainerfwd.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qcontainertools_impl.h
+ mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qdatastream.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qflags.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qgenericatomic.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qglobal.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qglobalstatic.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qhash.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qhashfunctions.h
+ mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qiodevice.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qiterator.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qlist.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qlogging.h
@@ -225,6 +228,7 @@ D:/DDZ-network/Client/ddz-network-client/player/robot.h
  mdp:D:/DDZ-network/Client/ddz-network-client/card/cards.h
  mdp:D:/DDZ-network/Client/ddz-network-client/player/player.h
  mdp:D:/DDZ-network/Client/ddz-network-client/player/robot.h
+ mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/QDataStream
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/QObject
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/QSet
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/QVector
@@ -240,12 +244,14 @@ D:/DDZ-network/Client/ddz-network-client/player/robot.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qconfig.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qcontainerfwd.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qcontainertools_impl.h
+ mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qdatastream.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qflags.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qgenericatomic.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qglobal.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qglobalstatic.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qhash.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qhashfunctions.h
+ mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qiodevice.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qiterator.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qlist.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qlogging.h
@@ -443,6 +449,7 @@ D:/DDZ-network/Client/ddz-network-client/player/userplayer.h
  mdp:D:/DDZ-network/Client/ddz-network-client/card/cards.h
  mdp:D:/DDZ-network/Client/ddz-network-client/player/player.h
  mdp:D:/DDZ-network/Client/ddz-network-client/player/userplayer.h
+ mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/QDataStream
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/QObject
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/QSet
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/QVector
@@ -458,12 +465,14 @@ D:/DDZ-network/Client/ddz-network-client/player/userplayer.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qconfig.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qcontainerfwd.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qcontainertools_impl.h
+ mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qdatastream.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qflags.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qgenericatomic.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qglobal.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qglobalstatic.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qhash.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qhashfunctions.h
+ mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qiodevice.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qiterator.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qlist.h
  mdp:D:/Qt/5.15.2/mingw81_64/include/QtCore/qlogging.h

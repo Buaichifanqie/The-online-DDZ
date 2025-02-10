@@ -43,7 +43,37 @@ void Communication::parseRequest(Buffer* buf)
         case RequestCode::AutoRoom:
         case RequestCode::ManualRoom:
             handleAddRoom(ptr.get(), resMsg);
-            myfunc=std::bind(&Communication::readyForPlay,this,resMsg.roomName,placeholders::_1);
+            myfunc=std::bind(&Communication::readyForPlay,this,resMsg.roomName,std::placeholders::_1);
+            break;
+        case RequestCode::GrabLord:
+            resMsg.data1=ptr->data1;
+            resMsg.rescode=RespondCode::OtherGrabLord;
+            myfunc=std::bind(&Communication::notifyOtherPlayers,this,std::placeholders::_1,ptr->roomName,ptr->userName);
+            break;
+        case RequestCode::PlayAHand:
+            resMsg.data1=ptr->data1;
+            resMsg.data2=ptr->data2;
+            resMsg.rescode=RespondCode::OtherPlayHand;
+            myfunc=std::bind(&Communication::notifyOtherPlayers,this,std::placeholders::_1,ptr->roomName,ptr->userName);
+            break;
+        case RequestCode::GameOver:
+            handleGameOver(ptr.get());
+            myfunc=nullptr;
+            break;
+        case RequestCode::Continue:
+            restartGame(ptr.get());
+            myfunc=nullptr;
+            break;
+        case RequestCode::SearchRoom:
+            handleSearchRoom(ptr.get(),resMsg);
+            break;
+        case RequestCode::LeaveRoom:
+            handleLeaveRoom(ptr.get(),resMsg);
+            myfunc=nullptr;
+            break;
+        case RequestCode::Goodbye:
+            handleGoodBye(ptr.get());
+            myfunc=nullptr;
             break;
         default:
             break;
@@ -52,7 +82,7 @@ void Communication::parseRequest(Buffer* buf)
     {
         codec.reLoad(&resMsg);
         std::string msg = codec.encodeMsg();
-        //Debug("回复给客户端的数据: %s, size = %d, status: %d", msg.data(), msg.size(), resMsg.rescode);
+        Debug("回复给客户端的数据: %s, size = %d, status: %d", msg.data(), msg.size(), resMsg.rescode);
         myfunc(msg);
     }
 }
@@ -183,6 +213,12 @@ void Communication::handleAddRoom(Message *reqMsg, Message &resMsg) {
     std::string oldRoom=m_redis->WhereAmI(reqMsg->userName);
     //查询这个玩家上把加入的房间，然后把分数读出来
     int score=m_redis->playerScore(oldRoom,reqMsg->userName);
+    if(oldRoom!=std::string())
+    {
+        m_redis->leaveRoom(oldRoom,reqMsg->userName);
+        RoomList::getInstance()->removePlayer(oldRoom,reqMsg->userName);
+    }
+
     bool flag= true;
     std::string roomName;
     if(reqMsg->reqcode == RequestCode::AutoRoom)
@@ -214,7 +250,7 @@ void Communication::handleAddRoom(Message *reqMsg, Message &resMsg) {
 
         //给客户端回复数据
         resMsg.rescode = RespondCode::JoinRoomOK;
-        resMsg.data1 =m_redis->getPlayerCount(roomName);
+        resMsg.data1 =to_string(m_redis->getPlayerCount(roomName));
         resMsg.roomName=roomName;
     }
     else
@@ -229,27 +265,12 @@ void Communication::readyForPlay(std::string roomName,std::string data) {
     //取出单例对象
     RoomList *instance = RoomList::getInstance();
     UserMap players = instance->getPlayers(roomName);
-    if (players.size() < 3) {
-        //房间没满
-        for (auto item: players) {
-            item.second(data);
-        }
+    //将房间信息和人数信息发送给各个客户端
+    for (auto item: players) {
+        item.second(data);
     }
-    else
-    {
-        //房间满了
-        //发牌数据
-        dealCards(players);
-        //通知客户端可以开始游戏了
-        Message msg;
-        msg.rescode=RespondCode::StartGame;
-        //data1  userName-次序-分数  谁分数高谁优先抢地主
-        msg.data1=m_redis->playersOder(roomName);
-        Codec codec(&msg);
-        for(const auto& item: players)
-        {
-            item.second(codec.encodeMsg());
-        }
+    if (players.size() == 3) {
+        startGame(roomName, players);
     }
 }
 
@@ -310,6 +331,90 @@ std::pair<int, int> Communication::takeOneCard() {
     for(int i=0;i<randNum;++i,++it);
     m_cards.erase(it);
     return *it;
+}
+
+void Communication::notifyOtherPlayers(std::string data, std::string roomName, std::string userName) {
+    //得到另外两个玩家
+    auto players=RoomList::getInstance()->getPartners(roomName,userName);
+    for(const auto& item : players)
+    {
+        item.second(data);
+    }
+}
+
+void Communication::restartGame(Message *reqMsg) {
+    //得到房间内的玩家
+    auto players=RoomList::getInstance()->getPlayers(reqMsg->roomName);
+    //判断房间人数
+    if(players.size()==3)
+    {
+        //清空当前房间所有玩家信息
+        RoomList::getInstance()->removeRoom(reqMsg->roomName);
+    }
+    //将玩家添加到单例对象中
+    RoomList::getInstance()->addUser(reqMsg->roomName,reqMsg->userName,sendMessage);
+    //发牌并且开始游戏
+    players=RoomList::getInstance()->getPlayers(reqMsg->roomName);
+    if(players.size()==3)
+    {
+        startGame(reqMsg->roomName,players);
+    }
+}
+
+void Communication::startGame(std::string roomName, UserMap players) {
+    //房间满了
+    //发牌数据
+    dealCards(players);
+    //通知客户端可以开始游戏了
+    Message msg;
+    msg.rescode=RespondCode::StartGame;
+    //data1  userName-次序-分数  谁分数高谁优先抢地主
+    msg.data1=m_redis->playersOder(roomName);
+    Codec codec(&msg);
+    for(const auto& item: players)
+    {
+        item.second(codec.encodeMsg());
+    }
+}
+
+void Communication::handleLeaveRoom(Message *reqMsg, Message &resMsg) {
+    m_redis->leaveRoom(reqMsg->roomName,reqMsg->userName);
+    RoomList::getInstance()->removePlayer(reqMsg->roomName,reqMsg->userName);
+    resMsg.rescode=RespondCode::OtherLeaveRoom;
+    auto players= RoomList::getInstance()->getPlayers(reqMsg->roomName);
+    resMsg.data1=to_string(players.size());
+    for(auto item: players)
+    {
+        Codec codec(&resMsg);
+        item.second(codec.encodeMsg());
+    }
+
+}
+
+void Communication::handleGoodBye(Message *reqMsg) {
+    //修改玩家的登录状态
+    char sql[10240]={0};
+    sprintf(sql,"update information set status=0 where name='%s'",reqMsg->userName.data());
+    m_mysql->update(sql);
+
+    //和客户端断开连接
+    disconnect();
+}
+
+void Communication::handleGameOver(Message *reqMsg) {
+    int score = std::stoi(reqMsg->data1);
+    //redis
+    m_redis->updatePlayerScore(reqMsg->roomName, reqMsg->userName, score);
+    //mysql
+    char sql[1024];
+    sprintf(sql, "update information set score=%d where name='%s'", score, reqMsg->userName.data());
+    m_mysql->update(sql);
+}
+
+void Communication::handleSearchRoom(Message *reqMsg, Message &resMsg) {
+    bool flag=m_redis->serchRoom(reqMsg->roomName);
+    resMsg.rescode=RespondCode::SearchRoomOK;
+    resMsg.data1=flag ? "true":"false";
 }
 
 

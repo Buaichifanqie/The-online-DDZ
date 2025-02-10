@@ -2,3 +2,4 @@
 #include "EWIEGA46WW/moc_communication.cpp"
 #include "EWIEGA46WW/moc_robotgraplord.cpp"
 #include "EWIEGA46WW/moc_robotplayhand.cpp"
+#include "EWIEGA46WW/moc_taskqueue.cpp"

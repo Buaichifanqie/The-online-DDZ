@@ -155,7 +155,7 @@ bool Cards::contains(const Cards &cards)
 Card Cards::takeRandomCard()
 {
     Card card;
-    if(DataManager::getInstance()->getGameMode()==DataManager::Single)
+    if(!DataManager::getInstance()->isNetworkMode())
     {
         // 生成一个随机数
         int num = QRandomGenerator::global()->bounded(m_cards.size());

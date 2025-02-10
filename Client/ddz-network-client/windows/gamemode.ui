@@ -39,15 +39,21 @@
          <layout class="QVBoxLayout" name="verticalLayout">
           <item>
            <widget class="QLabel" name="singel_label">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="text">
-             <string>TextLabel</string>
+             <string/>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QPushButton" name="singleModeBtn">
             <property name="text">
-             <string>单机模式</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -72,15 +78,21 @@
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <item>
            <widget class="QLabel" name="net_label">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="text">
-             <string>TextLabel</string>
+             <string/>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QPushButton" name="netModeBtn">
             <property name="text">
-             <string>网络模式</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -136,14 +148,14 @@
           <item>
            <widget class="QLabel" name="auto_label">
             <property name="text">
-             <string>TextLabel</string>
+             <string/>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QPushButton" name="autoBtn">
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -195,14 +207,14 @@
           <item>
            <widget class="QLabel" name="manual_label">
             <property name="text">
-             <string>TextLabel</string>
+             <string/>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QPushButton" name="manualBtn">
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -254,14 +266,14 @@
           <item>
            <widget class="QLabel" name="search_label">
             <property name="text">
-             <string>TextLabel</string>
+             <string/>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QPushButton" name="searchBtn">
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
            </widget>
           </item>

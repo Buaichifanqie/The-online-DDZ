@@ -10,6 +10,7 @@ D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-De
   D:/DDZ-network/Client/ddz-network-client/windows/animationwindow.h \
   D:/DDZ-network/Client/ddz-network-client/windows/cardpanel.h \
   D:/DDZ-network/Client/ddz-network-client/windows/countdown.h \
+  D:/Qt/5.15.2/mingw81_64/include/QtCore/QDataStream \
   D:/Qt/5.15.2/mingw81_64/include/QtCore/QMap \
   D:/Qt/5.15.2/mingw81_64/include/QtCore/QObject \
   D:/Qt/5.15.2/mingw81_64/include/QtCore/QSet \

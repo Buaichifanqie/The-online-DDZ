@@ -1,6 +1,7 @@
 #include "communication.h"
 #include "datamanager.h"
 #include "rsacrypto.h"
+#include "taskqueue.h"
 #include <QThread>
 #include <QDebug>
 #include <QDateTime>
@@ -88,6 +89,38 @@ void Communication::parseRecvMessage()
     case RespondCode::StartGame:
         emit startGame(ptr->data1);
         break;
+    case RespondCode::OtherGrabLord:
+    {
+        Task t;
+        t.bet=ptr->data1.toInt();
+        TaskQueue::getInstance()->add(t);
+        break;
+    }
+    case RespondCode::OtherPlayHand:
+    {
+        Task t;
+        //data1->数量 data2->数据
+        QDataStream stream(ptr->data2);
+        for(int i=0;i<ptr->data1.toInt();i++)
+        {
+            Card c;
+            stream>>c;
+            t.cs.add(c);
+        }
+        TaskQueue::getInstance()->add(t);
+    }
+    case RespondCode::SearchRoomOK:
+    {
+        bool flag=ptr->data1=="true" ? "true" : "false";
+        emit roomExist(flag);
+        break;
+    }
+    case RespondCode::OtherLeaveRoom:
+    {
+        int count=ptr->data1.toInt();
+        emit somebodyLeave(count);
+        break;
+    }
     case RespondCode::Failed:
         emit failedMsg(ptr->data1);
         break;

@@ -12,6 +12,8 @@ class DataManager
 public:
 
     enum GameMode{Single,NetWork};
+    enum RoomMode{Auto,Manual};
+
 
     //禁止使用拷贝构造函数
     DataManager(const DataManager&)=delete;
@@ -28,6 +30,7 @@ public:
     void setRoomName(QByteArray roomName);
     void setCards(Cards cs,Cards last);
     void setGameMode(GameMode mode);
+    void setRoomMode(RoomMode mode);
     //获取数据
     QByteArray getUserName();
     QByteArray getRoomName();
@@ -36,7 +39,9 @@ public:
     Communication* getCommunication();
     Cards getCards();
     Cards getLast3Cards();
-    GameMode getGameMode();
+    bool isNetworkMode();
+    bool isManualMode();
+
 private:
     DataManager()=default;//私有的 并且拥有默认函数的行为
     static DataManager* m_data;
@@ -50,6 +55,7 @@ private:
     Cards m_cs;
     Cards m_last;
     GameMode m_mode;
+    RoomMode m_roomMode;
 };
 
 #endif // DATAMANAGER_H

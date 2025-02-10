@@ -125,7 +125,8 @@ void TcpConnection::addWriteTask(std::string data) {
 }
 
 void TcpConnection::addDeleteTask() {
-    m_evLoop->addTask(m_channel, ElemType::DELETE);
     Debug("断开了和客户端的连接，connName=%s",m_name.data());
+    m_evLoop->addTask(m_channel, ElemType::DELETE);
+
 }
 

@@ -23,7 +23,7 @@ Login::Login(QWidget *parent)
     , ui(new Ui::Login)
 {
     ui->setupUi(this);
-
+    setFixedSize(720,525);
     ui->stackedWidget->setCurrentIndex(0);
 
     connect(ui->homeBtn,&QPushButton::clicked,this,[=](){
@@ -107,31 +107,28 @@ void Login::startConnect(Message *msg)
 {
     if(!m_isConnected)
     {
-        Communication *task=new Communication(*msg);
-        connect(task,&Communication::connectFailed,this,[=](){
-            //弹出窗口告诉使用者连接失败了
-            QMessageBox::critical(this,"连接服务器","连接服务器失败");
-            m_isConnected=false;
+        Communication *task = new Communication(*msg);
+        connect(task, &Communication::connectFailed, this, [=](){
+            QMessageBox::critical(this, "连接服务器", "连接服务器失败");
+            m_isConnected = false;
         });
-
-        connect(task,&Communication::loginOk,this,[=](){
-            //将用户名保存到单例对象
+        connect(task, &Communication::loginOk, this, [=](){
+            // 将用户名保存到单例对象
             DataManager::getInstance()->setUserName(ui->userName->text().toUtf8());
-            //保存用户名和密码
+            // 保存用户名和密码
             saveUserInfo();
-            //显示游戏模式->单机->网络
-            GameMode* mode=new GameMode;
+            // 显示游戏模式窗口-> 单机版, 网络版
+            GameMode* mode = new GameMode;
             mode->show();
-
+            accept();
         });
-        connect(task,&Communication::registerOk,this,[=](){
-            //从注册窗口切换到登录窗口
+        connect(task, &Communication::registerOk, this, [=](){
             ui->stackedWidget->setCurrentIndex(0);
         });
-        connect(task,&Communication::failedMsg,this,[=](QByteArray msg){
-            QMessageBox::critical(this,"ERROR",msg);
+        connect(task, &Communication::failedMsg, this, [=](QByteArray msg){
+            QMessageBox::critical(this, "ERROR", msg);
         });
-        m_isConnected=true;
+        m_isConnected = true;
         QThreadPool::globalInstance()->start(task);
         DataManager::getInstance()->setCommuncation(task);
     }

@@ -33,7 +33,7 @@
    <item>
     <widget class="QLabel" name="describe">
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
    </item>
@@ -100,7 +100,7 @@
        <item>
         <widget class="QPushButton" name="searchRoom">
          <property name="text">
-          <string>搜索房间</string>
+          <string/>
          </property>
         </widget>
        </item>
@@ -121,9 +121,9 @@
         </spacer>
        </item>
        <item>
-        <widget class="QPushButton" name="joinRoom">
+        <widget class="MyButton" name="joinRoom">
          <property name="text">
-          <string>加入房间</string>
+          <string/>
          </property>
         </widget>
        </item>
@@ -146,6 +146,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MyButton</class>
+   <extends>QPushButton</extends>
+   <header>mybutton.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

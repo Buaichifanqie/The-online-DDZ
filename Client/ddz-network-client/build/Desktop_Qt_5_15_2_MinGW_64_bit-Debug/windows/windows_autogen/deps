@@ -83,6 +83,7 @@ windows_autogen/timestamp: \
 	D:/DDZ-network/Client/ddz-network-client/windows/scorepanel.cpp \
 	D:/DDZ-network/Client/ddz-network-client/windows/scorepanel.h \
 	D:/Qt/5.15.2/mingw81_64/include/QtCore/QByteArray \
+	D:/Qt/5.15.2/mingw81_64/include/QtCore/QDataStream \
 	D:/Qt/5.15.2/mingw81_64/include/QtCore/QMap \
 	D:/Qt/5.15.2/mingw81_64/include/QtCore/QObject \
 	D:/Qt/5.15.2/mingw81_64/include/QtCore/QSet \

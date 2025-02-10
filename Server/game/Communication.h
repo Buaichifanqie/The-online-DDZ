@@ -28,6 +28,10 @@ public:
     void handleRegister(Message* reqMsg, Message& resMsg);
     void handleLogin(Message* reqMsg, Message& resMsg);
     void handleAddRoom(Message* reqMsg, Message& resMsg);
+    void handleLeaveRoom(Message* reqMsg, Message& resMsg);
+    void handleGoodBye(Message* reqMsg);
+    void handleGameOver(Message* reqMsg);
+    void handleSearchRoom(Message* reqMsg, Message& resMsg);
     //准备开始游戏
     void readyForPlay(std::string roomName,std::string data);
     //发牌
@@ -36,6 +40,12 @@ public:
     void initCards();
     //所及取一张牌
     std::pair<int,int> takeOneCard();
+    //转发数据
+    void notifyOtherPlayers(std::string data,std::string roomName,std::string userName);
+    //重新开始游戏
+    void restartGame(Message* reqMsg);
+    //开始游戏
+    void startGame(std::string roomName,UserMap players);
 private:
     sendCallback sendMessage;
     deleteCallback disconnect;

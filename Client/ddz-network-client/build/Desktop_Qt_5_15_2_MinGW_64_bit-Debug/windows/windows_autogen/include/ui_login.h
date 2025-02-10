@@ -38,9 +38,9 @@ public:
     QSpacerItem *horizontalSpacer_3;
     QWidget *widget;
     QGridLayout *gridLayout;
-    QLabel *label;
+    QLabel *yonghuming;
     QLineEdit *userName;
-    QLabel *label_2;
+    QLabel *mima;
     QLineEdit *password;
     QCheckBox *savePwd;
     QPushButton *regUser;
@@ -59,16 +59,16 @@ public:
     QSpacerItem *horizontalSpacer_6;
     QWidget *widget_6;
     QGridLayout *gridLayout_2;
-    QLineEdit *regUserName;
+    QLabel *yonghuming2;
     QWidget *widget_7;
     QHBoxLayout *horizontalLayout_5;
     QSpacerItem *horizontalSpacer_7;
     QPushButton *registerBtn;
     QSpacerItem *horizontalSpacer_8;
-    QLabel *label_4;
     QLineEdit *regPassword;
-    QLabel *label_3;
-    QLabel *label_7;
+    QLineEdit *regUserName;
+    QLabel *shoujihao;
+    QLabel *mima2;
     QLineEdit *phone;
     QSpacerItem *horizontalSpacer_9;
     QSpacerItem *verticalSpacer_4;
@@ -85,8 +85,8 @@ public:
     QSpacerItem *horizontalSpacer_11;
     QPushButton *netOkBtn;
     QSpacerItem *horizontalSpacer_12;
-    QLabel *label_5;
-    QLabel *label_6;
+    QLabel *ipdizhi;
+    QLabel *duankouhao;
     QLineEdit *port;
     QLineEdit *ipAddr;
     QSpacerItem *horizontalSpacer_13;
@@ -101,7 +101,7 @@ public:
     {
         if (Login->objectName().isEmpty())
             Login->setObjectName(QString::fromUtf8("Login"));
-        Login->resize(457, 312);
+        Login->resize(715, 492);
         verticalLayout_2 = new QVBoxLayout(Login);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         stackedWidget = new QStackedWidget(Login);
@@ -110,7 +110,7 @@ public:
         page->setObjectName(QString::fromUtf8("page"));
         verticalLayout = new QVBoxLayout(page);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        verticalSpacer = new QSpacerItem(20, 145, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
         verticalLayout->addItem(verticalSpacer);
 
@@ -126,20 +126,20 @@ public:
         widget->setObjectName(QString::fromUtf8("widget"));
         gridLayout = new QGridLayout(widget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        label = new QLabel(widget);
-        label->setObjectName(QString::fromUtf8("label"));
+        yonghuming = new QLabel(widget);
+        yonghuming->setObjectName(QString::fromUtf8("yonghuming"));
 
-        gridLayout->addWidget(label, 0, 0, 1, 1);
+        gridLayout->addWidget(yonghuming, 0, 0, 1, 1);
 
         userName = new QLineEdit(widget);
         userName->setObjectName(QString::fromUtf8("userName"));
 
         gridLayout->addWidget(userName, 0, 1, 1, 2);
 
-        label_2 = new QLabel(widget);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
+        mima = new QLabel(widget);
+        mima->setObjectName(QString::fromUtf8("mima"));
 
-        gridLayout->addWidget(label_2, 1, 0, 1, 1);
+        gridLayout->addWidget(mima, 1, 0, 1, 1);
 
         password = new QLineEdit(widget);
         password->setObjectName(QString::fromUtf8("password"));
@@ -195,7 +195,7 @@ public:
         page_2->setObjectName(QString::fromUtf8("page_2"));
         verticalLayout_3 = new QVBoxLayout(page_2);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
-        verticalSpacer_3 = new QSpacerItem(20, 6, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        verticalSpacer_3 = new QSpacerItem(20, 145, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
         verticalLayout_3->addItem(verticalSpacer_3);
 
@@ -211,10 +211,10 @@ public:
         widget_6->setObjectName(QString::fromUtf8("widget_6"));
         gridLayout_2 = new QGridLayout(widget_6);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        regUserName = new QLineEdit(widget_6);
-        regUserName->setObjectName(QString::fromUtf8("regUserName"));
+        yonghuming2 = new QLabel(widget_6);
+        yonghuming2->setObjectName(QString::fromUtf8("yonghuming2"));
 
-        gridLayout_2->addWidget(regUserName, 0, 1, 1, 2);
+        gridLayout_2->addWidget(yonghuming2, 0, 0, 1, 1);
 
         widget_7 = new QWidget(widget_6);
         widget_7->setObjectName(QString::fromUtf8("widget_7"));
@@ -236,25 +236,25 @@ public:
 
         gridLayout_2->addWidget(widget_7, 3, 0, 1, 3);
 
-        label_4 = new QLabel(widget_6);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
-
-        gridLayout_2->addWidget(label_4, 1, 0, 1, 1);
-
         regPassword = new QLineEdit(widget_6);
         regPassword->setObjectName(QString::fromUtf8("regPassword"));
 
         gridLayout_2->addWidget(regPassword, 1, 1, 1, 2);
 
-        label_3 = new QLabel(widget_6);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
+        regUserName = new QLineEdit(widget_6);
+        regUserName->setObjectName(QString::fromUtf8("regUserName"));
 
-        gridLayout_2->addWidget(label_3, 0, 0, 1, 1);
+        gridLayout_2->addWidget(regUserName, 0, 1, 1, 2);
 
-        label_7 = new QLabel(widget_6);
-        label_7->setObjectName(QString::fromUtf8("label_7"));
+        shoujihao = new QLabel(widget_6);
+        shoujihao->setObjectName(QString::fromUtf8("shoujihao"));
 
-        gridLayout_2->addWidget(label_7, 2, 0, 1, 1);
+        gridLayout_2->addWidget(shoujihao, 2, 0, 1, 1);
+
+        mima2 = new QLabel(widget_6);
+        mima2->setObjectName(QString::fromUtf8("mima2"));
+
+        gridLayout_2->addWidget(mima2, 1, 0, 1, 1);
 
         phone = new QLineEdit(widget_6);
         phone->setObjectName(QString::fromUtf8("phone"));
@@ -280,7 +280,7 @@ public:
         page_3->setObjectName(QString::fromUtf8("page_3"));
         verticalLayout_4 = new QVBoxLayout(page_3);
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
-        verticalSpacer_5 = new QSpacerItem(20, 32, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        verticalSpacer_5 = new QSpacerItem(20, 145, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
         verticalLayout_4->addItem(verticalSpacer_5);
 
@@ -316,15 +316,15 @@ public:
 
         gridLayout_3->addWidget(widget_10, 2, 0, 1, 3);
 
-        label_5 = new QLabel(widget_9);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
+        ipdizhi = new QLabel(widget_9);
+        ipdizhi->setObjectName(QString::fromUtf8("ipdizhi"));
 
-        gridLayout_3->addWidget(label_5, 0, 0, 1, 1);
+        gridLayout_3->addWidget(ipdizhi, 0, 0, 1, 1);
 
-        label_6 = new QLabel(widget_9);
-        label_6->setObjectName(QString::fromUtf8("label_6"));
+        duankouhao = new QLabel(widget_9);
+        duankouhao->setObjectName(QString::fromUtf8("duankouhao"));
 
-        gridLayout_3->addWidget(label_6, 1, 0, 1, 1);
+        gridLayout_3->addWidget(duankouhao, 1, 0, 1, 1);
 
         port = new QLineEdit(widget_9);
         port->setObjectName(QString::fromUtf8("port"));
@@ -387,20 +387,20 @@ public:
     void retranslateUi(QDialog *Login)
     {
         Login->setWindowTitle(QCoreApplication::translate("Login", "Dialog", nullptr));
-        label->setText(QCoreApplication::translate("Login", "\347\224\250\346\210\267\345\220\215:", nullptr));
-        label_2->setText(QCoreApplication::translate("Login", "\345\257\206\347\240\201:", nullptr));
+        yonghuming->setText(QCoreApplication::translate("Login", "\347\224\250\346\210\267\345\220\215:", nullptr));
+        mima->setText(QCoreApplication::translate("Login", "\345\257\206\347\240\201:", nullptr));
         savePwd->setText(QCoreApplication::translate("Login", "\344\277\235\345\255\230\345\257\206\347\240\201", nullptr));
         regUser->setText(QCoreApplication::translate("Login", "\346\262\241\346\234\211\350\264\246\345\217\267\357\274\214\351\251\254\344\270\212\346\263\250\345\206\214", nullptr));
-        loginBtn->setText(QCoreApplication::translate("Login", "\347\231\273\345\275\225", nullptr));
-        registerBtn->setText(QCoreApplication::translate("Login", "\346\263\250\345\206\214", nullptr));
-        label_4->setText(QCoreApplication::translate("Login", "\345\257\206\347\240\201:", nullptr));
-        label_3->setText(QCoreApplication::translate("Login", "\347\224\250\346\210\267\345\220\215:", nullptr));
-        label_7->setText(QCoreApplication::translate("Login", "\346\211\213\346\234\272\345\217\267:", nullptr));
-        netOkBtn->setText(QCoreApplication::translate("Login", "\347\241\256\345\256\232", nullptr));
-        label_5->setText(QCoreApplication::translate("Login", "ip\345\234\260\345\235\200\357\274\232", nullptr));
-        label_6->setText(QCoreApplication::translate("Login", "\347\253\257\345\217\243\345\217\267:", nullptr));
-        homeBtn->setText(QCoreApplication::translate("Login", "\344\270\273\351\241\265", nullptr));
-        netsetBtn->setText(QCoreApplication::translate("Login", "\347\275\221\347\273\234\350\256\276\347\275\256", nullptr));
+        loginBtn->setText(QString());
+        yonghuming2->setText(QCoreApplication::translate("Login", "\347\224\250\346\210\267\345\220\215:", nullptr));
+        registerBtn->setText(QString());
+        shoujihao->setText(QCoreApplication::translate("Login", "\346\211\213\346\234\272\345\217\267:", nullptr));
+        mima2->setText(QCoreApplication::translate("Login", "\345\257\206\347\240\201:", nullptr));
+        netOkBtn->setText(QString());
+        ipdizhi->setText(QCoreApplication::translate("Login", "ip\345\234\260\345\235\200\357\274\232", nullptr));
+        duankouhao->setText(QCoreApplication::translate("Login", "\347\253\257\345\217\243\345\217\267:", nullptr));
+        homeBtn->setText(QString());
+        netsetBtn->setText(QString());
     } // retranslateUi
 
 };

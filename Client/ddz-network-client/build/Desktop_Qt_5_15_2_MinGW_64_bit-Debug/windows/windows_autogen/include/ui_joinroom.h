@@ -20,6 +20,7 @@
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include "mybutton.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -41,7 +42,7 @@ public:
     QSpacerItem *horizontalSpacer_3;
     QPushButton *searchRoom;
     QSpacerItem *horizontalSpacer_4;
-    QPushButton *joinRoom;
+    MyButton *joinRoom;
     QSpacerItem *horizontalSpacer_5;
 
     void setupUi(QDialog *JoinRoom)
@@ -102,7 +103,7 @@ public:
 
         horizontalLayout_2->addItem(horizontalSpacer_4);
 
-        joinRoom = new QPushButton(page_2);
+        joinRoom = new MyButton(page_2);
         joinRoom->setObjectName(QString::fromUtf8("joinRoom"));
 
         horizontalLayout_2->addWidget(joinRoom);
@@ -127,10 +128,10 @@ public:
     void retranslateUi(QDialog *JoinRoom)
     {
         JoinRoom->setWindowTitle(QCoreApplication::translate("JoinRoom", "Dialog", nullptr));
-        describe->setText(QCoreApplication::translate("JoinRoom", "TextLabel", nullptr));
+        describe->setText(QString());
         createRoom->setText(QCoreApplication::translate("JoinRoom", "\345\210\233\345\273\272\346\210\277\351\227\264", nullptr));
-        searchRoom->setText(QCoreApplication::translate("JoinRoom", "\346\220\234\347\264\242\346\210\277\351\227\264", nullptr));
-        joinRoom->setText(QCoreApplication::translate("JoinRoom", "\345\212\240\345\205\245\346\210\277\351\227\264", nullptr));
+        searchRoom->setText(QString());
+        joinRoom->setText(QString());
     } // retranslateUi
 
 };

@@ -20,6 +20,12 @@ public:
     void addUser(std::string roomName,std::string userName,callback sendMessage);
     //通过房间名字获取成员信息
     UserMap getPlayers(std::string roomName);
+    //得到当前房间中除指定玩家外的其它玩家
+    UserMap getPartners(std::string roomName,std::string userName);
+    //删除指定房间的玩家
+    void removePlayer(std::string roomName,std::string userName);
+    //清空房间里的所有玩家
+    void removeRoom(std::string roomName);
 private:
     RoomList()=default;
     std::map<std::string,UserMap>m_roomMap;//共享资源，需要多线程访问

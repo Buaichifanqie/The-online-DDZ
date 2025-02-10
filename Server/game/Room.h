@@ -38,11 +38,16 @@ public:
     int playerScore(std::string roomName,std::string userName);
     //得到抢地主的次序
     std::string playersOder(std::string roomName);
+    //离开房间
+    void leaveRoom(std::string roomName,std::string userName);
+    //搜索房间
+    bool serchRoom(std::string roomName);
 private:
     sw::redis::Redis* m_redis;
     const std::string OnePlayer="OnePlayer";
     const std::string TwoPlayer="TwoPlayer";
     const std::string ThreePlayer="ThreePlayer";
+    const std::string Invalid="Invalid";
 };
 
 

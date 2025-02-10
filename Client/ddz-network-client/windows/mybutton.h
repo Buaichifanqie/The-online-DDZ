@@ -9,7 +9,8 @@ class MyButton : public QPushButton
 public:
     explicit MyButton(QWidget *parent = nullptr);
 
-    void setImage(QString normal, QString hover, QString pressed);
+    void setImage(QString normal, QString hover, QString pressed,QString disable=QString());
+    void setBtnDisable(bool flag);
 
 signals:
 
@@ -29,7 +30,9 @@ private:
     QString m_normal;
     QString m_hover;
     QString m_pressed;
+    QString m_disable;
     QPixmap m_pixmap;
+    bool m_isDisable=false;
 
 };
 

@@ -3,6 +3,7 @@ D:/DDZ-network/Client/ddz-network-client/build/Desktop_Qt_5_15_2_MinGW_64_bit-De
   D:/DDZ-network/Client/ddz-network-client/card/card.h \
   D:/DDZ-network/Client/ddz-network-client/card/cards.h \
   D:/DDZ-network/Client/ddz-network-client/player/player.h \
+  D:/Qt/5.15.2/mingw81_64/include/QtCore/QDataStream \
   D:/Qt/5.15.2/mingw81_64/include/QtCore/QObject \
   D:/Qt/5.15.2/mingw81_64/include/QtCore/QSet \
   D:/Qt/5.15.2/mingw81_64/include/QtCore/QVector \

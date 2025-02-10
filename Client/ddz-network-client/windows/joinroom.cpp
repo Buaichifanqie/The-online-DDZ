@@ -10,14 +10,32 @@ JoinRoom::JoinRoom(DialogType type,QWidget *parent)
 {
     ui->setupUi(this);
 
+    ui->joinRoom->setFixedSize(100,45);
+    ui->joinRoom->setImage(":/images/addRoom-normal.png",":/images/addRoom-hover.png",
+                           ":/images/addRoom-pressed.png",":/images/addRoom-disable.png");
+    ui->joinRoom->setBtnDisable(true);
+
+
     const QString titles[]={
-        "请输入要创建的房间的名字:",
-        "请输入要搜索的房间的名字:"
+        ":/images/info1.png",
+        ":/images/info2.png"
     };
     int index=static_cast<int>(type);
-    ui->describe->setText(titles[index]);
+    ui->describe->setPixmap(QPixmap(titles[index]));
     ui->stackedWidget->setCurrentIndex(index);
     setFixedSize(300,180);
+
+    Communication* comm=DataManager::getInstance()->getCommunication();
+    connect(comm,&Communication::roomExist,this,[=](bool flag){
+        if(flag)
+        {
+            ui->joinRoom->setBtnDisable(false);
+        }
+        else
+        {
+            ui->joinRoom->setBtnDisable(true);
+        }
+    });
 
     connect(ui->createRoom,&QPushButton::clicked,this,&JoinRoom::joinRoom);
     connect(ui->searchRoom,&QPushButton::clicked,this,&JoinRoom::searchRoom);
@@ -37,6 +55,8 @@ void JoinRoom::searchRoom()
 void JoinRoom::joinRoom()
 {
     encodeMessage(RequestCode::ManualRoom);
+    DataManager::getInstance()->setRoomMode(DataManager::Manual);
+    accept();
 }
 
 void JoinRoom::encodeMessage(RequestCode code)

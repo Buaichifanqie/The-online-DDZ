@@ -71,6 +71,13 @@ add_subdirectory(crypto)
 # 添加资源文件
 qt5_add_resources(RES res.qrc)
 
+# 添加图标资源文件
+if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
+    enable_language("RC")
+    set(ICON_RES ${CMAKE_CURRENT_SOURCE_DIR}/ddz.rc)
+endif()
+
+
 if(ANDROID)
   add_library(ddz-network-client SHARED
     ${PROJECT_SOURCES}
@@ -79,6 +86,7 @@ else()
   add_executable(ddz-network-client
     ${PROJECT_SOURCES}
     ${RES}
+    ${ICON_RES}
   )
 endif()
 

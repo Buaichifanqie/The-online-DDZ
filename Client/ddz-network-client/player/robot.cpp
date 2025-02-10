@@ -4,6 +4,8 @@
 #include "robotplayhand.h"
 #include <QDebug>
 #include <QThreadPool>
+#include <datamanager.h>
+#include <taskqueue.h>
 
 Robot::Robot(QObject *parent) : Player(parent)
 {
@@ -37,6 +39,12 @@ void Robot::preparePlayHand()
 
 void Robot::thinkCallLord()
 {
+    if(DataManager::getInstance()->isNetworkMode())
+    {
+        Task t=TaskQueue::getInstance()->take();
+        grabLordBet(t.bet);
+        return;
+    }
     /*
      * 基于手中的牌计算权重
      * 大小王: 6
@@ -90,6 +98,12 @@ void Robot::thinkCallLord()
 
 void Robot::thinkPlayHand()
 {
+    if(DataManager::getInstance()->isNetworkMode())
+    {
+        Task t=TaskQueue::getInstance()->take();
+        playHand(t.cs);
+        return;
+    }
     Strategy st(this, m_cards);
     Cards cs = st.makeStrategy();
     playHand(cs);

@@ -8,6 +8,12 @@ enum RequestCode
   AutoRoom=3;
   ManualRoom=4;
   SearchRoom=5;
+  GrabLord=6;
+  PlayAHand=7;
+  GameOver=8;
+  Continue=9;
+  LeaveRoom=10;
+  Goodbye=11;
 };
 
 enum RespondCode
@@ -20,8 +26,10 @@ enum RespondCode
   StartGame=5;
   SearchRoomOK=6;
   DealCards=7;
-  Failed=8;
-
+  OtherGrabLord=8;
+  OtherPlayHand=9;
+  OtherLeaveRoom=10;
+  Failed=11;
 };
 
 

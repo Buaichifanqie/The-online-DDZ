@@ -53,6 +53,13 @@ GamePanel::GamePanel(QWidget *parent)
 
     m_animation = new AnimationWindow(this);
     m_bgm = new BGMControl(this);
+
+    Communication* comm=DataManager::getInstance()->getCommunication();
+    connect(comm,&Communication::startGame,this,[=](QByteArray msg){
+        initGamePanel(msg);
+        gameStatusPrecess(GameControl::DispatchCard);
+        m_bgm->startBGM(80);
+    });
 }
 
 GamePanel::~GamePanel()
@@ -146,6 +153,16 @@ void GamePanel::initButtonsGroup()
     connect(ui->btnGroup, &ButtonGroup::betPoint, this, [=](int bet){
         m_gameCtl->getUserPlayer()->grabLordBet(bet);
         ui->btnGroup->selectPanel(ButtonGroup::Empty);
+        //判断是否是网络模式
+        if(DataManager::getInstance()->isNetworkMode())
+        {
+            Message msg;
+            msg.userName=DataManager::getInstance()->getUserName();
+            msg.roomName=DataManager::getInstance()->getRoomName();
+            msg.data1=QByteArray::number(bet);
+            msg.reqcode=RequestCode::GrabLord;
+            DataManager::getInstance()->getCommunication()->sendMessage(&msg);
+        }
     });
 }
 
@@ -546,12 +563,12 @@ void GamePanel::onPlayerStatusChanged(Player *player, GameControl::PlayerStatus 
                 ui->btnGroup->selectPanel(ButtonGroup::PassOrPlay);
             }
         }
-        else
         {
             ui->btnGroup->selectPanel(ButtonGroup::Empty);
         }
         break;
     case GameControl::Winning:
+    {
         m_bgm->stopBGM();
         m_contextMap[m_gameCtl->getLeftRobot()].isFrontSide = true;
         m_contextMap[m_gameCtl->getRightRobot()].isFrontSide = true;
@@ -561,7 +578,16 @@ void GamePanel::onPlayerStatusChanged(Player *player, GameControl::PlayerStatus 
         updatePlayerScore();
         m_gameCtl->setCurrentPlayer(player);
         showEndingScorePanel();
-        break;
+        Message msg
+        {
+            .userName=DataManager::getInstance()->getUserName(),
+            .roomName=DataManager::getInstance()->getRoomName(),
+            .data1=QByteArray::number(m_gameCtl->getUserPlayer()->getScore()),
+            .reqcode=RequestCode::GameOver
+        };
+        DataManager::getInstance()->getCommunication()->sendMessage(&msg);
+            break;
+    }
     default:
         break;
     }
@@ -740,6 +766,7 @@ void GamePanel::onUserPlayHand()
     m_countDown->stopCountDown();
     // 通过玩家对象出牌
     m_gameCtl->getUserPlayer()->playHand(cs);
+    notifyOtherPlayHand(cs);
     // 清空容器
     m_selectCards.clear();
 }
@@ -763,6 +790,7 @@ void GamePanel::onUserPass()
     // 打出一个空的Cards对象
     Cards empty;
     userPlayer->playHand(empty);
+    notifyOtherPlayHand(empty);
     // 清空用户选择的牌(玩家可能选择了一些牌, 但是没有打出去)
     for(auto it = m_selectCards.begin(); it != m_selectCards.end(); ++it)
     {
@@ -870,8 +898,28 @@ void GamePanel::showEndingScorePanel()
          panel->deleteLater();
          animation->deleteLater();
          ui->btnGroup->selectPanel(ButtonGroup::Empty);
-         gameStatusPrecess(GameControl::DispatchCard);
-         m_bgm->startBGM(80);
+
+         if(DataManager::getInstance()->isNetworkMode())
+         {
+             Message msg;
+             if(DataManager::getInstance()->isManualMode())
+             {
+                 msg.roomName=DataManager::getInstance()->getRoomName();
+                 msg.reqcode=RequestCode::Continue;
+             }
+             else
+             {
+                 //自动加入房间重新开始下一轮游戏
+                 msg.reqcode=RequestCode::AutoRoom;
+             }
+             msg.userName=DataManager::getInstance()->getUserName();
+             DataManager::getInstance()->getCommunication()->sendMessage(&msg);
+         }
+         else
+         {
+             gameStatusPrecess(GameControl::DispatchCard);
+             m_bgm->startBGM(80);
+         }
     });
 }
 
@@ -953,7 +1001,10 @@ void GamePanel::updatePlayerInfo(orderMap &info)
     //将解析出的数据设置给各个玩家
     m_gameCtl->getLeftRobot()->setScore(lscore);
     m_gameCtl->getRightRobot()->setScore(rscore);
-    m_gameCtl->getUserPlayer()->setScore(lscore);
+    m_gameCtl->getUserPlayer()->setScore(mscore);
+    m_gameCtl->getLeftRobot()->setName(left);
+    m_gameCtl->getRightRobot()->setName(right);
+    m_gameCtl->getUserPlayer()->setName(mid);
     //存储玩家名字
     m_nameList.clear();
     m_nameList<<left<<mid<<right;
@@ -977,6 +1028,27 @@ void GamePanel::startGame(int index)
     gameStatusPrecess(GameControl::DispatchCard);
     // 播放背景音乐
     m_bgm->startBGM(80);
+}
+
+void GamePanel::notifyOtherPlayHand(Cards &cs)
+{
+    DataManager* instance=DataManager::getInstance();
+    if(instance->isNetworkMode())
+    {
+        Message msg;
+        msg.userName=instance->getUserName();
+        msg.roomName=instance->getRoomName();
+        msg.data1=QByteArray::number(cs.cardCount());
+        QDataStream stream(&msg.data2,QIODevice::ReadWrite);
+        //将cs转换为容器类型
+        CardList cds=cs.toCardList();
+        for(const auto& item:cds)
+        {
+            stream<<item;
+        }
+        msg.reqcode=RequestCode::PlayAHand;
+        instance->getCommunication()->sendMessage(&msg);
+    }
 }
 
 void GamePanel::paintEvent(QPaintEvent *ev)
@@ -1016,6 +1088,15 @@ void GamePanel::mouseMoveEvent(QMouseEvent *ev)
 void GamePanel::closeEvent(QCloseEvent *ev)
 {
     emit panelClose();
+    //判断游戏模式
+    if(DataManager::getInstance()->isNetworkMode())
+    {
+        Message msg;
+        msg.reqcode=RequestCode::LeaveRoom;
+        msg.userName=DataManager::getInstance()->getUserName();
+        msg.roomName=DataManager::getInstance()->getRoomName();
+        DataManager::getInstance()->getCommunication()->sendMessage(&msg);
+    }
     ev->accept();
     deleteLater();
 }

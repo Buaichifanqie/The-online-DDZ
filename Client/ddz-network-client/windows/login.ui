@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>457</width>
-    <height>312</height>
+    <width>715</width>
+    <height>492</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -26,10 +26,13 @@
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Fixed</enum>
+         </property>
          <property name="sizeHint" stdset="0">
           <size>
            <width>20</width>
-           <height>40</height>
+           <height>145</height>
           </size>
          </property>
         </spacer>
@@ -54,7 +57,7 @@
            <widget class="QWidget" name="widget" native="true">
             <layout class="QGridLayout" name="gridLayout">
              <item row="0" column="0">
-              <widget class="QLabel" name="label">
+              <widget class="QLabel" name="yonghuming">
                <property name="text">
                 <string>用户名:</string>
                </property>
@@ -64,7 +67,7 @@
               <widget class="QLineEdit" name="userName"/>
              </item>
              <item row="1" column="0">
-              <widget class="QLabel" name="label_2">
+              <widget class="QLabel" name="mima">
                <property name="text">
                 <string>密码:</string>
                </property>
@@ -106,7 +109,7 @@
                 <item>
                  <widget class="QPushButton" name="loginBtn">
                   <property name="text">
-                   <string>登录</string>
+                   <string/>
                   </property>
                  </widget>
                 </item>
@@ -150,6 +153,9 @@
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Expanding</enum>
+         </property>
          <property name="sizeHint" stdset="0">
           <size>
            <width>20</width>
@@ -167,10 +173,13 @@
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Fixed</enum>
+         </property>
          <property name="sizeHint" stdset="0">
           <size>
            <width>20</width>
-           <height>6</height>
+           <height>145</height>
           </size>
          </property>
         </spacer>
@@ -194,8 +203,12 @@
           <item>
            <widget class="QWidget" name="widget_6" native="true">
             <layout class="QGridLayout" name="gridLayout_2">
-             <item row="0" column="1" colspan="2">
-              <widget class="QLineEdit" name="regUserName"/>
+             <item row="0" column="0">
+              <widget class="QLabel" name="yonghuming2">
+               <property name="text">
+                <string>用户名:</string>
+               </property>
+              </widget>
              </item>
              <item row="3" column="0" colspan="3">
               <widget class="QWidget" name="widget_7" native="true">
@@ -216,7 +229,7 @@
                 <item>
                  <widget class="QPushButton" name="registerBtn">
                   <property name="text">
-                   <string>注册</string>
+                   <string/>
                   </property>
                  </widget>
                 </item>
@@ -236,27 +249,23 @@
                </layout>
               </widget>
              </item>
-             <item row="1" column="0">
-              <widget class="QLabel" name="label_4">
-               <property name="text">
-                <string>密码:</string>
-               </property>
-              </widget>
-             </item>
              <item row="1" column="1" colspan="2">
               <widget class="QLineEdit" name="regPassword"/>
              </item>
-             <item row="0" column="0">
-              <widget class="QLabel" name="label_3">
+             <item row="0" column="1" colspan="2">
+              <widget class="QLineEdit" name="regUserName"/>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="shoujihao">
                <property name="text">
-                <string>用户名:</string>
+                <string>手机号:</string>
                </property>
               </widget>
              </item>
-             <item row="2" column="0">
-              <widget class="QLabel" name="label_7">
+             <item row="1" column="0">
+              <widget class="QLabel" name="mima2">
                <property name="text">
-                <string>手机号:</string>
+                <string>密码:</string>
                </property>
               </widget>
              </item>
@@ -287,6 +296,9 @@
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Expanding</enum>
+         </property>
          <property name="sizeHint" stdset="0">
           <size>
            <width>20</width>
@@ -304,10 +316,13 @@
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Fixed</enum>
+         </property>
          <property name="sizeHint" stdset="0">
           <size>
            <width>20</width>
-           <height>32</height>
+           <height>145</height>
           </size>
          </property>
         </spacer>
@@ -350,7 +365,7 @@
                 <item>
                  <widget class="QPushButton" name="netOkBtn">
                   <property name="text">
-                   <string>确定</string>
+                   <string/>
                   </property>
                  </widget>
                 </item>
@@ -371,14 +386,14 @@
               </widget>
              </item>
              <item row="0" column="0">
-              <widget class="QLabel" name="label_5">
+              <widget class="QLabel" name="ipdizhi">
                <property name="text">
                 <string>ip地址：</string>
                </property>
               </widget>
              </item>
              <item row="1" column="0">
-              <widget class="QLabel" name="label_6">
+              <widget class="QLabel" name="duankouhao">
                <property name="text">
                 <string>端口号:</string>
                </property>
@@ -414,6 +429,9 @@
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Expanding</enum>
+         </property>
          <property name="sizeHint" stdset="0">
           <size>
            <width>20</width>
@@ -432,7 +450,7 @@
       <item>
        <widget class="QPushButton" name="homeBtn">
         <property name="text">
-         <string>主页</string>
+         <string/>
         </property>
        </widget>
       </item>
@@ -452,7 +470,7 @@
       <item>
        <widget class="QPushButton" name="netsetBtn">
         <property name="text">
-         <string>网络设置</string>
+         <string/>
         </property>
        </widget>
       </item>

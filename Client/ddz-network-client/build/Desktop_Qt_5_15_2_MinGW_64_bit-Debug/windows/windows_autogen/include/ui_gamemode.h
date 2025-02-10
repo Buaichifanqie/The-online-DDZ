@@ -89,6 +89,11 @@ public:
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         singel_label = new QLabel(widget);
         singel_label->setObjectName(QString::fromUtf8("singel_label"));
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(singel_label->sizePolicy().hasHeightForWidth());
+        singel_label->setSizePolicy(sizePolicy);
 
         verticalLayout->addWidget(singel_label);
 
@@ -110,6 +115,8 @@ public:
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         net_label = new QLabel(widget_2);
         net_label->setObjectName(QString::fromUtf8("net_label"));
+        sizePolicy.setHeightForWidth(net_label->sizePolicy().hasHeightForWidth());
+        net_label->setSizePolicy(sizePolicy);
 
         verticalLayout_2->addWidget(net_label);
 
@@ -242,16 +249,16 @@ public:
     void retranslateUi(QDialog *GameMode)
     {
         GameMode->setWindowTitle(QCoreApplication::translate("GameMode", "Dialog", nullptr));
-        singel_label->setText(QCoreApplication::translate("GameMode", "TextLabel", nullptr));
-        singleModeBtn->setText(QCoreApplication::translate("GameMode", "\345\215\225\346\234\272\346\250\241\345\274\217", nullptr));
-        net_label->setText(QCoreApplication::translate("GameMode", "TextLabel", nullptr));
-        netModeBtn->setText(QCoreApplication::translate("GameMode", "\347\275\221\347\273\234\346\250\241\345\274\217", nullptr));
-        auto_label->setText(QCoreApplication::translate("GameMode", "TextLabel", nullptr));
-        autoBtn->setText(QCoreApplication::translate("GameMode", "PushButton", nullptr));
-        manual_label->setText(QCoreApplication::translate("GameMode", "TextLabel", nullptr));
-        manualBtn->setText(QCoreApplication::translate("GameMode", "PushButton", nullptr));
-        search_label->setText(QCoreApplication::translate("GameMode", "TextLabel", nullptr));
-        searchBtn->setText(QCoreApplication::translate("GameMode", "PushButton", nullptr));
+        singel_label->setText(QString());
+        singleModeBtn->setText(QString());
+        net_label->setText(QString());
+        netModeBtn->setText(QString());
+        auto_label->setText(QString());
+        autoBtn->setText(QString());
+        manual_label->setText(QString());
+        manualBtn->setText(QString());
+        search_label->setText(QString());
+        searchBtn->setText(QString());
         information->setText(QCoreApplication::translate("GameMode", "TextLabel", nullptr));
     } // retranslateUi
 

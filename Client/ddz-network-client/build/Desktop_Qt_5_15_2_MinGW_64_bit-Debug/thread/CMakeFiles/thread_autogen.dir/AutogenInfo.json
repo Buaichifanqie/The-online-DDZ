@@ -48,6 +48,12 @@
 			"MU",
 			"EWIEGA46WW/moc_robotplayhand.cpp",
 			null
+		],
+		[
+			"D:/DDZ-network/Client/ddz-network-client/thread/taskqueue.h",
+			"MU",
+			"EWIEGA46WW/moc_taskqueue.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -122,6 +128,11 @@
 		],
 		[
 			"D:/DDZ-network/Client/ddz-network-client/thread/robotplayhand.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/DDZ-network/Client/ddz-network-client/thread/taskqueue.cpp",
 			"MU",
 			null
 		]

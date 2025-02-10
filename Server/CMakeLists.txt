@@ -41,7 +41,7 @@ add_subdirectory(database)
 add_subdirectory(test)
 
 link_directories(/usr/local/ssl/lib64/)
-link_directories(/usr/lib/mysql)
+link_directories(/usr/lib/x86_64-linux-gnu/)
 link_directories(/usr/local/lib64/)
 link_directories(/usr/local/lib/)
 

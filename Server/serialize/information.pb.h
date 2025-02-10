@@ -59,12 +59,18 @@ enum RequestCode : int {
   AutoRoom = 3,
   ManualRoom = 4,
   SearchRoom = 5,
+  GrabLord = 6,
+  PlayAHand = 7,
+  GameOver = 8,
+  Continue = 9,
+  LeaveRoom = 10,
+  Goodbye = 11,
   RequestCode_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   RequestCode_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
 bool RequestCode_IsValid(int value);
 constexpr RequestCode RequestCode_MIN = UserLogin;
-constexpr RequestCode RequestCode_MAX = SearchRoom;
+constexpr RequestCode RequestCode_MAX = Goodbye;
 constexpr int RequestCode_ARRAYSIZE = RequestCode_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* RequestCode_descriptor();
@@ -90,7 +96,10 @@ enum RespondCode : int {
   StartGame = 5,
   SearchRoomOK = 6,
   DealCards = 7,
-  Failed = 8,
+  OtherGrabLord = 8,
+  OtherPlayHand = 9,
+  OtherLeaveRoom = 10,
+  Failed = 11,
   RespondCode_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   RespondCode_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };

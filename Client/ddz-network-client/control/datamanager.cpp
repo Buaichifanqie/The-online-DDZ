@@ -44,6 +44,11 @@ void DataManager::setGameMode(GameMode mode)
     m_mode=mode;
 }
 
+void DataManager::setRoomMode(RoomMode mode)
+{
+    m_roomMode=mode;
+}
+
 QByteArray DataManager::getUserName()
 {
     return m_userName;
@@ -79,9 +84,14 @@ Cards DataManager::getLast3Cards()
     return m_last;
 }
 
-DataManager::GameMode DataManager::getGameMode()
+bool DataManager::isNetworkMode()
 {
-    return m_mode;
+    return m_mode==GameMode::NetWork ? true : false;
+}
+
+bool DataManager::isManualMode()
+{
+    return m_roomMode==RoomMode::Manual ? true : false;
 }
 
 

@@ -81,6 +81,8 @@ public:
     //开始游戏
     void startGame();
     void startGame(int index);
+    //通知服务器当前玩家出牌了
+    void notifyOtherPlayHand(Cards& cs);
 protected:
     void paintEvent(QPaintEvent* ev);
     void mouseMoveEvent(QMouseEvent* ev);
